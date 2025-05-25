@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang = "de">
+<head>
+    <title>CSS</title>
+    <meta charset = "UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #ffffff;
+            --accent-color: #2947F1;
+            --accent-light: #2947F1;
+            --hover-color: #316BFE;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Dela Gothic One', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        header img {
+            width: 300px;
+            height: 300px;
+            margin-right: 40px;
+            object-fit: contain;
+        }
+        header h1 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 120px;
+        }
+        body h2 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 70px;
+        }
+        body h3 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-secondary);
+        }
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .scroll-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .scroll-btn.left {
+            transform: rotate(180deg);
+        }
+        nav {
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        nav ul {
+            display: inline-flex;
+            gap: 30px;
+            list-style-type: none;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            position: relative;
+            white-space: nowrap;
+        }
+        nav a:hover {
+            color: var(--hover-color);
+        }
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            header h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo/css.png" alt="CSS Logo 3D">
+        <h1>CSS</h1>
+    </header>
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <button class="scroll-btn left" onclick="scrollNav('left')">▶</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#">Selektoren</a></li>
+                    <li><a href="#">Deklarationen</a></li>
+                    <li><a href="#">Eigennschaften und Werte</a></li>
+                    <li><a href="#">Elementselektoren</a></li>
+                    <li><a href="#">Klassenselektoren</a></li>
+                    <li><a href="#">ID-Selektoren</a></li>
+                    <li><a href="#">Attributselektoren</a></li>
+                    <li><a href="#">Pseudoklassen</a></li>
+                    <li><a href="#">Pseudoelemente</a></li>
+                    <li><a href="#">content</a></li>
+                    <li><a href="#">padding</a></li>
+                    <li><a href="#">border</a></li>
+                    <li><a href="#">margin</a></li>
+                    <li><a href="#">fontfamily</a></li>
+                    <li><a href="#">font-size</a></li>
+                    <li><a href="#">font-style</a></li>
+                    <li><a href="#">font-weight</a></li>
+                    <li><a href="#">text-align</a></li>
+                    <li><a href="#">text-decoration</a></li>
+                    <li><a href="#">line-height</a></li>
+                    <li><a href="#">color</a></li>
+                    <li><a href="#">background-color</a></li>
+                    <li><a href="#">background-image</a></li>
+                    <li><a href="#">background-repeat</a></li>
+                    <li><a href="#">background-position</a></li>
+                    <li><a href="#">background-size</a></li>
+                    <li><a href="#">block</a></li>
+                    <li><a href="#">inline</a></li>
+                    <li><a href="#">inline-block</a></li>
+                    <li><a href="#">none</a></li>
+                    <li><a href="#">static</a></li>
+                    <li><a href="#">relative</a></li>
+                    <li><a href="#">absolute</a></li>
+                    <li><a href="#">fixed</a></li>
+                    <li><a href="#">sticky</a></li>
+                    <li><a href="#">Flexbox</a></li>
+                    <li><a href="#">Grid</a></li>
+                    <li><a href="#">Media Queries</a></li>
+                    <li><a href="#">Einheiten</a></li>
+                    <li><a href="#">max-width</a></li>
+                    <li><a href="#">height</a></li>
+                    <li><a href="#">object-fit</a></li>
+                    <li><a href="#">transition</a></li>
+                    <li><a href="#">@keyframes</a></li>
+                    <li><a href="#">animation</a></li>
+                    <li><a href="#">text-shadow</a></li>
+                    <li><a href="#">box-shadow</a></li>
+                    <li><a href="#">CSS-Variablen</a></li>
+                </ul>
+            </nav>
+            <button class="scroll-btn right" onclick="scrollNav('right')">▶</button>
+        </div>
+    </div>
+    
+    <script>
+        function scrollNav(direction) {
+            const nav = document.getElementById('mainNav');
+            const scrollAmount = nav.clientWidth * 0.8;
+            
+            if (direction === 'left') {
+                nav.scrollLeft -= scrollAmount;
+            } else {
+                nav.scrollLeft += scrollAmount;
+            }
+        }
+
+        //#2947F1 Dunkel
+        //#316BFE Hell
+    </script>
+</body>
+</html>

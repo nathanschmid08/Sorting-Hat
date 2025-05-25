@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang = "de">
+<head>
+    <title>SQL</title>
+    <meta charset = "UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #ffffff;
+            --accent-color: #2564AC;
+            --accent-light: #2564AC;
+            --hover-color: #2564AC;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Dela Gothic One', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        header img {
+            width: 300px;
+            height: 300px;
+            margin-right: 40px;
+            object-fit: contain;
+        }
+        header h1 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 120px;
+        }
+        body h2 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 70px;
+        }
+        body h3 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-secondary);
+        }
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .scroll-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .scroll-btn.left {
+            transform: rotate(180deg);
+        }
+        nav {
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        nav ul {
+            display: inline-flex;
+            gap: 30px;
+            list-style-type: none;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            position: relative;
+            white-space: nowrap;
+        }
+        nav a:hover {
+            color: var(--hover-color);
+        }
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            header h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo/kotlin.png" alt="Kotlin Logo 3D">
+        <h1>Kotlin</h1>
+    </header>
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <button class="scroll-btn left" onclick="scrollNav('left')">▶</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#">Einführung in Kotlin</a></li>
+                    <li><a href="#">Installation von IntelliJ IDEA oder Android Studio</a></li>
+                    <li><a href="#">Variablen und Konstanten</a></li>
+                    <li><a href="#">Datentypen</a></li>
+                    <li><a href="#">Null-Sicherheit</a></li>
+                    <li><a href="#">Kommentare</a></li>
+                    <li><a href="#">Ein- und Ausgabe</a></li>
+                    <li><a href="#">Operatoren</a></li>
+                    <li><a href="#">If-Else Bedingungen</a></li>
+                    <li><a href="#">When-Ausdruck</a></li>
+                    <li><a href="#">Schleifen</a></li>
+                    <li><a href="#">Funktionen</a></li>
+                    <li><a href="#">Lambda-Funktionen</a></li>
+                    <li><a href="#">Listen</a></li>
+                    <li><a href="#">Maps</a></li>
+                    <li><a href="#">Sets</a></li>
+                    <li><a href="#">Arrays</a></li>
+                    <li><a href="#">Datenklassen</a></li>
+                    <li><a href="#">Klassen</a></li>
+                    <li><a href="#">Objekte</a></li>
+                    <li><a href="#">Eigenschaften</a></li>
+                    <li><a href="#">Konstruktoren</a></li>
+                    <li><a href="#">Vererbung</a></li>
+                    <li><a href="#">Interfaces</a></li>
+                    <li><a href="#">Abstrakte Klassen und Methoden</a></li>
+                    <li><a href="#">Sealed Classes</a></li>
+                    <li><a href="#">Type Checking und Type Casting</a></li>
+                    <li><a href="#">Smart Casts</a></li>
+                    <li><a href="#">Extension Functions</a></li>
+                    <li><a href="#">Generics</a></li>
+                    <li><a href="#">Companion Objects</a></li>
+                    <li><a href="#">Error Handling</a></li>
+                    <li><a href="#">Scope Functions</a></li>
+                    <li><a href="#">Collection Functions</a></li>
+                    <li><a href="#">Higher-Order Functions</a></li>
+                    <li><a href="#">Lazy Initialization</a></li>
+                    <li><a href="#">Destructuring Declarations</a></li>
+                    <li><a href="#">Operator Overloading</a></li>
+                    <li><a href="#">Data Streams</a></li>
+                    <li><a href="#">Coroutines</a></li>
+                    <li><a href="#">Concurrency</a></li>
+                    <li><a href="#">Annotations</a></li>
+                    <li><a href="#">Reflection</a></li>
+                    <li><a href="#">File Handling</a></li>
+                    <li><a href="#">Dependency Injection</a></li>
+                    <li><a href="#">Networking</a></li>
+                    <li><a href="#">JSON Parsing</a></li>
+                    <li><a href="#">Unit Testing</a></li>
+                    <li><a href="#">Android Entwicklung</a></li>
+                    <li><a href="#">Activity und Fragment</a></li>
+                    <li><a href="#">Intents und Navigation</a></li>
+                    <li><a href="#">ViewModel und LiveData</a></li>
+                    <li><a href="#">State Management</a></li>
+                    <li><a href="#">Jetpack Compose</a></li>
+                    <li><a href="#">Room Database</a></li>
+                    <li><a href="#">Shared Preferences</a></li>
+                    <li><a href="#">Permissions Handling</a></li>
+                    <li><a href="#">Debugging</a></li>
+                    <li><a href="#">Profiling</a></li>
+                </ul>
+            </nav>
+            <button class="scroll-btn right" onclick="scrollNav('right')">▶</button>
+        </div>
+    </div>
+
+    <script>
+        function scrollNav(direction) {
+            const nav = document.getElementById('mainNav');
+            const scrollAmount = nav.clientWidth * 0.8;
+            
+            if (direction === 'left') {
+                nav.scrollLeft -= scrollAmount;
+            } else {
+                nav.scrollLeft += scrollAmount;
+            }
+        }
+
+        //#F04729 Dunkel
+        //#F45F2C Hell
+    </script>
+</body>
+</html>

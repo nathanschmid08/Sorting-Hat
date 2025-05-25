@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>DEVELOPE LEARNHUB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --hover-color: #60a5fa;
+            --bg-primary: #1e1e1e;
+            --bg-secondary: #141414;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --border-color: #2d2d2d;
+            --sidebar-width: 260px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            display: flex;
+            min-height: 100vh;
+            letter-spacing: -0.02em;
+            overflow: hidden;  /* Verhindert Scrollbalken am Body */
+        }
+
+        .sidenav {
+            width: var(--sidebar-width);
+            background-color: var(--bg-primary);
+            border-right: 1px solid var(--border-color);
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            padding: 1.5rem 0;
+        }
+
+        .nav-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-section-title {
+            font-size: 0.7rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            padding: 0.75rem 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .sidenav a {
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidenav a:hover {
+            background-color: var(--bg-secondary);
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+        }
+
+        .sidenav a i {
+            width: 1.5rem;
+            margin-right: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .main {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: transparent;  /* Transparenter Hintergrund */
+        }
+
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            background-color: var(--primary-color);
+            color: var(--bg-primary);
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-family: 'Dela Gothic One', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        .sidenav::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .sidenav a img {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .sidenav::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        .sidenav::-webkit-scrollbar-thumb {
+            background-color: var(--text-secondary);
+            border-radius: 3px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .sidenav {
+                transform: translateX(-100%);
+                z-index: 50;
+            }
+
+            .sidenav.active {
+                transform: translateX(0);
+            }
+
+            .main {
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            .sidenav a {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidenav" id="sidenav">
+        <div class="sidenav" id="sidenav">
+            <div class="nav-section">
+                <div class="nav-section-title">Programmiersprachen</div>
+                <a href="#" onclick="loadPage('MAINPAGES/HTML.html')"><img src="svgs/html.svg">HTML</a>
+                <a href="#" onclick="loadPage('MAINPAGES/CSS.html')"><img src="svgs/css.svg">CSS</a>
+                <a href="#" onclick="loadPage('MAINPAGES/JS.html')"><img src="svgs/js.svg">JavaScript</a>
+                <a href="#" onclick="loadPage('MAINPAGES/PYTHON.html')"><img src="svgs/python.svg">Python</a>
+                <a href="#" onclick="loadPage('MAINPAGES/PHP.html')"><img src="svgs/php.svg">PHP</a>
+                <a href="#" onclick="loadPage('MAINPAGES/SQL.html')"><img src="svgs/sql.svg">SQL</a>
+                <a href="#" onclick="loadPage('MAINPAGES/SWIFT.html')"><img src="svgs/swift.svg">Swift</a>
+                <a href="#" onclick="loadPage('MAINPAGES/CPLUSPLUS.html')"><img src="svgs/cpp.svg">C++</a>
+                <a href="#" onclick="loadPage('MAINPAGES/CSHARP.html')"><img src="svgs/csharp.svg">C#</a>
+                <a href="#" onclick="loadPage('MAINPAGES/RUBY.html')"><img src="svgs/ruby.svg">Ruby</a>
+                <a href="#" onclick="loadPage('MAINPAGES/TYPESCRIPT.html')"><img src="svgs/ts.svg">TypeScript</a>
+                <a href="#" onclick="loadPage('MAINPAGES/KOTLIN.html')"><img src="svgs/kotlin.svg">Kotlin</a>
+                <a href="#" onclick="loadPage('MAINPAGES/GO.html')"><img src="svgs/go.svg">Go</a>
+                <a href="#" onclick="loadPage('MAINPAGES/RUST.html')"><img src="svgs/rust.svg">Rust</a>
+                <a href="#" onclick="loadPage('MAINPAGES/JAVA.html')"><img src="svgs/java.svg">Java</a>
+            </div>
+    
+            <div class="nav-section">
+                <div class="nav-section-title">Frameworks & Tools</div>
+                <a href="#" onclick="loadPage('MAINPAGES/REACT.html')"><img src="svgs/react.svg">React</a>
+                <a href="#" onclick="loadPage('MAINPAGES/ANGULAR.html')"><img src="svgs/angular.svg">Angular</a>
+                <a href="#" onclick="loadPage('MAINPAGES/NODEJS.html')"><img src="svgs/node-js.svg">Node.js</a>
+                <a href="#" onclick="loadPage('MAINPAGES/GIT.html')"><img src="svgs/git.svg">Git</a>
+                <a href="#" onclick="loadPage('MAINPAGES/MONGODB.html')"><img src="svgs/mongodb.svg">MongoDB</a>
+                <a href="#" onclick="loadPage('MAINPAGES/LITE.html')"><img src="svgs/sqlite.svg">SQLite</a>
+                <a href="#" onclick="loadPage('MAINPAGES/JQUERY.html')"><img src="svgs/jquery.svg">jQuery</a>
+                <a href="#" onclick="loadPage('MAINPAGES/VUE.html')"><img src="svgs/vue.svg">Vue.js</a>
+                <a href="#" onclick="loadPage('MAINPAGES/NEST.html')"><img src="svgs/NestJS.svg">Nest.js</a>
+                <a href="#" onclick="loadPage('MAINPAGES/SASS.html')"><img src="svgs/sass.svg">Sass</a>
+                <a href="#" onclick="loadPage('MAINPAGES/XML.html')"><img src="svgs/xml.svg">XML</a>
+                <a href="#" onclick="loadPage('MAINPAGES/XHTML.html')"><img src="svgs/xhtml.svg">XHTML</a>
+                <a href="#" onclick="loadPage('MAINPAGES/JSON.html')"><img src="svgs/json.svg">JSON</a>
+            </div>
+    
+            <div class="nav-section">
+                <div class="nav-section-title">Features</div>
+                <a href="#" onclick="loadPage('MAINPAGES/CHATBOT.html')"><i class="fas fa-robot"></i>AI Chatbot</a>
+                <a href="#" onclick="loadPage('MAINPAGES/TRYEDIT.html')"><i class="fas fa-edit"></i>Try Editor</a>
+                <a href="#" onclick="loadPage('MAINPAGES/TRYEDIT.html')"><i class="fa-solid fa-compass"></i>Explorer</a>
+                <a href="#" onclick="loadPage('MAINPAGES/SUCHE.html')"><i class="fas fa-search"></i>Suche</a>
+            </div>
+    
+            <div class="nav-section">
+                <div class="nav-section-title">Konto</div>
+                <a href="#" onclick="loadPage('MAINPAGES/REGISTER.html')"><i class="fas fa-user-plus"></i>Register</a>
+                <a href="#" onclick="loadPage('MAINPAGES/LOGIN.html')"><i class="fas fa-sign-in-alt"></i>Login</a>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="main">
+        <iframe id="contentFrame" src="MAINPAGES/HTML.html"></iframe>
+    </div>
+
+    <script>
+        function loadPage(page) {
+            document.getElementById('contentFrame').src = page;
+            if (window.innerWidth <= 1024) {
+                document.getElementById('sidenav').classList.remove('active');
+            }
+        }
+
+        function toggleMenu() {
+            document.getElementById('sidenav').classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const sidenav = document.getElementById('sidenav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (window.innerWidth <= 1024 && 
+                !sidenav.contains(event.target) && 
+                !menuToggle.contains(event.target) && 
+                sidenav.classList.contains('active')) {
+                sidenav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

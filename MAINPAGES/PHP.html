@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang = "de">
+<head>
+    <title>PHP</title>
+    <meta charset = "UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #ffffff;
+            --accent-color: #4F6BE1;
+            --accent-light: #4F6BE1;
+            --hover-color: #4f6ce1e3;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Dela Gothic One', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        header img {
+            width: 300px;
+            height: 300px;
+            margin-right: 40px;
+            object-fit: contain;
+        }
+        header h1 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 120px;
+        }
+        body h2 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 70px;
+        }
+        body h3 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-secondary);
+        }
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .scroll-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .scroll-btn.left {
+            transform: rotate(180deg);
+        }
+        nav {
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        nav ul {
+            display: inline-flex;
+            gap: 30px;
+            list-style-type: none;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            position: relative;
+            white-space: nowrap;
+        }
+        nav a:hover {
+            color: var(--hover-color);
+        }
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            header h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo/php.png" alt="PHP Logo 3D">
+        <h1>PHP</h1>
+    </header>
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <button class="scroll-btn left" onclick="scrollNav('left')">▶</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#">Einführung in PHP</a></li>
+                    <li><a href="#">Installation und Einrichtung</a></li>
+                    <li><a href="#">Grundlegende Syntax</a></li>
+                    <li><a href="#">Variablen und Datentypen</a></li>
+                    <li><a href="#">Operatoren</a></li>
+                    <li><a href="#">Kontrollstrukturen</a></li>
+                    <li><a href="#">Funktionen</a></li>
+                    <li><a href="#">Arrays</a></li>
+                    <li><a href="#">Assoziative Arrays</a></li>
+                    <li><a href="#">Superglobale Arrays</a></li>
+                    <li><a href="#">Formularverarbeitung</a></li>
+                    <li><a href="#">Session und Cookies</a></li>
+                    <li><a href="#">Dateiverarbeitung</a></li>
+                    <li><a href="#">Fehlerbehandlung</a></li>
+                    <li><a href="#">Klassen und Objekte</a></li>
+                    <li><a href="#">Einführung in OOP</a></li>
+                    <li><a href="#">Vererbung</a></li>
+                    <li><a href="#">Polymorphismus</a></li>
+                    <li><a href="#">Abstrakte Klassen</a></li>
+                    <li><a href="#">Interfaces</a></li>
+                    <li><a href="#">PHP Data Objects</a></li>
+                    <li><a href="#">MySQL</a></li>
+                    <li><a href="#">Prepared Statements</a></li>
+                    <li><a href="#">CRUD Operationen</a></li>
+                    <li><a href="#">Formularvalidierung</a></li>
+                    <li><a href="#">File Uploads</a></li>
+                    <li><a href="#">Mailversand</a></li>
+                    <li><a href="#">JSON Verarbeitung</a></li>
+                    <li><a href="#">RESTful APIs</a></li>
+                    <li><a href="#">Composer</a></li>
+                    <li><a href="#">Unit Testing</a></li>
+                </ul>
+            </nav>
+            <button class="scroll-btn right" onclick="scrollNav('right')">▶</button>
+        </div>
+    </div>
+    <script>
+        function scrollNav(direction) {
+            const nav = document.getElementById('mainNav');
+            const scrollAmount = nav.clientWidth * 0.8;
+            
+            if (direction === 'left') {
+                nav.scrollLeft -= scrollAmount;
+            } else {
+                nav.scrollLeft += scrollAmount;
+            }
+        }
+
+        //#F04729 Dunkel
+        //#F45F2C Hell
+    </script>
+</body>
+</html>

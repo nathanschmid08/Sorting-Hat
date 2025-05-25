@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang = "de">
+<head>
+    <title>SQL</title>
+    <meta charset = "UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #ffffff;
+            --accent-color: #579DD6;
+            --accent-light: #579DD6;
+            --hover-color: #579DD6;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Dela Gothic One', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        header img {
+            width: 300px;
+            height: 300px;
+            margin-right: 40px;
+            object-fit: contain;
+        }
+        header h1 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 120px;
+        }
+        body h2 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 70px;
+        }
+        body h3 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-secondary);
+        }
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .scroll-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .scroll-btn.left {
+            transform: rotate(180deg);
+        }
+        nav {
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        nav ul {
+            display: inline-flex;
+            gap: 30px;
+            list-style-type: none;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            position: relative;
+            white-space: nowrap;
+        }
+        nav a:hover {
+            color: var(--hover-color);
+        }
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            header h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo/mysql.webp" alt="SQL Logo 3D">
+        <h1>SQL</h1>
+    </header>
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <button class="scroll-btn left" onclick="scrollNav('left')">▶</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#">Einführung in MySQL</a></li>
+                    <li><a href="#">Installation MySQL Workbench</a></li>
+                    <li><a href="#">Create Databse</a></li>
+                    <li><a href="#">Create Table</a></li>
+                    <li><a href="#">Drop Table</a></li>
+                    <li><a href="#">Alter Table</a></li>
+                    <li><a href="#">Numerische Datentypen</a></li>
+                    <li><a href="#">Zeichenketten</a></li>
+                    <li><a href="#">Datum und Zeit</a></li>
+                    <li><a href="#">Boolsche Werte</a></li>
+                    <li><a href="#">Insert into</a></li>
+                    <li><a href="#">Select</a></li>
+                    <li><a href="#">Where</a></li>
+                    <li><a href="#">Order by</a></li>
+                    <li><a href="#">Limit</a></li>
+                    <li><a href="#">Update</a></li>
+                    <li><a href="#">Delete</a></li>
+                    <li><a href="#">Operatoren</a></li>
+                    <li><a href="#">Like</a></li>
+                    <li><a href="#">In</a></li>
+                    <li><a href="#">Between</a></li>
+                    <li><a href="#">Group by</a></li>
+                    <li><a href="#">Count</a></li>
+                    <li><a href="#">Sum</a></li>
+                    <li><a href="#">Avg</a></li>
+                    <li><a href="#">Min</a></li>
+                    <li><a href="#">Max</a></li>
+                    <li><a href="#">Having</a></li>
+                    <li><a href="#">Aliases</a></li>
+                    <li><a href="#">Joins</a></li>
+                    <li><a href="#">Inner Join</a></li>
+                    <li><a href="#">Left Join</a></li>
+                    <li><a href="#">Right Join</a></li>
+                    <li><a href="#">Full Outer Join</a></li>
+                    <li><a href="#">Cross Join</a></li>
+                    <li><a href="#">Subqueries</a></li>
+                    <li><a href="#">Indizes</a></li>
+                    <li><a href="#">Explain</a></li>
+                    <li><a href="#">Primary Key</a></li>
+                    <li><a href="#">Foreign Key</a></li>
+                    <li><a href="#">Unique</a></li>
+                    <li><a href="#">Default</a></li>
+                    <li><a href="#">Auto Increment</a></li>
+                    <li><a href="#">Not Null</a></li>
+                    <li><a href="#">Check</a></li>
+                    <li><a href="#">Stored Procedures</a></li>
+                    <li><a href="#">Functions</a></li>
+                    <li><a href="#">Create User</a></li>
+                    <li><a href="#">Grant</a></li>
+                    <li><a href="#">Revoke</a></li>
+                    <li><a href="#">Show Grants</a></li>
+                    <li><a href="#">Information_Schema</a></li> 
+                    <li><a href="#">Start Transaction</a></li>
+                    <li><a href="#">Commit</a></li>
+                    <li><a href="#">Rollback</a></li>
+                    <li><a href="#">Lock</a></li>
+                    <li><a href="#">Unlock</a></li>
+                    <li><a href="#">ACID Prinzipien</a></li>
+                    <li><a href="#">Load Data infile</a></li>
+                    <li><a href="#">Select Into Outfile</a></li>
+                    <li><a href="#">MySQLdump</a></li>
+                    <li><a href="#">MySQLimport</a></li>
+                    <li><a href="#">Show Warnings</a></li>
+                    <li><a href="#">Show Errors</a></li>
+                    <li><a href="#">Error_Log</a></li>
+                    <li><a href="#">Slow_Query_Log</a></li>
+                </ul>
+            </nav>
+            <button class="scroll-btn right" onclick="scrollNav('right')">▶</button>
+        </div>
+    </div>
+
+    <script>
+        function scrollNav(direction) {
+            const nav = document.getElementById('mainNav');
+            const scrollAmount = nav.clientWidth * 0.8;
+            
+            if (direction === 'left') {
+                nav.scrollLeft -= scrollAmount;
+            } else {
+                nav.scrollLeft += scrollAmount;
+            }
+        }
+    </script>
+</body>
+</html>

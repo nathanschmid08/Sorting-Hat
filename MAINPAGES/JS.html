@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang = "de">
+<head>
+    <title>JS</title>
+    <meta charset = "UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #ffffff;
+            --accent-color: #FEEB31;
+            --accent-light: #FEEB31;
+            --hover-color: #FEEB31;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Dela Gothic One', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        header img {
+            width: 300px;
+            height: 300px;
+            margin-right: 40px;
+            object-fit: contain;
+        }
+        header h1 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 120px;
+        }
+        body h2 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 70px;
+        }
+        body h3 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-secondary);
+        }
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .scroll-btn {
+            background-color: var(--accent-color);
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .scroll-btn.left {
+            transform: rotate(180deg);
+        }
+        nav {
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        nav ul {
+            display: inline-flex;
+            gap: 30px;
+            list-style-type: none;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            position: relative;
+            white-space: nowrap;
+        }
+        nav a:hover {
+            color: var(--hover-color);
+        }
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            header h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo/javascript.png" alt="JS Logo 3D">
+        <h1>Java Script</h1>
+    </header>
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <button class="scroll-btn left" onclick="scrollNav('left')">▶</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#">script src</a></li>
+                    <li><a href="#">Variablen</a></li>
+                    <li><a href="#">Datentypen</a></li>
+                    <li><a href="#">Operatoren</a></li>
+                    <li><a href="#">if</a></li>
+                    <li><a href="#">else if</a></li>
+                    <li><a href="#">else</a></li>
+                    <li><a href="#">switch</a></li>
+                    <li><a href="#">for</a></li>
+                    <li><a href="#">while</a></li>
+                    <li><a href="#">do... while</a></li>
+                    <li><a href="#">for... in</a></li>
+                    <li><a href="#">for... of</a></li>
+                    <li><a href="#">Funktionen</a></li>
+                    <li><a href="#">Methoden</a></li>
+                    <li><a href="#">Objekte</a></li>
+                    <li><a href="#">Arrays</a></li>
+                    <li><a href="#">push</a></li>
+                    <li><a href="#">pop</a></li>
+                    <li><a href="#">shift</a></li>
+                    <li><a href="#">unshift</a></li>
+                    <li><a href="#">map</a></li>
+                    <li><a href="#">filter</a></li>
+                    <li><a href="#">reduce</a></li>
+                    <li><a href="#">getElementById</a></li>
+                    <li><a href="#">querySelector</a></li>
+                    <li><a href="#">innerHTML</a></li>
+                    <li><a href="#">textContent</a></li>
+                    <li><a href="#">style</a></li>
+                    <li><a href="#">addEventListener</a></li>
+                    <li><a href="#">async</a></li>
+                    <li><a href="#">await</a></li>
+                    <li><a href="#">try... catch</a></li>
+                    <li><a href="#">class</a></li>
+                    <li><a href="#">constructor</a></li>
+                    <li><a href="#">extends</a></li>
+                    <li><a href="#">super</a></li>
+                    <li><a href="#">import</a></li>
+                    <li><a href="#">export</a></li>
+                    <li><a href="#">fetch</a></li>
+                    <li><a href="#">XMLHttpRequest</a></li>
+                    <li><a href="#">localStorage</a></li>
+                    <li><a href="#">sessionStorage</a></li>
+                </ul>
+            </nav>
+            <button class="scroll-btn right" onclick="scrollNav('right')">▶</button>
+        </div>
+    </div>
+
+    <script>
+        function scrollNav(direction) {
+            const nav = document.getElementById('mainNav');
+            const scrollAmount = nav.clientWidth * 0.8;
+            
+            if (direction === 'left') {
+                nav.scrollLeft -= scrollAmount;
+            } else {
+                nav.scrollLeft += scrollAmount;
+            }
+        }
+
+        //#F04729 Dunkel
+        //#F45F2C Hell
+    </script>
+</body>
+</html>

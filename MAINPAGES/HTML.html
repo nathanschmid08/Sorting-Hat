@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang = "de">
+<head>
+    <title>HTML</title>
+    <meta charset = "UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #ffffff;
+            --accent-color: #F04729;
+            --accent-light: #F45F2C;
+            --hover-color: #F45F2C;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Dela Gothic One', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        header img {
+            width: 300px;
+            height: 300px;
+            margin-right: 40px;
+            object-fit: contain;
+        }
+        header h1 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 120px;
+        }
+        body h2 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 70px;
+        }
+        body h3 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-secondary);
+        }
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .scroll-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .scroll-btn.left {
+            transform: rotate(180deg);
+        }
+        nav {
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        nav ul {
+            display: inline-flex;
+            gap: 30px;
+            list-style-type: none;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            position: relative;
+            white-space: nowrap;
+        }
+        nav a:hover {
+            color: var(--hover-color);
+        }
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            header h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo/html.png" alt="HTML Logo 3D">
+        <h1>HTML</h1>
+    </header>
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <button class="scroll-btn left" onclick="scrollNav('left')">▶</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#">Einführung</a></li>
+                    <li><a href="#">&lt;!DOCTYPE html&gt;</a></li>
+                    <li><a href="#">&lt;html&gt;</a></li>
+                    <li><a href="#">&lt;head&gt;</a></li>
+                    <li><a href="#">&lt;title&gt;</a></li>
+                    <li><a href="#">meta charset uft8</a></li>
+                    <li><a href="#">link to stylesheet</a></li>
+                    <li><a href="#">&lt;body&gt;</a></li>
+                    <li><a href="#">&lt;header&gt;</a></li>
+                    <li><a href="#">&lt;h1 - h6&gt;</a></li>
+                    <li><a href="#">&lt;nav&gt;</a></li>
+                    <li><a href="#">&lt;p&gt;</a></li>
+                    <li><a href="#">&lt;br&gt;</a></li>
+                    <li><a href="#">&lt;hr&gt;</a></li>
+                    <li><a href="#">&lt;ul&gt;</a></li>
+                    <li><a href="#">&lt;li&gt;</a></li>
+                    <li><a href="#">&lt;ol&gt;</a></li>
+                    <li><a href="#">&lt;a&gt;</a></li>
+                    <li><a href="#">&lt;img&gt;</a></li>
+                    <li><a href="#">&lt;canvas&gt;</a></li>
+                    <li><a href="#">&lt;video&gt;</a></li>
+                    <li><a href="#">&lt;audio&gt;</a></li>
+                    <li><a href="#">&lt;table&gt;</a></li>
+                    <li><a href="#">&lt;tr&gt;</a></li>
+                    <li><a href="#">&lt;th&gt;</a></li>
+                    <li><a href="#">&lt;td&gt;</a></li>
+                    <li><a href="#">&lt;caption&gt;</a></li>
+                    <li><a href="#">&lt;thead&gt;</a></li>
+                    <li><a href="#">&lt;tbody&gt;</a></li>
+                    <li><a href="#">&lt;tfoot&gt;</a></li>
+                    <li><a href="#">&lt;!-- KOMMENTAR --&gt;</a></li>
+                    <li><a href="#">&lt;form&gt;</a></li>
+                    <li><a href="#">&lt;input&gt;</a></li>
+                    <li><a href="#">&lt;button&gt;</a></li>
+                    <li><a href="#">&lt;fieldset&gt;</a></li>
+                    <li><a href="#">&lt;legend&gt;</a></li>
+                    <li><a href="#">required</a></li>
+                    <li><a href="#">pattern</a></li>
+                    <li><a href="#">min</a></li>
+                    <li><a href="#">max</a></li>
+                    <li><a href="#">minlenght</a></li>
+                    <li><a href="#">maxlength</a></li>
+                    <li><a href="#">&lt;div&gt;</a></li>
+                    <li><a href="#">&lt;span&gt;</a></li>
+                    <li><a href="#">&lt;article&gt;</a></li>
+                    <li><a href="#">&lt;section&gt;</a></li>
+                    <li><a href="#">&lt;aside&gt;</a></li>
+                    <li><a href="#">&lt;footer&gt;</a></li>
+                    <li><a href="#">&lt;strong&gt;</a></li>
+                    <li><a href="#">&lt;em&gt;</a></li>
+                    <li><a href="#">&lt;mark&gt;</a></li>
+                    <li><a href="#">&lt;cite&gt;</a></li>
+                    <li><a href="#">&lt;abbr&gt;</a></li>
+                    <li><a href="#">&lt;code&gt;</a></li>
+                    <li><a href="#">&lt;blockquote&gt;</a></li>
+                    <li><a href="#">&lt;del&gt;</a></li>
+                    <li><a href="#">&lt;ins&gt;</a></li>
+                    <li><a href="#">&lt;progress&gt;</a></li>
+                    <li><a href="#">&lt;meter&gt;</a></li>
+                    <li><a href="#">&lt;sup&gt;</a></li>
+                    <li><a href="#">&lt;sub&gt;</a></li>
+                    <li><a href="#">&lt;kbd&gt;</a></li>
+                    <li><a href="#">&lt;time&gt;</a></li>
+                    <li><a href="#">&lt;details&gt;</a></li>
+                    <li><a href="#">&lt;summary&gt;</a></li>
+                    <li><a href="#">&lt;iframe&gt;</a></li>
+                    <li><a href="#">&lt;map&gt;</a></li>
+                    <li><a href="#">&lt;area&gt;</a></li>
+                    <li><a href="#">&lt;samp&gt;</a></li>
+                    <li><a href="#">&lt;var&gt;</a></li>
+                    <li><a href="#">&lt;dfn&gt;</a></li>
+                    <li><a href="#">&lt;bdi&gt;</a></li>
+                    <li><a href="#">&lt;bdo&gt;</a></li>
+                    <li><a href="#">&lt;address&gt;</a></li>
+                    <li><a href="#">&lt;noscript&gt;</a></li>
+                    <li><a href="#">link to script</a></li>
+                    <li><a href="#">&lt;figure&gt;</a></li>
+                    <li><a href="#">&lt;figcaption&gt;</a></li>
+                    <li><a href="#">&lt;q&gt;</a></li>
+                    <li><a href="#">&lt;small&gt;</a></li>
+                </ul>
+            </nav>
+            <button class="scroll-btn right" onclick="scrollNav('right')">▶</button>
+        </div>
+    </div>
+    <script>
+        function scrollNav(direction) {
+            const nav = document.getElementById('mainNav');
+            const scrollAmount = nav.clientWidth * 0.8;
+            
+            if (direction === 'left') {
+                nav.scrollLeft -= scrollAmount;
+            } else {
+                nav.scrollLeft += scrollAmount;
+            }
+        }
+
+        //#F04729 Dunkel
+        //#F45F2C Hell
+    </script>
+</body>
+</html>

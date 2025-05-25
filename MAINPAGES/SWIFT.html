@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang = "de">
+<head>
+    <title>SQL</title>
+    <meta charset = "UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #ffffff;
+            --accent-color: #FF583E;
+            --accent-light: #FF583E;
+            --hover-color: #FF583E;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Dela Gothic One', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        header img {
+            width: 300px;
+            height: 300px;
+            margin-right: 40px;
+            object-fit: contain;
+        }
+        header h1 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 120px;
+        }
+        body h2 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 70px;
+        }
+        body h3 {
+            font-family: 'Dela Gothic One', sans-serif;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-secondary);
+        }
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .scroll-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .scroll-btn.left {
+            transform: rotate(180deg);
+        }
+        nav {
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        nav ul {
+            display: inline-flex;
+            gap: 30px;
+            list-style-type: none;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            position: relative;
+            white-space: nowrap;
+        }
+        nav a:hover {
+            color: var(--hover-color);
+        }
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            header h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo/swift.webp" alt="Swift Logo 3D">
+        <h1>Swift</h1>
+    </header>
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <button class="scroll-btn left" onclick="scrollNav('left')">▶</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#">Einführung in Swift</a></li>
+                    <li><a href="#">Installation von Xcode</a></li>
+                    <li><a href="#">Variablen und Konstanten</a></li>
+                    <li><a href="#">Datentypen</a></li>
+                    <li><a href="#">Optionals</a></li>
+                    <li><a href="#">Kommentare</a></li>
+                    <li><a href="#">Ein- und Ausgabe</a></li>
+                    <li><a href="#">Operatoren</a></li>
+                    <li><a href="#">If-Else Bedingungen</a></li>
+                    <li><a href="#">Switch-Anweisung</a></li>
+                    <li><a href="#">Schleifen</a></li>
+                    <li><a href="#">Funktionen</a></li>
+                    <li><a href="#">Tupel</a></li>
+                    <li><a href="#">Arrays</a></li>
+                    <li><a href="#">Dictionaries</a></li>
+                    <li><a href="#">Sets</a></li>
+                    <li><a href="#">Enumerationen</a></li>
+                    <li><a href="#">Strukturen</a></li>
+                    <li><a href="#">Klassen</a></li>
+                    <li><a href="#">Eigenschaften</a></li>
+                    <li><a href="#">Methoden</a></li>
+                    <li><a href="#">Initialisierer</a></li>
+                    <li><a href="#">Deinitialisierer</a></li>
+                    <li><a href="#">Optionale Verkettung</a></li>
+                    <li><a href="#">Guard-Anweisung</a></li>
+                    <li><a href="#">Error Handling</a></li>
+                    <li><a href="#">Protokolle</a></li>
+                    <li><a href="#">Erweiterungen</a></li>
+                    <li><a href="#">Generics</a></li>
+                    <li><a href="#">Closures</a></li>
+                    <li><a href="#">Asynchrone Programmierung</a></li>
+                    <li><a href="#">Inheritance</a></li>
+                    <li><a href="#">Polymorphismus</a></li>
+                    <li><a href="#">Type Casting</a></li>
+                    <li><a href="#">Access Control</a></li>
+                    <li><a href="#">Memory Management</a></li>
+                    <li><a href="#">Mutating Methods</a></li>
+                    <li><a href="#">Subscripts</a></li>
+                    <li><a href="#">Nested Types</a></li>
+                    <li><a href="#">Custom Operators</a></li>
+                    <li><a href="#">Property Observers</a></li>
+                    <li><a href="#">Key-Value Observing</a></li>
+                    <li><a href="#">Concurrency</a></li>
+                    <li><a href="#">JSON Parsing</a></li>
+                    <li><a href="#">Unit Testing</a></li>
+                    <li><a href="#">Package Management</a></li>
+                    <li><a href="#">User Defaults</a></li>
+                    <li><a href="#">File Handling</a></li>
+                    <li><a href="#">Networking</a></li>
+                    <li><a href="#">App-Entwicklung mit SwiftUI</a></li>
+                    <li><a href="#">Views und Modifiers</a></li>
+                    <li><a href="#">State und Binding</a></li>
+                    <li><a href="#">EnvironmentObject</a></li>
+                    <li><a href="#">Navigation</a></li>
+                    <li><a href="#">Combine Framework</a></li>
+                    <li><a href="#">Core Data</a></li>
+                    <li><a href="#">Debugging</a></li>
+                    <li><a href="#">Profiling</a></li>
+                </ul>
+            </nav>
+            <button class="scroll-btn right" onclick="scrollNav('right')">▶</button>
+        </div>
+    </div>
+
+    <script>
+        function scrollNav(direction) {
+            const nav = document.getElementById('mainNav');
+            const scrollAmount = nav.clientWidth * 0.8;
+            
+            if (direction === 'left') {
+                nav.scrollLeft -= scrollAmount;
+            } else {
+                nav.scrollLeft += scrollAmount;
+            }
+        }
+    </script>
+</body>
+</html>
