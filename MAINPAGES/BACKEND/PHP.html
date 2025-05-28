@@ -4,10 +4,11 @@
     <title>PHP</title>
     <meta charset = "UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <style>
         :root {
-            --primary-color: #3b82f6;
-            --hover-color: #60a5fa;
+            --primary-color: #787BAF;
+            --hover-color: #8f94da;
             --bg-primary: #1e1e1e;
             --bg-secondary: #141414;
             --text-primary: #e2e8f0;
@@ -117,6 +118,7 @@
         }
 
         main h1 {
+            color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -128,10 +130,16 @@
         }
 
         main p {
+            font-family: 'Source Sans 3', sans-serif;
             margin-top: 1rem;
             font-size: 1rem;
             line-height: 1.6;
             color: var(--text-secondary);
+        }
+
+        .hljs,
+        .hljs * {
+            background: none !important;
         }
 
         pre {
@@ -151,8 +159,10 @@
     </style>
 </head>
 <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <header>
-        <img src="LOGO/php.png" alt="PHP Logo 3D">
+        <img src="LOGO/php.png" alt="">
         <h1>PHP</h1>
     </header>
     <div class="sticky-nav-container">
@@ -160,7 +170,7 @@
         <div class="nav-wrapper" id="navWrapper">
             <nav>
                 <ul>
-                    <li><a href="#">Einführung in PHP</a></li>
+                    <li><a href="#intro">Einführung</a></li>
                     <li><a href="#">Installation und Einrichtung</a></li>
                     <li><a href="#">Grundlegende Syntax</a></li>
                     <li><a href="#">Variablen und Datentypen</a></li>
@@ -198,7 +208,30 @@
     </div>
 
     <main>
-
+        <h1 class="intro">Einführung</h1>
+        <p>PHP (Hypertext Preprocessor) ist eine serverseitige Programmiersprache, die speziell für die Webentwicklung entwickelt wurde. 
+            Anders als JavaScript, das im Browser läuft, wird PHP auf dem Server ausgeführt und erzeugt dynamische Webseiteninhalte, bevor sie an den Browser gesendet werden. 
+            PHP ermöglicht es dir, Datenbanken anzusprechen, Formulare zu verarbeiten oder benutzerdefinierte Inhalte je nach Nutzer zu erstellen. 
+            Es ist sehr beliebt und weit verbreitet, vor allem für die Entwicklung von Content-Management-Systemen wie WordPress. 
+            Obwohl es schon lange existiert, wird PHP ständig weiterentwickelt und bleibt ein wichtiger Baustein im modernen Web.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-html"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;PHP-Mix&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php
+        echo "&lt;p&gt;Das ist ein PHP-Abschnitt.&lt;/p&gt;";
+    ?&gt;
+    &lt;p&gt;Das ist reines HTML.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+        
     </main>
 
     <script>
