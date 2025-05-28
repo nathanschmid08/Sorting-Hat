@@ -5,54 +5,210 @@
     <meta charset = "UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #3b82f6;
+            --hover-color: #60a5fa;
+            --bg-primary: #1e1e1e;
+            --bg-secondary: #141414;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --border-color: #2d2d2d;
+        }
+
+        html, body {
+            background-color: #1e1e1e !important;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Dela Gothic One', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        header {
+            background-color: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        header img {
+            height: 80px;
+            width: 80px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--text-primary);
+            font-weight: normal;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .sticky-nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+
+        .nav-scroll-btn {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            padding: 0 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-scroll-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-wrapper {
+            overflow-x: auto;
+            white-space: nowrap;
+            flex: 1;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .nav-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        nav ul {
+            display: inline-flex;
+            list-style: none;
+            gap: 1rem;
+            padding: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 0.25rem;
+            transition: 0.2s ease;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        main h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h2 {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: var(--hover-color);
+        }
+
+        main p {
+            margin-top: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        pre {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+
+        code {
+            font-family: monospace;
+            color: var(--text-primary);
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo/" alt="SQLite Logo 3D">
+        <img src="LOGO/lite.png" alt="">
         <h1>SQLite</h1>
     </header>
-    <nav>
-        <ul>
-            <li>Einführung in SQLite</li>
-            <li>Installation</li>
-            <li>Erstellen einer Datenbank</li>
-            <li>Erstellen von Tabellen</li>
-            <li>Tabellenstruktur anzeigen</li>
-            <li>Datentypen</li>
-            <li>Primär- und Fremdschlüssel</li>
-            <li>Daten einfügen</li>
-            <li>Daten abfragen</li>
-            <li>Filterung</li>
-            <li>Sortieren von Ergebnissen</li>
-            <li>Ergebnisse begrenzen</li>
-            <li>Daten aktualisieren</li>
-            <li>Daten löschen</li>
-            <li>Aggregate-Funktionen</li>
-            <li>Gruppierung von Daten</li>
-            <li>Aliase für Spalten und Tabellen</li>
-            <li>Verknüpfungen</li>
-            <li>Unterabfragen</li>
-            <li>Indizes erstellen und verwenden</li>
-            <li>Datenbank sichern und wiederherstellen</li>
-            <li>Transaktionen</li>
-            <li>Views erstellen und verwenden</li> 
-            <li>Trigger</li>
-            <li>Check-Bedingungen</li>
-            <li>NULL-Werte behandeln</li>
-            <li>SQL Injection vermeiden</li>
-            <li>Export und Import von Daten</li>
-            <li>SQLite-Metabefehle</li>
-            <li>Performance-Optimierung</li>
-            <li>SQLite in Programmiersprachen integrieren</li>
-            <li>Common Table Expressions</li>
-            <li>JSON-Unterstützung</li>
-            <li>Temporäre Tabellen</li>
-            <li>SQLite Datenbanken verschlüsseln</li>
-        </ul>
-    </nav>
+    <div class="sticky-nav-container">
+        <button class="nav-scroll-btn" onclick="scrollNav(-200)">&#x25C0;</button>
+        <div class="nav-wrapper" id="navWrapper">
+            <nav>
+                <ul>
+                    <li>Einführung in SQLite</li>
+                    <li>Installation</li>
+                    <li>Erstellen einer Datenbank</li>
+                    <li>Erstellen von Tabellen</li>
+                    <li>Tabellenstruktur anzeigen</li>
+                    <li>Datentypen</li>
+                    <li>Primär- und Fremdschlüssel</li>
+                    <li>Daten einfügen</li>
+                    <li>Daten abfragen</li>
+                    <li>Filterung</li>
+                    <li>Sortieren von Ergebnissen</li>
+                    <li>Ergebnisse begrenzen</li>
+                    <li>Daten aktualisieren</li>
+                    <li>Daten löschen</li>
+                    <li>Aggregate-Funktionen</li>
+                    <li>Gruppierung von Daten</li>
+                    <li>Aliase für Spalten und Tabellen</li>
+                    <li>Verknüpfungen</li>
+                    <li>Unterabfragen</li>
+                    <li>Indizes erstellen und verwenden</li>
+                    <li>Datenbank sichern und wiederherstellen</li>
+                    <li>Transaktionen</li>
+                    <li>Views erstellen und verwenden</li> 
+                    <li>Trigger</li>
+                    <li>Check-Bedingungen</li>
+                    <li>NULL-Werte behandeln</li>
+                    <li>SQL Injection vermeiden</li>
+                    <li>Export und Import von Daten</li>
+                    <li>SQLite-Metabefehle</li>
+                    <li>Performance-Optimierung</li>
+                    <li>SQLite in Programmiersprachen integrieren</li>
+                    <li>Common Table Expressions</li>
+                    <li>JSON-Unterstützung</li>
+                    <li>Temporäre Tabellen</li>
+                    <li>SQLite Datenbanken verschlüsseln</li>
+                </ul>
+            </nav>
+        </div>
+        <button class="nav-scroll-btn" onclick="scrollNav(200)">&#x25B6;</button>
+    </div>
+
+    <main>
+
+    </main>
+
+    <script>
+        function scrollNav(amount) {
+            document.getElementById('navWrapper').scrollBy({ left: amount, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html
