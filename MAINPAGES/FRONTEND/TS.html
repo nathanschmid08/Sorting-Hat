@@ -4,6 +4,7 @@
     <title>TYPESCRIPT</title>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <style>
         :root {
             --primary-color: #3b82f6;
@@ -134,6 +135,11 @@
             color: var(--text-secondary);
         }
 
+        .hljs,
+        .hljs * {
+            background: none !important;
+        }
+        
         pre {
             background-color: var(--bg-secondary);
             padding: 1rem;
@@ -151,6 +157,8 @@
     </style>
 </head>
 <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <header>
         <img src="LOGO/ts.png" alt="TYPESCRIPT Logo 3D">
         <h1>TypeScript</h1>
@@ -161,7 +169,7 @@
         <div class="nav-wrapper" id="navWrapper">
             <nav>
                 <ul>
-                    <li><a href="#">Einführung in TypeScript</a></li>
+                    <li><a href="#intro">Einführung</a></li>
                     <li><a href="#">Installation und Einrichtung</a></li>
                     <li><a href="#">Grundlegende Syntax</a></li>
                     <li><a href="#">Variablen und Datentypen</a></li>
@@ -195,7 +203,23 @@
     </div>
 
     <main>
-
+        <h1 id="intro">Einführung</h1>
+        <p>TypeScript ist eine moderne Programmiersprache, die auf JavaScript basiert und dieses um zusätzliche Funktionen erweitert. 
+            Der wichtigste Unterschied: TypeScript erlaubt die Verwendung von sogenannten Typen, mit denen du genauer festlegen kannst, welche Art von Daten dein Code erwartet. 
+            Das hilft dir, Fehler frühzeitig zu erkennen und macht deinen Code übersichtlicher und besser wartbar – besonders in größeren Projekten. 
+            TypeScript wird vor der Ausführung in normales JavaScript umgewandelt, sodass es in jedem Browser funktioniert. 
+            Es ist heute aus der Webentwicklung kaum mehr wegzudenken, vor allem wenn Teams an komplexeren Anwendungen arbeiten.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-typescript"><code>
+function greet(name: string): string {
+    return "Hallo, " + name + "!";
+}
+              
+let userName: string = "Nathan";
+              
+console.log(greet(userName));              
+        </code></pre>        
     </main>
 
     <script>

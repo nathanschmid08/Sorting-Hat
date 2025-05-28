@@ -4,10 +4,11 @@
     <title>JS</title>
     <meta charset = "UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <style>
         :root {
-            --primary-color: #3b82f6;
-            --hover-color: #60a5fa;
+            --primary-color: #ffe100;
+            --hover-color: #ECDC68;
             --bg-primary: #1e1e1e;
             --bg-secondary: #141414;
             --text-primary: #e2e8f0;
@@ -117,6 +118,7 @@
         }
 
         main h1 {
+            color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -128,10 +130,16 @@
         }
 
         main p {
+            font-family: 'Source Sans 3', sans-serif;
             margin-top: 1rem;
             font-size: 1rem;
             line-height: 1.6;
             color: var(--text-secondary);
+        }
+
+        .hljs,
+        .hljs * {
+            background: none !important;
         }
 
         pre {
@@ -151,6 +159,8 @@
     </style>
 </head>
 <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <header>
         <img src="LOGO/js.png" alt="JS Logo 3D">
         <h1>JavaScript</h1>
@@ -160,6 +170,7 @@
         <div class="nav-wrapper">
             <nav>
                 <ul>
+                    <li><a href="#intro">Einführung</a></li>
                     <li><a href="#">script src</a></li>
                     <li><a href="#">Variablen</a></li>
                     <li><a href="#">Datentypen</a></li>
@@ -210,7 +221,35 @@
     </div>
 
     <main>
+        <h1 id="intro">Einführung</h1>
+        <p>JavaScript ist die Programmiersprache des Webs und wird verwendet, um Webseiten interaktiv und dynamisch zu machen. 
+            Während HTML für die Struktur und CSS für das Aussehen zuständig ist, sorgt JavaScript dafür, dass sich Dinge auf der Seite bewegen, reagieren oder verändern. 
+            Du kannst damit z. B. auf Klicks reagieren, Inhalte verändern, Animationen abspielen oder Daten verarbeiten. 
+            JavaScript läuft direkt im Browser und ist ein unverzichtbarer Bestandteil moderner Webseiten. 
+            Ohne JavaScript wären viele Funktionen, die wir täglich im Web nutzen, nicht möglich – von einfachen Bildergalerien bis hin zu komplexen Webanwendungen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-html"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Einfaches JavaScript Beispiel&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
+    &lt;h1 id="headline"&gt;Hallo!&lt;/h1&gt;
+    &lt;button onclick="changeText()"&gt;Klick mich&lt;/button&gt;
+
+    &lt;script&gt;
+        function changeText() {
+            document.getElementById("headline").innerText = "Du hast geklickt!";
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
     </main>
 
     <script>
