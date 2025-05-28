@@ -130,6 +130,7 @@
         }
 
         main p {
+            font-family: 'Source Sans 3', sans-serif;
             margin-top: 1rem;
             font-size: 1rem;
             line-height: 1.6;
@@ -160,7 +161,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <header>
-        <img src="LOGO/html.png" alt="HTML Logo 3D">
+        <img src="LOGO/html.png" alt="">
         <h1>HTML</h1>
     </header>
     <div class="sticky-nav-container">
@@ -313,11 +314,9 @@
             Der &lt;html&gt; Tag ist das äusserste Element jeder HTML-Seite. Er sagt dem Browser: „Alles, was hier drin steht, gehört zur HTML-Seite.“
         </p>
 
-        <h2>
-            Beispiel:
-        </h2>
+        <h2>Beispiel:</h2>
 
-        <pre><code>
+        <pre class="language-html"><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
@@ -336,6 +335,21 @@
             Der &lt;head&gt; Tag steht im oberen Teil deiner HTML-Seite und enthält Informationen über die Webseite, die nicht direkt im Browser sichtbar sind. Man nennt diesen Bereich auch „Kopf der Seite“.
             Hier kommen z. B. der Seitentitel, Zeichencodierung, Verlinkungen zu CSS-Dateien, Meta-Informationen und mehr hinein.
         </p>
+        <h2>Beispiel:</h2>
+        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Meine Webseite&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!--Hier kommt der Inhalt--&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+
 
     </main>
 
