@@ -4,10 +4,11 @@
     <title>HTML</title>
     <meta charset = "UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <style>
         :root {
-            --primary-color: #3b82f6;
-            --hover-color: #60a5fa;
+            --primary-color: #D25935;
+            --hover-color: #DD6E3C;
             --bg-primary: #1e1e1e;
             --bg-secondary: #141414;
             --text-primary: #e2e8f0;
@@ -117,6 +118,7 @@
         }
 
         main h1 {
+            color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -143,6 +145,10 @@
             margin-top: 1rem;
         }
 
+        pre code {
+            background: none !important;
+        }
+
         code {
             font-family: monospace;
             color: var(--text-primary);
@@ -151,6 +157,8 @@
     </style>
 </head>
 <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <header>
         <img src="LOGO/html.png" alt="HTML Logo 3D">
         <h1>HTML</h1>
@@ -160,10 +168,10 @@
         <div class="nav-wrapper" id="navWrapper">
             <nav>
                 <ul>
-                    <li><a href="#">Einführung</a></li>
-                    <li><a href="#">&lt;!DOCTYPE html&gt;</a></li>
-                    <li><a href="#">&lt;html&gt;</a></li>
-                    <li><a href="#">&lt;head&gt;</a></li>
+                    <li><a href="#intro">Einführung</a></li>
+                    <li><a href="#doctype">&lt;!DOCTYPE html&gt;</a></li>
+                    <li><a href="#html">&lt;html&gt;</a></li>
+                    <li><a href="#head">&lt;head&gt;</a></li>
                     <li><a href="#">&lt;title&gt;</a></li>
                     <li><a href="#">meta charset uft8</a></li>
                     <li><a href="#">link to stylesheet</a></li>
@@ -246,11 +254,16 @@
         <button class="nav-scroll-btn" onclick="scrollNav(200)">&#x25B6;</button>
     </div>
     <main>
-        <h1>Einführung in HTML</h1>
-        <p>HTML (Hypertext Markup Language) ist eine Auszeichnungssprache zur Strukturierung von Webinhalten.</p>
+        <h1 id="intro">Einführung in HTML</h1>
+        <p>HTML (Hypertext Markup Language) ist die grundlegende Auszeichnungssprache des Webs. 
+            Sie wird verwendet, um den Aufbau und die Struktur von Inhalten auf Webseiten festzulegen. 
+            Mit HTML kannst du bestimmen, wo Texte, Überschriften, Bilder, Links, Listen und viele andere Elemente auf einer Seite angezeigt werden sollen. 
+            Dabei sagt HTML dem Browser nicht, wie etwas aussehen soll (das übernimmt CSS), sondern was für Inhalt es ist und welche Bedeutung er hat. 
+            Ohne HTML gäbe es keine lesbare oder funktionierende Webseite – es ist also das Grundgerüst jeder Internetseite.
+        </p>
 
         <h2>Beispiel</h2>
-        <pre><code>
+        <pre class="language-html"><code>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="de"&gt;
 &lt;head&gt;
@@ -285,40 +298,45 @@
         <br>
         <br>
 
-        <h1 id="into">Einführung in HTML</h1>
-        <p>HTML (Hypertext Markup Language) ist eine Auszeichnungssprache zur Strukturierung von Webinhalten.</p>
+        <h1 id="doctype">&lt;!DOCTYPE html&gt;</h1>
+        <p>
+            Die &lt;!DOCTYPE html&gt; Deklaration steht ganz am Anfang jeder HTML-Datei und teilt dem Browser mit, welche Version von HTML verwendet wird. In diesem Fall zeigt &lt;!DOCTYPE html&gt; an, dass es sich um HTML5, die aktuellste Version von HTML, handelt.
+            Er sorgt dafür, dass der Browser die Webseite im sogenannten „Standardmodus“ rendert – also ohne alte Kompatibilitätsfehler. Ohne diesen Tag könnten Webseiten anders oder fehlerhaft angezeigt werden, besonders in älteren Browsern.
+        </p>
 
-        <h2>Beispiel</h2>
+        <br>
+        <br>
+        <br>
+
+        <h1 id="html">&lt;html&gt;</h1>
+        <p>
+            Der &lt;html&gt; Tag ist das äusserste Element jeder HTML-Seite. Er sagt dem Browser: „Alles, was hier drin steht, gehört zur HTML-Seite.“
+        </p>
+
+        <h2>
+            Beispiel:
+        </h2>
+
         <pre><code>
 &lt;!DOCTYPE html&gt;
-&lt;html lang="de"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Meine Webseite&lt;/title&gt;
-    &lt;link rel="stylesheet" href="styles.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;h1&gt;Willkommen auf meiner Webseite&lt;/h1&gt;
-    &lt;/header&gt;
-    &lt;nav&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a href="#section1"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section2"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-    &lt;section id="section1"&gt;
-        &lt;p&gt;Dies ist der Inhalt von Section 1.&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;section id="section2"&gt;
-        &lt;p&gt;Dies ist der Inhalt von Section 2.&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;footer&gt;
-        &lt;p&gt;&copy; 2023 Meine Webseite&lt;/p&gt;
-    &lt;/footer&gt;
-&lt;/body&gt;
+&lt;html&gt;
+
+    &lt;!--Hier kommt der Inhalt--&gt;
+
 &lt;/html&gt;
         </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="head">&lt;head&gt;</h1>
+
+        <p>
+            Der &lt;head&gt; Tag steht im oberen Teil deiner HTML-Seite und enthält Informationen über die Webseite, die nicht direkt im Browser sichtbar sind. Man nennt diesen Bereich auch „Kopf der Seite“.
+            Hier kommen z. B. der Seitentitel, Zeichencodierung, Verlinkungen zu CSS-Dateien, Meta-Informationen und mehr hinein.
+        </p>
+
     </main>
 
     <script>
