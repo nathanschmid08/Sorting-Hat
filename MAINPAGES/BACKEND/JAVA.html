@@ -5,10 +5,11 @@
     <title>JAVA</title>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <style>
         :root {
             --primary-color: #3b82f6;
-            --hover-color: #60a5fa;
+            --hover-color: #E15241;
             --bg-primary: #1e1e1e;
             --bg-secondary: #141414;
             --text-primary: #e2e8f0;
@@ -118,6 +119,7 @@
         }
 
         main h1 {
+            color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -133,6 +135,17 @@
             font-size: 1rem;
             line-height: 1.6;
             color: var(--text-secondary);
+            font-family: 'Source Sans 3', sans-serif;
+        }
+
+        main a {
+            color: #ffff;
+            text-decoration: none;
+        }
+
+        .hljs,
+        .hljs * {
+            background: none !important;
         }
 
         pre {
@@ -153,6 +166,8 @@
 </head>
 
 <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <header>
         <img src="LOGO/java.png" alt="JAVA Logo 3D">
         <h1>Java</h1>
@@ -162,8 +177,8 @@
         <div class="nav-wrapper" id="navWrapper">
             <nav>
                 <ul>
-                    <li><a href="#">Einführung in Java</a></li>
-                    <li><a href="#">Installation und Einrichtung</a></li>
+                    <li><a href="#intro">Einführung</a></li>
+                    <li><a href="#installation">Installation und Einrichtung</a></li>
                     <li><a href="#">Grundlegende Syntax</a></li>
                     <li><a href="#">Variablen und Datentypen</a></li>
                     <li><a href="#">Operatoren</a></li>
@@ -198,7 +213,86 @@
     </div>
 
     <main>
+        <h1 id="intro">Einführung</h1>
+        <p>Java ist eine objektorientierte Programmiersprache, die nach dem Prinzip „Einmal schreiben, überall ausführen“ entwickelt wurde. 
+            Sie wird nicht direkt vom Betriebssystem ausgeführt, sondern läuft in der Java Virtual Machine (JVM), was sie plattformunabhängig macht. 
+            Java kommt in vielen Bereichen zum Einsatz – von Unternehmenssoftware über Android-Apps bis hin zu Webanwendungen. 
+            Die Sprache legt viel Wert auf Stabilität, Sicherheit und Wartbarkeit, was sie besonders für große, langfristige Projekte attraktiv macht. 
+            Durch ihre klare Struktur und umfangreiche Standardbibliothek ist Java bis heute eine der meistgenutzten Programmiersprachen weltweit.
+        </p>
+        <h2>Beispiel</h2>  
+        <pre class="language-java"><code>
+public class HalloWelt {
+    public static void main(String[] args) {
+        System.out.println("Hallo, Welt!");
+    }
+}       
+        </code></pre>    
 
+        <br>
+        <br>
+        <br>
+        
+        <h1 id="installation">Installation und Einrichtung</h1>
+        <p>
+            Um mit Java programmieren zu können, musst du zuerst das <strong>JDK (Java Development Kit)</strong> installieren.
+            Es enthält alles, was du brauchst: den Compiler, die Laufzeitumgebung und wichtige Werkzeuge.
+        </p>
+          
+        <h2>1. Java herunterladen</h2>
+        <p>
+            Die einfachste Möglichkeit ist der Download von der offiziellen <a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank">Oracle-Webseite</a>.
+            Alternativ kannst du auch die freie und weit verbreitete Version von <a href="https://adoptium.net/" target="_blank">Adoptium</a> verwenden.
+            Wähle dort einfach dein Betriebssystem aus (z. B. Windows, macOS oder Linux) und lade das <strong>JDK 17 (LTS)</strong> herunter – diese Version ist stabil und ideal für Einsteiger.
+        </p>
+          
+        <h2>2. Java installieren</h2>
+        <p>
+            Nach dem Download kannst du das JDK ganz einfach installieren:
+        </p>
+        <p><strong>Windows / macOS:</strong> Installiere es über einen Doppelklick und folge dem Assistenten.</p>
+        <p><strong>Linux (z. B. Ubuntu):</strong> Öffne ein Terminal und gib folgenden Befehl ein:</p>
+        
+        <br>
+        
+        <pre class="language-bash"><code>
+sudo apt install openjdk-17-jdk
+        </code></pre>
+            
+          
+        <h2>3. Installation überprüfen</h2>
+        <p>
+            Öffne ein Terminal oder die Eingabeaufforderung und gib folgendes ein:
+            <code>java -version</code><br>
+            Wenn du eine Ausgabe wie <code>java version "17.0.x"</code> siehst, ist alles korrekt installiert.
+        </p>
+          
+        <h2>Welche IDE ist empfehlenswert?</h2>
+        <p>
+            Für Einsteiger ist <strong>IntelliJ IDEA Community Edition</strong> besonders geeignet. 
+            Sie ist kostenlos, leicht verständlich und bietet viele Funktionen wie Autovervollständigung, Fehlererkennung und ein übersichtliches Projektmanagement.
+            Du kannst sie direkt von der offiziellen Seite herunterladen:
+            <a href="https://www.jetbrains.com/idea/download" target="_blank">https://www.jetbrains.com/idea/download</a>.
+        </p>
+          
+        <p>
+            Alternativ kannst du auch <strong>Eclipse</strong> oder <strong>NetBeans</strong> verwenden, die ebenfalls kostenlose und funktionsreiche Entwicklungsumgebungen für Java sind.
+        </p>
+          
+        <h2>Erstes Java-Programm</h2>
+        <p>
+            Sobald die IDE eingerichtet ist, kannst du ein neues Java-Projekt erstellen und folgenden Code ausprobieren:
+        </p>
+        <pre><code class="language-java">
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hallo, Java!");
+    }
+}
+        </code></pre>
+        <p>
+            Klicke in der IDE auf den &#x25B6; Button, um das Programm zu starten. Schon wird dein erstes Java-Programm in der Konsole ausgegeben!
+        </p>          
     </main>
 
     <script>
