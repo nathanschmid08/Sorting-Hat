@@ -168,7 +168,7 @@
             <nav>
                 <ul>
                     <li><a href="#intro">Einführung</a></li>
-                    <li><a href="#">Selektoren</a></li>
+                    <li><a href="#selectors">Selektoren</a></li>
                     <li><a href="#">Deklarationen</a></li>
                     <li><a href="#">Eigennschaften und Werte</a></li>
                     <li><a href="#">Elementselektoren</a></li>
@@ -259,6 +259,34 @@
 
 &lt;/body&gt;
 &lt;/html&gt;
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="selectors">Selektoren</h1>
+        <p>CSS-Selektoren sind Muster, mit denen du gezielt HTML-Elemente auswählst und gestaltest. 
+            Sie bestimmen, auf welche Elemente deine CSS-Regeln angewendet werden – zum Beispiel über Tag-Namen, Klassen oder IDs. 
+            Mit komplexeren Selektoren kannst du sogar Elemente nach ihrer Position im DOM oder nach Attributen ansprechen. 
+            Durch präzise Selektoren behältst du die Kontrolle über das Design und vermeidest unerwünschte Überschneidungen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-css"><code>
+/* Element-Selektor: alle &lt;p&gt; Elemente */
+p {
+    color: blue;
+}
+            
+/* Klassen-Selektor: alle Elemente mit class="highlight" */
+.highlight {
+    background-color: yellow;
+}
+            
+/* ID-Selektor: nur das Element mit id="spezial" */
+#spezial {
+    font-weight: bold;
+}
         </code></pre>
     </main>
 

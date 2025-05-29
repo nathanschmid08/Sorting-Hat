@@ -173,9 +173,9 @@
                     <li><a href="#doctype">&lt;!DOCTYPE html&gt;</a></li>
                     <li><a href="#html">&lt;html&gt;</a></li>
                     <li><a href="#head">&lt;head&gt;</a></li>
-                    <li><a href="#">&lt;title&gt;</a></li>
-                    <li><a href="#">meta charset uft8</a></li>
-                    <li><a href="#">link to stylesheet</a></li>
+                    <li><a href="#title">&lt;title&gt;</a></li>
+                    <li><a href="#charset">meta charset uft8</a></li>
+                    <li><a href="#stylesheet">link to stylesheet</a></li>
                     <li><a href="#">&lt;body&gt;</a></li>
                     <li><a href="#">&lt;header&gt;</a></li>
                     <li><a href="#">&lt;h1 - h6&gt;</a></li>
@@ -335,22 +335,69 @@
             Der &lt;head&gt; Tag steht im oberen Teil deiner HTML-Seite und enthält Informationen über die Webseite, die nicht direkt im Browser sichtbar sind. Man nennt diesen Bereich auch „Kopf der Seite“.
             Hier kommen z. B. der Seitentitel, Zeichencodierung, Verlinkungen zu CSS-Dateien, Meta-Informationen und mehr hinein.
         </p>
-        <h2>Beispiel:</h2>
-        <pre><code>
+        <h2>Beispiel</h2>
+        <pre class="language-html"><code>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="de"&gt;
 &lt;head&gt;
+    &lt;!--Hier ist der Head Inhalt--&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Meine Webseite&lt;/title&gt;
     &lt;link rel="stylesheet" href="styles.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;!--Hier kommt der Inhalt--&gt;
 &lt;/body&gt;
 &lt;/html&gt;
         </code></pre>
 
+        <br>
+        <br>
+        <br>
 
+        <h1 id="title">&lt;title&gt;</h1>
+        <p>Der &lt;title&gt; Tag legt den Titel der HTML-Seite fest, der im Browser-Tab und in Lesezeichen angezeigt wird. 
+            Er steht im &lt;head&gt; Bereich und ist wichtig für die Nutzererfahrung und Suchmaschinenoptimierung. 
+            Ohne &lt;title&gt; fehlt deiner Seite eine aussagekräftige Bezeichnung, die Besuchern hilft, den Inhalt schnell zu erfassen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-html"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Meine tolle Webseite&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Willkommen!&lt;/h1&gt;
+    &lt;p&gt;Schau dir den Titel im Browser-Tab an.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;       
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="charset">meta charset uft8</h1>
+        <p>Der &lt;meta charset="UTF-8"&gt; Tag legt die Zeichenkodierung der HTML-Seite fest. 
+            UTF-8 ist eine weit verbreitete Kodierung, die nahezu alle Zeichen aus allen Sprachen der Welt darstellen kann – 
+            darunter auch Umlaute wie ä, ö, ü oder Sonderzeichen wie € und ©. 
+            Ohne diese Angabe kann es zu Darstellungsfehlern kommen, besonders bei Sonderzeichen. 
+            Deshalb gehört dieser Meta-Tag heute zum Standard jeder modernen Webseite.
+        </p>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="stylesheet">link to stylesheet</h1>
+        <p>Der &lt;link rel="stylesheet" href="style.css"&gt; Tag verbindet deine HTML-Seite mit einer externen CSS-Datei. 
+            Er steht im &lt;head&gt; Bereich und lädt das Stylesheet, bevor die Seite angezeigt wird. 
+            So kannst du dein Design – Farben, Layouts, Schriftarten und Abstände – ausgelagert und übersichtlich in einer Datei pflegen. 
+            Ohne diesen Link würde dein HTML nur rohen, unformatieren Inhalt zeigen.
+        </p>
+        
+        
     </main>
 
     <script>
