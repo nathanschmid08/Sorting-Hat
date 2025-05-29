@@ -4,10 +4,11 @@
     <title>RUBY</title>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <style>
         :root {
-            --primary-color: #3b82f6;
-            --hover-color: #60a5fa;
+            --primary-color: #c6301c;
+            --hover-color: #ee4933;
             --bg-primary: #1e1e1e;
             --bg-secondary: #141414;
             --text-primary: #e2e8f0;
@@ -117,6 +118,7 @@
         }
 
         main h1 {
+            color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -128,10 +130,16 @@
         }
 
         main p {
+            font-family: 'Source Sans 3', sans-serif;
             margin-top: 1rem;
             font-size: 1rem;
             line-height: 1.6;
             color: var(--text-secondary);
+        }
+
+        .hljs,
+        .hljs * {
+            background: none !important;
         }
 
         pre {
@@ -151,6 +159,8 @@
     </style>
 </head>
 <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <header>
         <img src="LOGO/ruby.png" alt="">
         <h1>Ruby</h1>
@@ -160,7 +170,7 @@
         <div class="nav-wrapper" id="navWrapper">
             <nav>
                 <ul>
-                    <li><a href="#">Einführung</a></li>
+                    <li><a href="#intro">Einführung</a></li>
                     <li><a href="#">Installation und Einrichtung</a></li>
                     <li><a href="#">Interpreter und IRB</a></li>
                     <li><a href="#">Code ausführen</a></li>
@@ -236,7 +246,19 @@
     </div>
 
     <main>
-
+        <h1 id="intro">Einführung</h1>
+        <p>
+            Ruby ist eine dynamische, objektorientierte Programmiersprache, die grossen Wert auf Einfachheit und Produktivität legt. 
+            Sie besticht durch eine elegante und leicht lesbare Syntax, die es Programmierern erlaubt, ihren Code schnell und intuitiv zu schreiben. 
+            Ruby wird besonders gerne für die Webentwicklung genutzt, vor allem dank des bekannten Frameworks Ruby on Rails, das die Erstellung von Webanwendungen deutlich beschleunigt. 
+            Die Sprache ist flexibel und unterstützt viele Programmierparadigmen, wodurch sie sich für eine Vielzahl von Projekten eignet. 
+            Ruby ist plattformunabhängig und hat eine engagierte Community, die stetig an der Erweiterung und Verbesserung der Sprache arbeitet.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-ruby"><code>
+# Ein einfacher Ruby-Code
+puts "Hallo, Ruby!"
+        </code></pre>
     </main>
 
     <script>
