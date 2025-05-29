@@ -169,9 +169,9 @@
                 <ul>
                     <li><a href="#intro">Einführung</a></li>
                     <li><a href="#selectors">Selektoren</a></li>
-                    <li><a href="#">Deklarationen</a></li>
-                    <li><a href="#">Eigennschaften und Werte</a></li>
-                    <li><a href="#">Elementselektoren</a></li>
+                    <li><a href="#declarationen">Deklarationen</a></li>
+                    <li><a href="#values">Eigennschaften und Werte</a></li>
+                    <li><a href="#elements">Elementselektoren</a></li>
                     <li><a href="#">Klassenselektoren</a></li>
                     <li><a href="#">ID-Selektoren</a></li>
                     <li><a href="#">Attributselektoren</a></li>
@@ -287,6 +287,148 @@ p {
 #spezial {
     font-weight: bold;
 }
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="declarationen">Deklarationen</h1>
+        <p>
+            CSS-Deklarationen legen fest, wie ein ausgewähltes HTML-Element dargestellt werden soll. 
+            Jede Deklaration besteht aus einer Eigenschaft (z. B. <code>color</code>, <code>font-size</code> oder <code>margin</code>) und einem dazugehörigen Wert. 
+            Mehrere Deklarationen werden in geschweifte Klammern geschrieben und durch Semikolons getrennt – sie bilden zusammen einen sogenannten Deklarationsblock. 
+            Mit diesen Deklarationen kannst du das Aussehen deiner Webseite gezielt beeinflussen, von Farben über Abstände bis hin zu Animationen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-css"><code>
+/* Grundlegendes Styling für die gesamte Seite */
+body {
+    background-color: #f0f0f0;     /* Hellgrauer Hintergrund für die Seite */
+    font-family: sans-serif;       /* Serifenlose Schriftart für besseren Lesefluss */
+    margin: 0;                     /* Entfernt den Standard-Aussenabstand des Browsers */
+    padding: 20px;                 /* Fügt innen etwas Abstand zum Rand hinzu */
+}
+            
+/* Überschrift 1 (z. B. Seitentitel) */
+h1 {
+    color: #2c3e50;                /* Dunkelblauer Farbton für den Text */
+    font-size: 32px;               /* Grosse Schriftgrösse */
+    margin-bottom: 10px;           /* Abstand unterhalb der Überschrift */
+}
+            
+/* Fliesstext (Absätze) */
+p {
+    color: #555555;                /* Mittelgraue Textfarbe */
+    font-size: 16px;               /* Normale Schriftgrösse für Text */
+    line-height: 1.6;              /* Zeilenhöhe für bessere Lesbarkeit */
+}
+            
+/* Links im Text */
+a {
+    color: #007acc;                /* Blau für Links */
+    text-decoration: none;         /* Entfernt die Unterstreichung */
+}
+            
+/* Hover-Zustand für Links (wenn man mit der Maus drüberfährt) */
+a:hover {
+    text-decoration: underline;    /* Zeigt beim Darüberfahren eine Unterstreichung */
+}     
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="values">Eigennschaften und Werte</h1>        
+        <p>
+            In CSS bestehen die meisten Stilregeln aus sogenannten Eigenschaften und Werten. 
+            Die <strong>Eigenschaft</strong> (englisch: property) beschreibt, was genau am Element geändert werden soll – zum Beispiel die Farbe, die Schriftgrösse oder der Abstand. 
+            Der <strong>Wert</strong> (englisch: value) legt dann fest, wie diese Eigenschaft aussehen soll – also z.&nbsp;B. <code>red</code> für die Farbe oder <code>20px</code> für einen Abstand. 
+            Beides zusammen nennt man eine <em>Deklaration</em> und sie sieht immer so aus: <code>eigenschaft: wert;</code>. 
+            Mit dieser einfachen Struktur kannst du das Aussehen jeder Webseite gezielt gestalten.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-css"><code>
+/* Element-Selektor: Alle &lt;body&gt;-Elemente */
+body {
+    background-color: #f9f9f9;          /* Heller Hintergrund */
+    font-family: Arial, sans-serif;     /* Serifenlose Standardschrift */
+    padding: 40px;                      /* Innenabstand zum Rand */
+}
+                
+/* ID-Selektor: Nur das Element mit id="haupttitel" */
+#haupttitel {
+    color: #2c3e50;                     /* Dunkelblauer Titeltext */
+    font-size: 36px;                    /* Grosse Schrift */
+    text-align: center;                 /* Zentrierter Text */
+    margin-bottom: 30px;                /* Abstand zum nächsten Element */
+}
+                
+/* Klassen-Selektor: Alle Elemente mit class="info-text" */
+.info-text {
+    font-size: 18px;                    /* Etwas grössere Schrift */
+    color: #555555;                     /* Dunkelgrauer Fliesstext */
+    line-height: 1.6;                   /* Angenehmer Zeilenabstand */
+    background-color: #ffffff;          /* Weisser Hintergrund für die Textbox */
+    padding: 20px;                      /* Innenabstand */
+    border-left: 5px solid #007acc;     /* Farbiger Streifen am Rand */
+    margin-bottom: 20px;                /* Abstand zu anderen Absätzen */
+    border-radius: 4px;                 /* Leicht abgerundete Ecken */
+}       
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="elements">Elementselektoren</h1>
+        <p>
+            Elementselektoren sind eine der grundlegendsten Methoden in CSS, um HTML-Elemente anzusprechen und zu gestalten. 
+            Dabei wählst du einfach den Namen eines HTML-Tags, zum Beispiel <code>p</code> für Absätze oder <code>h1</code> für Überschriften, aus. 
+            Alle Elemente dieses Typs auf der Webseite erhalten dann die definierten Stile. 
+            Elementselektoren eignen sich besonders gut, um eine einheitliche Gestaltung für alle gleichen Elemente festzulegen, ohne dass du Klassen oder IDs vergeben musst. 
+            Sie sind einfach zu verstehen und bilden die Basis jeder CSS-Anwendung.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-css"><code>
+/* Wendet Styles auf das gesamte &lt;body&gt;-Element an */
+body {
+    background-color: #eef2f7;              /* Hellblauer Hintergrund */
+    font-family: 'Segoe UI', sans-serif;    /* Moderne, gut lesbare Schrift */
+    color: #333333;                         /* Dunkelgraue Standardschriftfarbe */
+    margin: 40px;                           /* Aussenabstand zum Browserrand */
+}
+                
+/* Gestaltet alle &lt;h1&gt;-Elemente */
+h1 {
+    font-size: 36px;                        /* Grosse Überschrift */
+    text-align: center;                     /* Zentriert */
+    color: #2a5d9f;                         /* Blauer Farbton */
+    margin-bottom: 30px;                    /* Abstand nach unten */
+}
+                
+/* Gestaltet alle &lt;p&gt;-Absätze */
+p {
+    font-size: 18px;                        /* Lesbare Textgrösse */
+    line-height: 1.6;                       /* Etwas mehr Zeilenabstand */
+    background-color: #ffffff;              /* Weisser Hintergrund für Lesbarkeit */
+    padding: 20px;                          /* Innenabstand im Absatz */
+    border-left: 5px solid #4a90e2;         /* Blauer Streifen links */
+    margin-bottom: 20px;                    /* Abstand zu nächsten Absätzen */
+    border-radius: 6px;                     /* Abgerundete Ecken */
+}
+                
+/* Gestaltet alle &lt;a&gt;-Links */
+a {
+    color: #e74c3c;                         /* Roter Farbton für Links */
+    text-decoration: none;                  /* Unterstreichung entfernen */
+    font-weight: bold;                      /* Fettgedruckt */
+}
+                
+a:hover {
+    text-decoration: underline;             /* Unterstreichung beim Darüberfahren */
+}                
         </code></pre>
     </main>
 
