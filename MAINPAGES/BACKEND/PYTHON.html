@@ -4,10 +4,11 @@
     <title>PYTHON</title>
     <meta charset = "UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <style>
         :root {
-            --primary-color: #3b82f6;
-            --hover-color: #60a5fa;
+            --primary-color: #446E9B;
+            --hover-color: #F8D658;
             --bg-primary: #1e1e1e;
             --bg-secondary: #141414;
             --text-primary: #e2e8f0;
@@ -117,6 +118,7 @@
         }
 
         main h1 {
+            color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -128,10 +130,16 @@
         }
 
         main p {
+            font-family: 'Source Sans 3', sans-serif;
             margin-top: 1rem;
             font-size: 1rem;
             line-height: 1.6;
             color: var(--text-secondary);
+        }
+
+        .hljs,
+        .hljs * {
+            background: none !important;
         }
 
         pre {
@@ -151,8 +159,10 @@
     </style>
 </head>
 <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <header>
-        <img src="LOGO/python.png" alt="PYTHON Logo 3D">
+        <img src="LOGO/python.png" alt="">
         <h1>Python</h1>
     </header>
     <div class="sticky-nav-container">
@@ -160,7 +170,7 @@
         <div class="nav-wrapper" id="navWrapper">
             <nav>
                 <ul>
-                    <li><a href="#">Einführung in Python</a></li>
+                    <li><a href="#intro">Einführung</a></li>
                     <li><a href="#">Installation und Einrichtung</a></li>
                     <li><a href="#">Grundlegende Syntax</a></li>
                     <li><a href="#">Variablen und Datentypen</a></li>
@@ -207,7 +217,19 @@
     </div>
 
     <main>
-
+        <h1 id="intro">Einführung</h1>
+        <p>
+            Python ist eine einfach zu erlernende, aber sehr leistungsfähige Programmiersprache, die großen Wert auf Lesbarkeit und Klarheit legt. 
+            Dank ihrer klaren Syntax eignet sie sich besonders gut für Einsteiger, wird aber auch in der professionellen Softwareentwicklung intensiv genutzt. 
+            Python wird in vielen Bereichen eingesetzt – von Webentwicklung und Datenanalyse über Automatisierung bis hin zu Künstlicher Intelligenz. 
+            Die Sprache ist plattformunabhängig und verfügt über eine riesige Auswahl an Bibliotheken, mit denen sich nahezu jede Aufgabe elegant lösen lässt. 
+            Gerade wegen ihrer Vielseitigkeit und Zugänglichkeit ist Python heute eine der beliebtesten Programmiersprachen weltweit.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-python"><code>
+# Das ist ein einfacher Python-Code
+print("Hallo, Python!")            
+        </code></pre>
     </main>
 
     <script>

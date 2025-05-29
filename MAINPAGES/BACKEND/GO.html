@@ -4,10 +4,11 @@
     <title>SQL</title>
     <meta charset = "UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <style>
         :root {
-            --primary-color: #3b82f6;
-            --hover-color: #60a5fa;
+            --primary-color: #4DC4D3;
+            --hover-color: #4DC4D3;
             --bg-primary: #1e1e1e;
             --bg-secondary: #141414;
             --text-primary: #e2e8f0;
@@ -117,6 +118,7 @@
         }
 
         main h1 {
+            color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -128,10 +130,16 @@
         }
 
         main p {
+            font-family: 'Source Sans 3', sans-serif;
             margin-top: 1rem;
             font-size: 1rem;
             line-height: 1.6;
             color: var(--text-secondary);
+        }
+
+        .hljs,
+        .hljs * {
+            background: none !important;
         }
 
         pre {
@@ -151,6 +159,8 @@
     </style>
 </head>
 <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <header>
         <img src="LOGO/go.png" alt="">
         <h1>Go</h1>
@@ -161,7 +171,7 @@
         <div class="nav-wrapper" id="navWrapper">
             <nav>
                 <ul>
-                    <li><a href="#">Einführung</a></li>
+                    <li><a href="#intro">Einführung</a></li>
                     <li><a href="#">Installation</a></li>
                     <li><a href="#">Go-Modul</a></li>
                     <li><a href="#">Variablen und Konstanten</a></li>
@@ -220,7 +230,24 @@
     </div>
 
     <main>
-    
+        <h1 id="intro">Einführung</h1>
+        <p>
+            Go ist eine moderne Programmiersprache, die von Google entwickelt wurde und für ihre Einfachheit, Geschwindigkeit und Effizienz bekannt ist. 
+            Sie kombiniert die Leistungsfähigkeit kompilierter Sprachen wie C mit einer klaren und gut lesbaren Syntax. 
+            Go eignet sich besonders gut für die Entwicklung von Netzwerkanwendungen, Servern und Microservices – also genau dort, wo hohe Performance und Stabilität gefragt sind. 
+            Dank eingebauter Parallelverarbeitung (Goroutines) lässt sich leistungsfähiger Code sehr einfach schreiben. 
+            Go ist plattformunabhängig, schnell zu erlernen und liefert durch sein minimalistisches Design sauberen, wartbaren Code – ideal für moderne Softwareprojekte.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+
+import "fmt"
+            
+func main() {
+    fmt.Println("Hallo, Go!")
+}         
+</code></pre>
     </main>
 
     <script>
