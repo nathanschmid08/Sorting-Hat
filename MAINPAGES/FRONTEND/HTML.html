@@ -176,8 +176,8 @@
                     <li><a href="#title">&lt;title&gt;</a></li>
                     <li><a href="#charset">meta charset uft8</a></li>
                     <li><a href="#stylesheet">link to stylesheet</a></li>
-                    <li><a href="#">&lt;body&gt;</a></li>
-                    <li><a href="#">&lt;header&gt;</a></li>
+                    <li><a href="#body">&lt;body&gt;</a></li>
+                    <li><a href="#header">&lt;header&gt;</a></li>
                     <li><a href="#">&lt;h1 - h6&gt;</a></li>
                     <li><a href="#">&lt;nav&gt;</a></li>
                     <li><a href="#">&lt;p&gt;</a></li>
@@ -396,8 +396,70 @@
             So kannst du dein Design – Farben, Layouts, Schriftarten und Abstände – ausgelagert und übersichtlich in einer Datei pflegen. 
             Ohne diesen Link würde dein HTML nur rohen, unformatieren Inhalt zeigen.
         </p>
-        
-        
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="body">&lt;body&gt;</h1>
+        <p>
+            Der &lt;body&gt; Tag bildet den Hauptbereich einer HTML-Seite, in dem der sichtbare Inhalt für Besucher steht. 
+            Alles, was du im Browserfenster sehen kannst – Texte, Bilder, Videos, Buttons und weitere Elemente – wird im &lt;body&gt; untergebracht. 
+            Er steht direkt unter dem &lt;html&gt; Tag und nach dem &lt;head&gt; Bereich, der Informationen zur Seite enthält, die nicht sichtbar sind. 
+            Ohne den &lt;body&gt; gäbe es keine Webseite zum Anschauen, denn hier passiert die gesamte Darstellung für den Nutzer.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-html"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Beispielseite mit Body&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Willkommen auf meiner Webseite&lt;/h1&gt;
+    &lt;p&gt;Dies ist ein einfacher Textabschnitt, der im &lt;body&gt;-Tag steht.&lt;/p&gt;
+    &lt;img src="bild.jpg" alt="Beispielbild"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="header">&lt;header&gt;</h1>
+        <p>Der &lt;header&gt; Tag ist ein semantisches HTML-Element, das den Kopfbereich eines Abschnitts oder einer gesamten Webseite definiert. 
+            Er enthält typischerweise wichtige Inhalte wie Logos, Navigationsmenüs, Überschriften oder andere einleitende Informationen. 
+            Der &lt;header&gt; kann mehrfach auf einer Seite verwendet werden, zum Beispiel für den Hauptseitenkopf oder für einzelne Artikel. 
+            Durch seine klare Struktur verbessert der &lt;header&gt; die Lesbarkeit und Zugänglichkeit einer Webseite und hilft Suchmaschinen, die wichtigen Bereiche besser zu verstehen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-html"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Beispiel mit Header&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Meine Webseite&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#start"&gt;Start&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;Über uns&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#kontakt"&gt;Kontakt&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;h2 id="start"&gt;Willkommen&lt;/h2&gt;
+    &lt;p&gt;Hier beginnt der Inhalt der Webseite.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
     </main>
 
     <script>
