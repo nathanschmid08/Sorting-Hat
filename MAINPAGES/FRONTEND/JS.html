@@ -171,8 +171,8 @@
             <nav>
                 <ul>
                     <li><a href="#intro">Einführung</a></li>
-                    <li><a href="#">script src</a></li>
-                    <li><a href="#">Variablen</a></li>
+                    <li><a href="#src">script src</a></li>
+                    <li><a href="#variables">Variablen</a></li>
                     <li><a href="#">Datentypen</a></li>
                     <li><a href="#">Operatoren</a></li>
                     <li><a href="#">if</a></li>
@@ -250,6 +250,75 @@
 
 &lt;/body&gt;
 &lt;/html&gt;
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="src">script src</h1>
+        <p>
+            Der &lt;script&gt; Tag mit dem Attribut <code>src</code> wird verwendet, 
+            um externe JavaScript-Dateien in eine HTML-Seite einzubinden. 
+            Anstatt den JavaScript-Code direkt im HTML-Dokument zu schreiben, 
+            verweist man mit <code>src</code> auf eine separate Datei. Das sorgt für bessere Übersicht, 
+            Wiederverwendbarkeit und einfachere Wartung des Codes. Der Browser lädt die externe Datei 
+            und führt den darin enthaltenen JavaScript-Code aus, sobald das &lt;script&gt;-Element erreicht wird. 
+            Ohne das <code>src</code>-Attribut kann man auch Inline-JavaScript im &lt;script&gt;-Tag schreiben.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Beispiel Script src&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Willkommen&lt;/h1&gt;
+
+    &lt;!-- Externe JavaScript-Datei einbinden --&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+        <br>
+        <h3>script.js</h3>
+        <pre class="language-javascript"><code>
+// Dies ist der JavaScript-Code in der externen Datei
+console.log('Hallo aus der externen Datei!');
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="variables">Variablen</h1>
+        <p>
+            In JavaScript kannst du mit <strong>Variablen</strong> und <strong>Konstanten</strong> Daten speichern, 
+            die du später im Code wiederverwenden willst. Variablen werden mit dem Schlüsselwort <code>let</code> oder <code>var</code> 
+            deklariert und können ihren Wert später ändern. Konstanten hingegen werden mit <code>const</code> erstellt und behalten ihren Wert – sie 
+            dürfen nach der Zuweisung nicht mehr verändert werden. Die Verwendung von <code>let</code> und <code>const</code> ist moderner 
+            und sicherer als <code>var</code>, weshalb du sie bevorzugen solltest. Durch den gezielten Einsatz von Variablen und Konstanten 
+            strukturierst du deinen Code übersichtlich und vermeidest unnötige Wiederholungen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Eine Variable mit let – der Wert kann später verändert werden
+let name = "Anna";
+console.log(name); // Ausgabe: Anna
+
+name = "Luca";
+console.log(name); // Ausgabe: Luca
+
+// Eine Konstante mit const – der Wert bleibt gleich
+const geburtsjahr = 2008;
+console.log(geburtsjahr); // Ausgabe: 2008
+
+// folgender Versuch würde einen Fehler auslösen:
+// geburtsjahr = 2010; Das ist nicht erlaubt
         </code></pre>
     </main>
 
