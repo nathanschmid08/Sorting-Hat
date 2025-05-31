@@ -173,8 +173,8 @@
                     <li><a href="#intro">Einführung</a></li>
                     <li><a href="#src">script src</a></li>
                     <li><a href="#variables">Variablen</a></li>
-                    <li><a href="#">Datentypen</a></li>
-                    <li><a href="#">Operatoren</a></li>
+                    <li><a href="#types">Datentypen</a></li>
+                    <li><a href="#operators">Operatoren</a></li>
                     <li><a href="#">if</a></li>
                     <li><a href="#">else if</a></li>
                     <li><a href="#">else</a></li>
@@ -319,6 +319,86 @@ console.log(geburtsjahr); // Ausgabe: 2008
 
 // folgender Versuch würde einen Fehler auslösen:
 // geburtsjahr = 2010; Das ist nicht erlaubt
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="types">Datentypen</h1>
+        <p>JavaScript ist eine dynamisch typisierte Sprache – das bedeutet, dass du beim Erstellen 
+            von Variablen keinen bestimmten Datentyp angeben musst. Im Gegensatz zu vielen anderen S
+            prachen kennt JavaScript keine festen Datentypen für Variablen. Der Typ wird automatisch zur 
+            Laufzeit bestimmt – je nachdem, welcher Wert gespeichert wird. So kann eine Variable zum Beispiel 
+            zuerst einen Text (String) und später eine Zahl enthalten. Das macht JavaScript sehr flexibel, 
+            erfordert aber auch, dass du genau darauf achtest, welche Art von Daten du verwendest, um Fehler zu vermeiden.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+let variable = "Hallo Welt";   // aktuell ein String
+console.log(variable);         // Ausgabe: Hallo Welt
+
+variable = 42;                 // jetzt ist es eine Zahl
+console.log(variable);         // Ausgabe: 42
+
+variable = true;               // jetzt ist es ein Boolean
+console.log(variable);         // Ausgabe: true
+        </code></pre>
+        
+        <br>
+        <br>
+        <br>
+
+        <h1 id="operators">Operatoren</h1>
+        <p>Operatoren in JavaScript sind Symbole oder Schlüsselwörter, mit denen du Werte verarbeiten, 
+            vergleichen oder verändern kannst. Zum Beispiel kannst du mit dem Pluszeichen <code>+</code> 
+            zwei Zahlen addieren oder Texte (Strings) verbinden. Es gibt verschiedene Arten von Operatoren: <strong>arithmetische Operatoren</strong> 
+            (wie <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>), <strong>Vergleichsoperatoren</strong> 
+            (wie <code>==</code>, <code>===</code>, <code>&lt;</code>, <code>&gt;</code>), <strong>logische Operatoren</strong> 
+            (wie <code>&&</code>, <code>||</code>, <code>!</code>) und <strong>Zuweisungsoperatoren</strong> 
+            (wie <code>=</code>, <code>+=</code>, <code>*=</code>). Mit Operatoren kannst du also Rechnungen durchführen, 
+            Bedingungen prüfen oder Werte in Variablen speichern – sie sind ein zentraler Bestandteil jeder Programmiersprache.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Arithmetische Operatoren
+let a = 10;
+let b = 3;
+
+let summe = a + b;          // + Addieren → 10 + 3 = 13
+let differenz = a - b;      // - Subtrahieren → 10 - 3 = 7
+let produkt = a * b;        // * Multiplizieren → 10 * 3 = 30
+let quotient = a / b;       // / Dividieren → 10 / 3 ≈ 3.333
+let rest = a % b;           // % Modulo (Rest) → 10 % 3 = 1
+
+console.log("Summe:", summe);
+console.log("Differenz:", differenz);
+console.log("Produkt:", produkt);
+console.log("Quotient:", quotient);
+console.log("Rest:", rest);
+
+// Vergleichsoperatoren
+console.log(a == 10);           // == prüft auf Gleichheit (Wert) → true
+console.log(a === "10");        // === prüft auf Gleichheit (Wert + Typ) → false
+console.log(b != 5);            // != ungleich → true
+console.log(a &gt; b);          // größer als → true
+console.log(b &lt; 5);          // kleiner als → true
+
+// Logische Operatoren
+let x = true;
+let y = false;
+
+console.log(x && y);    // UND (&&) → true && false = false
+console.log(x || y);    // ODER (||) → true || false = true
+console.log(!x);        // NICHT (!) → !true = false
+
+// Zuweisungsoperatoren
+let zahl = 5;
+
+zahl += 2;      // entspricht: zahl = zahl + 2 → 7
+zahl *= 3;      // entspricht: zahl = zahl * 3 → 21
+
+console.log("Ergebnis nach Zuweisungen:", zahl);
         </code></pre>
     </main>
 
