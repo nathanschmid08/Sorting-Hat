@@ -175,9 +175,9 @@
                     <li><a href="#variables">Variablen</a></li>
                     <li><a href="#types">Datentypen</a></li>
                     <li><a href="#operators">Operatoren</a></li>
-                    <li><a href="#">if</a></li>
-                    <li><a href="#">else if</a></li>
-                    <li><a href="#">else</a></li>
+                    <li><a href="#if">if</a></li>
+                    <li><a href="#elseif">else if</a></li>
+                    <li><a href="#else">else</a></li>
                     <li><a href="#">switch</a></li>
                     <li><a href="#">for</a></li>
                     <li><a href="#">while</a></li>
@@ -381,7 +381,7 @@ console.log("Rest:", rest);
 console.log(a == 10);           // == prüft auf Gleichheit (Wert) → true
 console.log(a === "10");        // === prüft auf Gleichheit (Wert + Typ) → false
 console.log(b != 5);            // != ungleich → true
-console.log(a &gt; b);          // größer als → true
+console.log(a &gt; b);          // grösser als → true
 console.log(b &lt; 5);          // kleiner als → true
 
 // Logische Operatoren
@@ -400,6 +400,84 @@ zahl *= 3;      // entspricht: zahl = zahl * 3 → 21
 
 console.log("Ergebnis nach Zuweisungen:", zahl);
         </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="if">if</h1>
+        <p>
+            Die <code>if</code>-Anweisung ist eine der wichtigsten Kontrollstrukturen in JavaScript. 
+            Mit ihr kannst du Entscheidungen treffen: Der Code innerhalb des <code>if</code>-Blocks wird nur ausgeführt, wenn eine bestimmte Bedingung erfüllt ist – also <code>true</code> ergibt. 
+            Damit kannst du Programme schreiben, die auf unterschiedliche Situationen flexibel reagieren, z. B. je nach Benutzereingabe oder Datenlage. 
+            Häufig wird <code>if</code> auch mit <code>else</code> oder <code>else if</code> kombiniert, um mehrere Bedingungen zu prüfen. 
+            So kannst du den Ablauf deines Programms gezielt steuern und intelligentes Verhalten ermöglichen.
+        </p>
+        <h2>Beispiel</h2>  
+        <pre class="language-javascript"><code>
+let alter = 18;
+
+if (alter >= 18) {
+    console.log("Du bist volljährig.");
+} else {
+    console.log("Du bist noch nicht volljährig.");
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="elseif">else if</h1>
+        <p>
+            Die <code>else if</code>-Anweisung in JavaScript ermöglicht es dir, mehrere Bedingungen hintereinander zu prüfen. 
+            Wenn die erste <code>if</code>-Bedingung nicht zutrifft, wird die nächste <code>else if</code>-Bedingung getestet – und so weiter. 
+            So kannst du komplexere Entscheidungsstrukturen bauen, bei denen du auf verschiedene Fälle unterschiedlich reagieren willst. 
+            Wird eine der Bedingungen erfüllt, wird nur der zugehörige Codeblock ausgeführt – die restlichen Bedingungen werden übersprungen. 
+            <code>else if</code> sorgt also für mehr Flexibilität in deinen Programmen und hilft dir, klar strukturierte Abläufe zu gestalten.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+let note = 3;
+
+if (note === 1) {
+    console.log("Sehr gut");
+} else if (note === 2) {
+    console.log("Gut");
+} else if (note === 3) {
+    console.log("Befriedigend");
+} else if (note === 4) {
+    console.log("Ausreichend");
+} else if (note === 5) {
+    console.log("Mangelhaft");
+} else if (note === 6) {
+    console.log("Ungenügend");
+} else {
+    console.log("Ungültige Note");
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="else">else</h1>
+        <p>
+            Die <code>else</code>-Anweisung in JavaScript gehört zu einer <code>if</code>-Struktur und wird verwendet, um eine Alternative auszuführen, falls keine der vorherigen Bedingungen zutrifft. 
+            Wenn also weder die <code>if</code>- noch eine mögliche <code>else if</code>-Bedingung erfüllt ist, greift der <code>else</code>-Block. 
+            Das ist besonders nützlich, wenn du sicherstellen möchtest, dass in jedem Fall eine Reaktion erfolgt – selbst wenn du nicht alle möglichen Werte explizit abfragst. 
+            <code>else</code> steht dabei immer am Ende der Bedingungskette und fängt sozusagen „alle anderen Fälle“ auf.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+let alter = 15;
+
+if (alter >= 18) {
+    console.log("Du bist volljährig.");
+} else {
+    console.log("Du bist noch nicht volljährig.");
+}   
+        </code></pre>  
     </main>
 
     <script>
