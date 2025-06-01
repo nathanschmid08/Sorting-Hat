@@ -445,20 +445,33 @@ a:hover {
         </p>
         <h2>Beispiel</h2>
         <pre class="language-html"><code>
-&lt;p class="wichtig"&gt;Dieser Text ist besonders wichtig.&lt;/p&gt;
-&lt;p class="wichtig"&gt;Auch dieser Text ist wichtig und sieht gleich aus.&lt;/p&gt;
-&lt;p&gt;Dies ist ein ganz normaler Absatz.&lt;/p&gt;            
+&lt;button class="button&gt;>Klick mich&gt;/button&gt;
+&lt;p class="highlight"&gt;Dieser Text ist hervorgehoben.&lt;/p&gt;                  
         </code></pre>
         
         <br>
     
         <pre><code>
-.wichtig {
-    color: red;
-    font-weight: bold;
-    font-size: 18px;
-}        
+/* Definiert eine Klasse "button" für alle Buttons */
+.button {
+    background-color: #3498db;  /* Hintergrundfarbe blau */
+    color: white;               /* Textfarbe weiß */
+    padding: 10px 20px;         /* Innenabstand */
+    border-radius: 5px;         /* Abgerundete Ecken */
+    cursor: pointer;            /* Mauszeiger zeigt Hand */
+}
+            
+/* Definiert eine Klasse "highlight" für hervorgehobene Texte */
+.highlight {
+    background-color: yellow;   /* Gelber Hintergrund */
+    font-weight: bold;          /* Fettschrift */
+}             
         </code></pre>
+
+        <br>
+        <br>
+        <br>
+        
     </main>
 
     <script>
