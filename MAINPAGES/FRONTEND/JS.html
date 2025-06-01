@@ -178,7 +178,7 @@
                     <li><a href="#if">if</a></li>
                     <li><a href="#elseif">else if</a></li>
                     <li><a href="#else">else</a></li>
-                    <li><a href="#">switch</a></li>
+                    <li><a href="#switch">switch</a></li>
                     <li><a href="#">for</a></li>
                     <li><a href="#">while</a></li>
                     <li><a href="#">do... while</a></li>
@@ -477,7 +477,34 @@ if (alter >= 18) {
 } else {
     console.log("Du bist noch nicht volljährig.");
 }   
-        </code></pre>  
+        </code></pre>
+    
+        <br>
+        <br>
+        <br>
+
+        <h1 id="switch">switch</h1>
+        <p>
+            Das <code>switch</code>-Statement in JavaScript ist eine Alternative zu mehreren <code>if...else if</code>-Bedingungen und eignet sich besonders gut, wenn du eine Variable auf viele mögliche Werte überprüfen möchtest. 
+            Statt viele <code>if</code>-Abfragen hintereinander zu schreiben, kannst du mit <code>switch</code> übersichtlicher und klarer festlegen, was bei welchem Fall passieren soll. 
+            Jeder mögliche Wert wird mit einem <code>case</code> geprüft, und mit <code>break</code> wird der jeweilige Fall beendet. 
+            Ein optionaler <code>default</code>-Block kann genutzt werden, wenn kein anderer Fall zutrifft.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+let farbe = "rot";
+
+switch (farbe) {
+    case "blau":
+        console.log("Die Farbe ist blau.");
+        break;
+    case "rot":
+        console.log("Die Farbe ist rot.");
+        break;
+    default:
+        console.log("Unbekannte Farbe.");
+}
+        </code></pre>
     </main>
 
     <script>
