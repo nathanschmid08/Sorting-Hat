@@ -172,7 +172,7 @@
                     <li><a href="#declarationen">Deklarationen</a></li>
                     <li><a href="#values">Eigennschaften und Werte</a></li>
                     <li><a href="#elements">Elementselektoren</a></li>
-                    <li><a href="#">Klassenselektoren</a></li>
+                    <li><a href="#class-selectors">Klassenselektoren</a></li>
                     <li><a href="#">ID-Selektoren</a></li>
                     <li><a href="#">Attributselektoren</a></li>
                     <li><a href="#">Pseudoklassen</a></li>
@@ -429,6 +429,35 @@ a {
 a:hover {
     text-decoration: underline;             /* Unterstreichung beim Darüberfahren */
 }                
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="class-selectors">Klassenselektoren</h1>
+        <p>
+            Klassenselektoren ermöglichen es dir, gezielt HTML-Elemente mit einer bestimmten <code>class</code>-Eigenschaft zu gestalten. 
+            Du verwendest sie, indem du in CSS einen Punkt (<code>.</code>) vor den Klassennamen setzt – zum Beispiel <code>.btn</code>. 
+            So kannst du mehrere Elemente gleich stylen, ohne sie einzeln ansprechen zu müssen. 
+            Klassenselektoren sind ideal, um wiederverwendbare Gestaltungselemente wie Buttons, Karten oder spezielle Textelemente zu definieren. 
+            Sie machen deinen CSS-Code übersichtlicher und flexibler – besonders bei grösseren Webseiten.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-html"><code>
+&lt;p class="wichtig"&gt;Dieser Text ist besonders wichtig.&lt;/p&gt;
+&lt;p class="wichtig"&gt;Auch dieser Text ist wichtig und sieht gleich aus.&lt;/p&gt;
+&lt;p&gt;Dies ist ein ganz normaler Absatz.&lt;/p&gt;            
+        </code></pre>
+        
+        <br>
+    
+        <pre><code>
+.wichtig {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}        
         </code></pre>
     </main>
 
