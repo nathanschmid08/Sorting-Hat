@@ -174,8 +174,8 @@
                     <li><a href="#elements">Elementselektoren</a></li>
                     <li><a href="#class-selectors">Klassenselektoren</a></li>
                     <li><a href="#ids">ID-Selektoren</a></li>
-                    <li><a href="#">Attributselektoren</a></li>
-                    <li><a href="#">Pseudoklassen</a></li>
+                    <li><a href="#attribut">Attributselektoren</a></li>
+                    <li><a href="#pseudoclass">Pseudoklassen</a></li>
                     <li><a href="#">Pseudoelemente</a></li>
                     <li><a href="#">content</a></li>
                     <li><a href="#">padding</a></li>
@@ -493,6 +493,94 @@ a:hover {
     text-align: center;
     margin-top: 40px;
 }    
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="attribut">Attributselektoren</h1>
+        <p>Attributselektoren ermöglichen es dir, HTML-Elemente basierend auf ihren Attributen und Attributwerten zu stylen. 
+            Du kannst damit zum Beispiel gezielt alle Links mit einem bestimmten Ziel <code>href</code>, Eingabefelder mit einem bestimmten Typ (<code>type</code>) oder 
+            Elemente mit benutzerdefinierten Attributen ansprechen. Attributselektoren sind besonders nützlich, wenn Klassen oder IDs nicht ausreichen oder du selektiv auf bestimmte Eigenschaften von Elementen reagieren möchtest. 
+            Durch ihre Flexibilität helfen sie dir, deinen CSS-Code präziser und kontextabhängiger zu gestalten. 
+        </p>
+        <pre class="language-css"><code>
+/* Wählt alle Links mit einem href-Attribut */
+a[href] {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Wählt alle Links, die auf eine PDF-Datei verweisen */
+a[href$=".pdf"] {
+    color: red;
+    font-weight: bold;
+}
+
+/* Wählt alle Eingabefelder mit dem Typ "text" */
+input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* Wählt alle Elemente mit einem data-role Attribut */
+*[data-role] {
+    background-color: #f0f0f0;
+}
+
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="pseudoclass">Pseudoklassen</h1>
+        <p>Pseudoklassen sind Schlüsselwörter, die an Selektoren angehängt werden, um den Stil eines Elements in einem bestimmten Zustand zu definieren – ohne zusätzliche Klassen oder IDs im HTML-Code. 
+            Sie ermöglichen dir, auf Interaktionen wie Hover-Zustände oder die Position eines Elements im DOM zu reagieren. Beispiele sind <code>:hover</code> für das Verhalten beim Überfahren mit der Maus, <code>:first-child</code> für das erste Kind eines Elternelements oder <code>:focus</code> für ein aktives Eingabefeld. 
+            Pseudo-Klassen sind besonders hilfreich, um interaktives und dynamisches Styling umzusetzen – ganz ohne JavaScript. 
+        </p>
+
+        <pre class="language-html"><code>
+&lt;ul&gt;
+    &lt;li&gt;Erstes Element (wird hervorgehoben)&lt;/li&gt;
+    &lt;li&gt;Zweites Element&lt;/li&gt;
+&lt;/ul&gt;
+              
+&lt;a href="#"&gt;Fahr mit der Maus über mich!&lt;/a&gt;
+              
+&lt;br&gt;&lt;br&gt;
+              
+&lt;input type="text" placeholder="Klick mich an"&gt;
+              
+&lt;br&gt;&lt;br&gt;
+              
+&lt;button&gt;Drück mich!&lt;/button&gt;
+        </code></pre>
+
+        <br>
+
+        <pre class="language-css"><code>
+/* Wenn der Benutzer mit der Maus über den Link fährt */
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Das erste Kind eines Elements bekommt eine andere Hintergrundfarbe */
+li:first-child {
+    background-color: #f0f0f0;
+}
+
+/* Das Eingabefeld wird beim Fokus blau umrandet */
+input:focus {
+    border: 2px solid blue;
+}
+
+/* Elemente, die gerade aktiv (z. B. beim Klicken) sind */
+button:active {
+    background-color: #ccc;
+}
         </code></pre>
     </main>
 
