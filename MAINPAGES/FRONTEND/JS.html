@@ -167,7 +167,7 @@
     </header>
     <div class="sticky-nav-container">
         <button class="nav-scroll-btn" onclick="scrollNav(-200)">&#x25C0;</button>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper" id="navWrapper">
             <nav>
                 <ul>
                     <li><a href="#intro">Einführung</a></li>
@@ -179,25 +179,25 @@
                     <li><a href="#elseif">else if</a></li>
                     <li><a href="#else">else</a></li>
                     <li><a href="#switch">switch</a></li>
-                    <li><a href="#">for</a></li>
-                    <li><a href="#">while</a></li>
-                    <li><a href="#">do... while</a></li>
-                    <li><a href="#">for... in</a></li>
-                    <li><a href="#">for... of</a></li>
-                    <li><a href="#">Funktionen</a></li>
-                    <li><a href="#">Methoden</a></li>
-                    <li><a href="#">Objekte</a></li>
-                    <li><a href="#">Arrays</a></li>
-                    <li><a href="#">push</a></li>
-                    <li><a href="#">pop</a></li>
-                    <li><a href="#">shift</a></li>
-                    <li><a href="#">unshift</a></li>
-                    <li><a href="#">map</a></li>
-                    <li><a href="#">filter</a></li>
-                    <li><a href="#">reduce</a></li>
-                    <li><a href="#">getElementById</a></li>
-                    <li><a href="#">querySelector</a></li>
-                    <li><a href="#">innerHTML</a></li>
+                    <li><a href="#for">for</a></li>
+                    <li><a href="#while">while</a></li>
+                    <li><a href="#dowhile">do... while</a></li>
+                    <li><a href="#forin">for... in</a></li>
+                    <li><a href="#forof">for... of</a></li>
+                    <li><a href="#functions">Funktionen</a></li>
+                    <li><a href="#methods">Methoden</a></li>
+                    <li><a href="#objects">Objekte</a></li>
+                    <li><a href="#arrays">Arrays</a></li>
+                    <li><a href="#push">push</a></li>
+                    <li><a href="#pop">pop</a></li>
+                    <li><a href="#shift">shift</a></li>
+                    <li><a href="#unshift">unshift</a></li>
+                    <li><a href="#map">map</a></li>
+                    <li><a href="#filter">filter</a></li>
+                    <li><a href="#reduce">reduce</a></li>
+                    <li><a href="#getElementById">getElementById</a></li>
+                    <li><a href="#querySelector">querySelector</a></li>
+                    <li><a href="#innerHTML">innerHTML</a></li>
                     <li><a href="#">textContent</a></li>
                     <li><a href="#">style</a></li>
                     <li><a href="#">addEventListener</a></li>
@@ -504,6 +504,521 @@ switch (farbe) {
     default:
         console.log("Unbekannte Farbe.");
 }
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="for">for</h1>
+        <p>
+            Die <code>for</code>-Schleife ist eine der meistgenutzten Schleifen in JavaScript und wird verwendet, um Code mehrfach auszuführen – solange eine bestimmte Bedingung erfüllt ist. 
+            Sie besteht aus drei Teilen: einer Start-Anweisung, einer Bedingung und einer Schritt-Anweisung. 
+            Typischerweise wird sie verwendet, um durch Zahlen zu zählen oder über Arrays zu iterieren. 
+            Die <code>for</code>-Schleife ist besonders dann praktisch, wenn du genau weisst, wie oft sich ein Vorgang wiederholen soll.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Wir wollen die Zahlen von 1 bis 5 in der Konsole ausgeben
+for (let i = 1; i &lt;= 5; i++) {
+    console.log(i);
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+        
+        <h1 id="while">while</h1>
+        <p>
+            Die <code>while</code>-Schleife wird verwendet, um einen Codeblock so lange wiederholt auszuführen, wie eine bestimmte Bedingung wahr ist. 
+            Im Gegensatz zur <code>for</code>-Schleife ist die <code>while</code>-Schleife besonders dann nützlich, wenn man nicht genau weiss, wie oft ein Vorgang wiederholt werden muss. 
+            Bevor der Schleifeninhalt ausgeführt wird, wird die Bedingung geprüft – ist sie <code>true</code>, läuft die Schleife weiter, ist sie <code>false</code>, wird sie beendet. 
+            Es ist wichtig, innerhalb der Schleife dafür zu sorgen, dass die Bedingung irgendwann <code>false</code> wird, sonst läuft die Schleife unendlich weiter.
+        </p>
+        <h2>Beispiel</h2>
+        <pre><code class="language-javascript">
+// Startwert setzen
+let zahl = 1;
+            
+// Schleife läuft so lange, wie zahl kleiner oder gleich 5 ist
+while (zahl &lt;= 5) {
+    console.log("Aktuelle Zahl ist: " + zahl);
+              
+    // Zahl um 1 erhöhen, damit die Schleife irgendwann endet
+    zahl++;
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="dowhile">do... while</h1>
+        <p>
+            Die <code>do...while</code>-Schleife ähnlich wie eine <code>while</code>-Schleife – mit einem wichtigen Unterschied: 
+            Der Code im <code>do</code>-Block wird mindestens einmal ausgeführt, egal ob die Bedingung stimmt oder nicht. 
+            Erst nach dem ersten Durchlauf wird die Bedingung geprüft und entschieden, ob die Schleife weiterläuft. 
+            Das ist besonders dann nützlich, wenn du willst, dass ein Vorgang mindestens einmal durchgeführt wird – zum Beispiel eine Benutzereingabe abfragen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+let eingabe;
+
+do {
+    eingabe = prompt("Gib das Passwort ein:");
+} while (eingabe !== "geheim");
+            
+alert("Zugriff erlaubt!");          
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="forin">for... in</h1>
+        <p> Die Schleife <code>for...in</code> wird verwendet, um über die <strong>Eigenschaften eines Objekts</strong> zu iterieren. 
+            Sie eignet sich besonders gut, wenn du alle Schlüssel (Property-Namen) eines Objekts nacheinander durchgehen möchtest – unabhängig davon, 
+            wie viele es sind oder wie sie heissen. Dabei greifst du jeweils auf den Namen der Eigenschaft zu und kannst diesen z. B. nutzen, um den zugehörigen Wert abzurufen. 
+            Allerdings sollte <code>for...in</code> mit Vorsicht verwendet werden, da sie auch vererbte Eigenschaften aus der Prototyp-Kette mit einschliesst. 
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+const auto = {
+    marke: "Toyota",
+    modell: "Corolla",
+    baujahr: 2020
+};
+              
+for (let eigenschaft in auto) {
+    console.log(eigenschaft + ": " + auto[eigenschaft]);
+}    
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="forof">for... of</h1>
+        <p> Die <code>for...of</code>-Schleife ist eine moderne und einfache Möglichkeit, über Iterable-Objekte in JavaScript zu iterieren – also z. B. über Arrays, Strings, Maps oder Sets. 
+            Im Gegensatz zur <code>for...in</code>-Schleife, die über Eigenschaftsnamen eines Objekts läuft, arbeitet <code>for...of</code> direkt mit den Werten selbst. Das macht sie besonders 
+            leserlich und praktisch, wenn du einfach über Inhalte gehen willst – etwa bei einer Liste von Zahlen oder Zeichen. <code>for...of</code> funktioniert nur mit sogenannten "iterierbaren" 
+            Objekten und ist nicht geeignet, um durch die Eigenschaften von normalen Objekten zu gehen. 
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+const farben = ["Rot", "Grün", "Blau"];
+
+for (const farbe of farben) {
+    console.log(farbe);
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="functions">Funktionen</h1>
+        <p>
+            Funktionen in JavaScript sind eigenständige Codeblöcke, die eine bestimmte Aufgabe ausführen und bei Bedarf mehrfach aufgerufen werden können. 
+            Sie helfen dabei, Code übersichtlich, wiederverwendbar und logisch strukturiert zu gestalten. 
+            Funktionen können Eingabewerte (sogenannte Parameter) entgegennehmen und ein Ergebnis zurückgeben. 
+            Du kannst eigene Funktionen definieren oder auf eine Vielzahl integrierter Funktionen zurückgreifen, die JavaScript bereits mitbringt. 
+            Funktionen sind ein zentrales Konzept in JavaScript – ohne sie wäre strukturierte Programmierung kaum möglich.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Funktion, die zwei Zahlen addiert und das Ergebnis zurückgibt
+function addiere(zahl1, zahl2) {
+    return zahl1 + zahl2;
+}
+
+// Funktion aufrufen und Ergebnis ausgeben
+const ergebnis = addiere(5, 3);
+console.log(ergebnis); // Ausgabe: 8
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="methods">Methoden</h1>
+        <p>
+            Methoden in JavaScript sind Funktionen, die an Objekte gebunden sind und deren Verhalten oder Eigenschaften beeinflussen. 
+            Sie ermöglichen es dir, Aktionen auf den Daten eines Objekts auszuführen oder diese zu verändern. 
+            Fast alle Datentypen in JavaScript, wie Arrays, Strings oder Objekte, besitzen eigene Methoden, die dir praktische Werkzeuge an die Hand geben – zum Beispiel zum Ändern von Text, Sortieren von Listen oder Berechnen von Werten. 
+            Methoden werden immer mit Punktnotation aufgerufen, zum Beispiel <code>array.push()</code> oder <code>string.toUpperCase()</code>. 
+            Durch Methoden kannst du deinen Code flexibler und einfacher gestalten.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Ein Array mit ein paar Zahlen
+const zahlen = [1, 2, 3];
+            
+// Methode push fügt ein neues Element ans Ende des Arrays an
+zahlen.push(4);
+            
+console.log(zahlen); // Ausgabe: [1, 2, 3, 4]
+            
+// Ein String
+const text = "hallo";
+            
+// Methode toUpperCase wandelt den Text in Grossbuchstaben um
+const grossText = text.toUpperCase();
+            
+console.log(grossText); // Ausgabe: "HALLO"              
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="objects">Objekte</h1>
+        <p>
+            Objekte sind eines der wichtigsten Konzepte in JavaScript und dienen dazu, mehrere Werte oder Eigenschaften in einer einzigen Einheit zu speichern. 
+            Ein Objekt besteht aus sogenannten Schlüssel-Wert-Paaren, wobei jeder Schlüssel (auch Property genannt) einen Wert haben kann – das können Zahlen, Texte, Funktionen oder sogar andere Objekte sein. 
+            Mit Objekten kannst du Daten logisch strukturieren und organisieren, zum Beispiel Informationen über eine Person, ein Auto oder eine Bestellung. 
+            Du greifst auf die Werte eines Objekts über die Punktnotation (<code>objekt.eigenschaft</code>) oder eckige Klammern (<code>objekt["eigenschaft"]</code>) zu. 
+            Objekte sind die Grundlage für viele weitere JavaScript-Features, wie Methoden, Klassen oder JSON-Daten.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Ein Objekt, das eine Person beschreibt
+const person = {
+    name: "Anna",
+    alter: 28,
+    beruf: "Designer",
+  
+    // Methode, die die Person begrüsst
+    begruessung: function() {
+        console.log("Hallo, mein Name ist " + this.name + ".");
+    }
+};
+
+// Zugriff auf Eigenschaften
+console.log(person.name);   // Ausgabe: Anna
+console.log(person.alter);  // Ausgabe: 28
+
+// Aufruf der Methode
+person.begruessung();      // Ausgabe: Hallo, mein Name ist Anna.
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="arrays">Arrays</h1>
+        <p>
+            Arrays sind geordnete Sammlungen von Werten, die du unter einem einzigen Variablennamen speichern kannst. 
+            Ein Array kann beliebig viele Elemente enthalten – zum Beispiel Zahlen, Zeichenketten, Objekte oder sogar andere Arrays. 
+            Du greifst auf ein Element über seinen Index zu, der bei 0 beginnt (z. B. <code>meineArray[0]</code> für das erste Element). 
+            Arrays sind dynamisch: Du kannst Elemente hinzufügen (<code>push</code>), entfernen (<code>pop</code>) oder in der Mitte einfügen (<code>splice</code>), ohne die ursprüngliche Grösse festlegen zu müssen. 
+            Viele eingebaute Methoden wie <code>map</code>, <code>filter</code> oder <code>forEach</code> helfen dir, Daten elegant zu verarbeiten und zu transformieren. 
+            Durch ihre Flexibilität und leistungsstarken Funktionen sind Arrays unverzichtbar für die Arbeit mit Listen und Sammlungen in JavaScript.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Ein Array mit Namen
+const namen = ["Anna", "Ben", "Clara", "David"];
+            
+// Zugriff auf das erste Element (Index 0)
+console.log(namen[0]);  // Ausgabe: Anna
+            
+// Ein neues Element hinzufügen
+namen.push("Eva");
+console.log(namen);  // Ausgabe: ["Anna", "Ben", "Clara", "David", "Eva"]
+            
+// Elemente durchlaufen und ausgeben
+namen.forEach(function(name) {
+    console.log("Hallo, " + name + "!");
+});
+            
+// Filter: Alle Namen mit mehr als 3 Buchstaben
+const langeNamen = namen.filter(name => name.length > 3);
+console.log(langeNamen);  // Ausgabe: ["Clara", "David"]            
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="push">push</h1>
+        <p>
+            Die Methode <code>push()</code> ist eine praktische Funktion, mit der du neue Elemente ans Ende eines Arrays hinzufügen kannst. 
+            Wenn du zum Beispiel eine Liste von Werten hast und dynamisch weitere Werte ergänzen möchtest, ist <code>push()</code> genau das richtige Werkzeug. 
+            Dabei verändert <code>push()</code> das ursprüngliche Array direkt und gibt die neue Länge des Arrays zurück. 
+            Das macht es besonders einfach, Arrays flexibel zu erweitern, ohne eine neue Variable anlegen zu müssen. 
+            Kurz gesagt: Mit <code>push()</code> fügst du Elemente schnell und unkompliziert hinten an dein Array an.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Ein Array mit Zahlen
+let zahlen = [1, 2, 3];
+            
+// Mit push() ein neues Element hinzufügen
+zahlen.push(4);
+            
+console.log(zahlen);  // Ausgabe: [1, 2, 3, 4]
+            
+// Noch ein Element anhängen
+zahlen.push(5);
+            
+console.log(zahlen);  // Ausgabe: [1, 2, 3, 4, 5]
+            
+// push() gibt die neue Länge des Arrays zurück
+let neueLaenge = zahlen.push(6);
+console.log(neueLaenge);  // Ausgabe: 6 
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="pop">pop</h1>
+        <p>
+            Die Methode <code>pop()</code> wird verwendet, um das letzte Element aus einem Array zu entfernen. 
+            Dabei verändert <code>pop()</code> das ursprüngliche Array direkt und gibt das entfernte Element zurück. 
+            Das ist besonders praktisch, wenn du Elemente vom Ende einer Liste entfernen möchtest, zum Beispiel in einer Stapelverarbeitung (Stack). 
+            Wenn das Array leer ist, gibt <code>pop()</code> <code>undefined</code> zurück. 
+            Kurz gesagt: Mit <code>pop()</code> kannst du ganz einfach das letzte Element aus einem Array herausholen und entfernen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Ein Array mit Farben
+let farben = ['rot', 'grün', 'blau'];
+            
+// Das letzte Element entfernen und speichern
+let letzteFarbe = farben.pop();
+            
+console.log(letzteFarbe); // Ausgabe: blau
+console.log(farben);       // Ausgabe: ['rot', 'grün']
+            
+// Noch einmal pop() verwenden
+let nochEineFarbe = farben.pop();
+            
+console.log(nochEineFarbe); // Ausgabe: grün
+console.log(farben);        // Ausgabe: ['rot'] 
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="shift">shift</h1>
+        <p>
+            Die Methode <code>shift()</code> entfernt das erste Element aus einem Array und gibt dieses Element zurück. 
+            Dabei wird das Array direkt verändert und alle übrigen Elemente rücken eine Position nach vorne. 
+            Diese Methode ist nützlich, wenn du Elemente von Anfang eines Arrays entfernen möchtest, zum Beispiel in einer Warteschlange (Queue). 
+            Wenn das Array leer ist, liefert <code>shift()</code> <code>undefined</code> zurück. 
+            Mit <code>shift()</code> kannst du also leicht das erste Element aus einem Array herausnehmen und gleichzeitig das Array anpassen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Ein Array mit Früchten
+let früchte = ['Apfel', 'Banane', 'Kirsche'];
+
+// Das erste Element entfernen und speichern
+let ersteFrucht = früchte.shift();
+
+console.log(ersteFrucht);  // Ausgabe: Apfel
+console.log(früchte);      // Ausgabe: ['Banane', 'Kirsche']
+
+// Noch einmal shift() verwenden
+let nächsteFrucht = früchte.shift();
+
+console.log(nächsteFrucht); // Ausgabe: Banane
+console.log(früchte);       // Ausgabe: ['Kirsche']
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="unshift">unshift</h1>
+        <p>
+            Die Methode <code>unshift()</code> fügt ein oder mehrere Elemente am Anfang eines Arrays hinzu. 
+            Dabei werden die bestehenden Elemente nach hinten verschoben, um Platz für die neuen Elemente zu schaffen. 
+            <code>unshift()</code> verändert also direkt das ursprüngliche Array. 
+            Die Methode gibt die neue Länge des Arrays zurück, nachdem die Elemente eingefügt wurden. 
+            <code>unshift()</code> ist praktisch, wenn du Elemente am Anfang eines Arrays ergänzen möchtest, zum Beispiel bei der Verwaltung von Warteschlangen oder Listen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Ein Array mit Tieren
+let tiere = ['Hund', 'Katze', 'Vogel'];
+
+// Ein neues Tier am Anfang hinzufügen
+let neueLänge = tiere.unshift('Elefant');
+
+console.log(tiere);       // Ausgabe: ['Elefant', 'Hund', 'Katze', 'Vogel']
+console.log(neueLänge);   // Ausgabe: 4
+
+// Noch ein Tier am Anfang einfügen
+tiere.unshift('Maus');
+
+console.log(tiere);       // Ausgabe: ['Maus', 'Elefant', 'Hund', 'Katze', 'Vogel']
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="map">map</h1>
+        <p>
+            Die Methode <code>map()</code> ist eine sehr nützliche Funktion, mit der du ein Array in ein neues Array umwandeln kannst. 
+            Dabei wird auf jedes Element des ursprünglichen Arrays eine Funktion angewendet, die das Element verarbeitet oder verändert. 
+            Das Ergebnis ist ein neues Array mit den veränderten Werten – das Original-Array bleibt dabei unverändert. 
+            <code>map()</code> eignet sich gut, wenn du z. B. alle Werte umrechnen, filtern oder formatieren möchtest, ohne das ursprüngliche Array zu verändern.
+        </p>
+        <h2>Beispiel</h2>  
+        <pre class="language-javascript"><code>
+// Ursprüngliches Array mit Zahlen
+const zahlen = [1, 2, 3, 4, 5];
+
+// map() multipliziert jede Zahl mit 2 und erstellt ein neues Array
+const verdoppelt = zahlen.map(function(num) {
+  return num * 2;
+});
+
+console.log(verdoppelt); // Ausgabe: [2, 4, 6, 8, 10]
+console.log(zahlen);     // Ausgabe: [1, 2, 3, 4, 5] (unverändert)
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="filter">filter</h1>
+        <p>
+            Die Methode <code>filter()</code> verwendet, um aus einem Array ein neues Array zu erstellen, das nur die Elemente enthält, die bestimmte Bedingungen erfüllen. 
+            Dabei durchläuft <code>filter()</code> jedes Element im ursprünglichen Array und wendet eine Funktion an, die entscheidet, ob das Element im neuen Array enthalten sein soll oder nicht. 
+            Das Original-Array bleibt dabei unverändert. 
+            <code>filter()</code> ist ideal, wenn du gezielt nur bestimmte Werte aus einem Array herausfiltern möchtest, zum Beispiel alle Zahlen größer als 10 oder alle Objekte mit einem bestimmten Attribut.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Ursprüngliches Array mit Zahlen
+const zahlen = [5, 12, 8, 130, 44];
+            
+// filter() erstellt ein neues Array mit Zahlen größer als 10
+const grosseZahlen = zahlen.filter(function(num) {
+    return num > 10;
+});
+            
+console.log(grosseZahlen); // Ausgabe: [12, 130, 44]
+console.log(zahlen);       // Ausgabe: [5, 12, 8, 130, 44] (unverändert) 
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="reduce">reduce</h1>
+        <p>
+            Die Methode <code>reduce()</code> ist eine leistungsstarke Funktion, mit der du ein Array auf einen einzigen Wert reduzieren kannst. 
+            Sie durchläuft alle Elemente des Arrays und verarbeitet sie Schritt für Schritt mit einer sogenannten „Reducer“-Funktion. 
+            Diese Funktion bekommt dabei einen Akkumulator (eine Art Zwischenergebnis) und das aktuelle Element als Eingabe und gibt einen neuen Akkumulator zurück. 
+            Typische Anwendungsfälle sind das Berechnen von Summen, Produkten oder das Kombinieren von Daten aus einem Array. 
+            Mit <code>reduce()</code> kannst du also komplexe Berechnungen elegant und effizient durchführen – und das alles in nur einer Zeile Code.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-javascript"><code>
+// Beispiel: Summe aller Zahlen in einem Array berechnen
+const zahlen = [1, 2, 3, 4, 5];
+            
+const summe = zahlen.reduce(function(akkumulator, aktuellesElement) {
+    return akkumulator + aktuellesElement;
+}, 0);
+ 
+console.log(summe); // Ausgabe: 15 
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="getElementById">getElementById</h1>
+        <p>
+            Die Methode <code>getElementById()</code> ist eine einfache und häufig genutzte Funktion in JavaScript, mit der du ein einzelnes HTML-Element anhand seiner <code>id</code> auswählen kannst. 
+            Du gibst einfach die <code>id</code> des gewünschten Elements als String an, und die Methode gibt dir dieses Element zurück – falls es existiert. 
+            So kannst du direkt auf ein bestimmtes Element zugreifen, um dessen Inhalt zu ändern, es zu stylen oder mit ihm zu interagieren. 
+            Das macht <code>getElementById()</code> zu einem praktischen Werkzeug für die Arbeit mit dynamischen Webseiten.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>script.js</h3>
+        <pre class="language-javascript"><code>
+// HTML-Element mit der ID "meinButton" auswählen
+const button = document.getElementById("meinButton");
+            
+// Textinhalt des Buttons ändern
+button.textContent = "Klick mich!";
+            
+// Eventlistener hinzufügen, der beim Klick eine Nachricht ausgibt
+button.addEventListener("click", function() {
+    alert("Der Button wurde gedrückt!");
+});       
+        </code></pre>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;button id="meinButton"&gt;Originaltext&lt;/button&gt;
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="querySelector">querySelector</h1>
+        <p>
+            Die Methode <code>querySelector()</code> ist ein vielseitiges Werkzeug, mit dem du HTML-Elemente anhand von CSS-Selektoren auswählen kannst. 
+            Im Gegensatz zu <code>getElementById()</code>, das nur nach der <code>id</code> sucht, kannst du mit <code>querySelector()</code> Elemente über Klassen, Tags, Attribute oder komplexe 
+            Selektoren ansprechen. Sie gibt das erste Element zurück, das dem angegebenen Selektor entspricht, oder <code>null</code>, wenn kein passendes Element gefunden wurde. 
+            So ermöglicht <code>querySelector()</code> sehr flexible und präzise Auswahlmöglichkeiten für die Arbeit mit dem DOM. 
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>script.js</h3>
+        <pre class="language-javascript"><code>
+// Das erste Element mit der Klasse "highlight" auswählen
+const element = document.querySelector(".highlight");
+            
+// Den Textinhalt des ausgewählten Elements ändern
+if (element) {
+    element.textContent = "Dieser Text wurde geändert!";
+}            
+        </code></pre>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;p class="highlight"&gt;Ursprünglicher Text&lt;/p&gt;
+&lt;p&gt;Anderer Text&lt;/p&gt;       
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="innerHTML">innerHTML</h1>
+        <p> Die Eigenschaft <code>innerHTML</code> erlaubt es dir, den HTML-Inhalt eines Elements als String zu lesen oder zu verändern. 
+            Das bedeutet, du kannst damit den kompletten Inhalt eines Elements inklusive HTML-Tags dynamisch ändern oder neu setzen. 
+            Das ist sehr praktisch, wenn du Inhalte auf einer Webseite ohne Neuladen aktualisieren möchtest. 
+            Allerdings solltest du vorsichtig sein, wenn du <code>innerHTML</code> mit Benutzereingaben verwendest, da dadurch Sicherheitslücken wie Cross-Site Scripting (XSS) entstehen können. 
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>script.js</h3>
+        <pre class="language-javascript"><code>
+// JavaScript: Den HTML-Inhalt des Elements mit der ID "container" ändern
+const container = document.getElementById("container");
+container.innerHTML = "&lt;h2&gt;Neuer Titel&lt;/h2&gt;&lt;p&gt;Dieser Inhalt wurde mit innerHTML ersetzt.&lt;/p&gt;";          
+        </code></pre>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div id="container"&gt;
+    &lt;p&gt;Ursprünglicher Inhalt&lt;/p&gt;
+&lt;/div&gt;              
         </code></pre>
     </main>
 
