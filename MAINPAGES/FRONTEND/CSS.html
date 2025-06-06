@@ -176,12 +176,12 @@
                     <li><a href="#ids">ID-Selektoren</a></li>
                     <li><a href="#attribut">Attributselektoren</a></li>
                     <li><a href="#pseudoclass">Pseudoklassen</a></li>
-                    <li><a href="#">Pseudoelemente</a></li>
-                    <li><a href="#">content</a></li>
-                    <li><a href="#">padding</a></li>
-                    <li><a href="#">border</a></li>
-                    <li><a href="#">margin</a></li>
-                    <li><a href="#">fontfamily</a></li>
+                    <li><a href="#Pseudoelemente">Pseudoelemente</a></li>
+                    <li><a href="#content">content</a></li>
+                    <li><a href="#padding">padding</a></li>
+                    <li><a href="#border">border</a></li>
+                    <li><a href="#margin">margin</a></li>
+                    <li><a href="#fontfamily">fontfamily</a></li>
                     <li><a href="#">font-size</a></li>
                     <li><a href="#">font-style</a></li>
                     <li><a href="#">font-weight</a></li>
@@ -444,13 +444,14 @@ a:hover {
             Sie machen deinen CSS-Code übersichtlicher und flexibler – besonders bei grösseren Webseiten.
         </p>
         <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
         <pre class="language-html"><code>
 &lt;button class="button&gt;>Klick mich&gt;/button&gt;
 &lt;p class="highlight"&gt;Dieser Text ist hervorgehoben.&lt;/p&gt;                  
         </code></pre>
-        
         <br>
-    
+        <h3>style.css</h3>
         <pre class="language-css"><code>
 /* Definiert eine Klasse "button" für alle Buttons */
 .button {
@@ -479,13 +480,14 @@ a:hover {
             In CSS setzt du ein <code>#</code> vor den ID-Namen – zum Beispiel <code>#header</code>. 
             ID-Selektoren eignen sich besonders gut für zentrale Bereiche deiner Webseite wie Navigation, Hauptüberschriften oder spezielle Abschnitte, die sich klar vom Rest abheben sollen.
         </p>
-        
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
         <pre class="language-html"><code>
 &lt;h1 id="main-title"&gt;Willkommen auf meiner Website&lt;/h1&gt;
         </code></pre>
-
         <br>
-
+        <h3>style.css</h3>
         <pre class="language-css"><code>
 #main-title {
     color: darkblue;
@@ -505,6 +507,7 @@ a:hover {
             Elemente mit benutzerdefinierten Attributen ansprechen. Attributselektoren sind besonders nützlich, wenn Klassen oder IDs nicht ausreichen oder du selektiv auf bestimmte Eigenschaften von Elementen reagieren möchtest. 
             Durch ihre Flexibilität helfen sie dir, deinen CSS-Code präziser und kontextabhängiger zu gestalten. 
         </p>
+        <h2>Beispiel</h2>
         <pre class="language-css"><code>
 /* Wählt alle Links mit einem href-Attribut */
 a[href] {
@@ -528,7 +531,6 @@ input[type="text"] {
 *[data-role] {
     background-color: #f0f0f0;
 }
-
         </code></pre>
 
         <br>
@@ -540,7 +542,9 @@ input[type="text"] {
             Sie ermöglichen dir, auf Interaktionen wie Hover-Zustände oder die Position eines Elements im DOM zu reagieren. Beispiele sind <code>:hover</code> für das Verhalten beim Überfahren mit der Maus, <code>:first-child</code> für das erste Kind eines Elternelements oder <code>:focus</code> für ein aktives Eingabefeld. 
             Pseudo-Klassen sind besonders hilfreich, um interaktives und dynamisches Styling umzusetzen – ganz ohne JavaScript. 
         </p>
-
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
         <pre class="language-html"><code>
 &lt;ul&gt;
     &lt;li&gt;Erstes Element (wird hervorgehoben)&lt;/li&gt;
@@ -557,9 +561,8 @@ input[type="text"] {
               
 &lt;button&gt;Drück mich!&lt;/button&gt;
         </code></pre>
-
         <br>
-
+        <h3>style.css</h3>
         <pre class="language-css"><code>
 /* Wenn der Benutzer mit der Maus über den Link fährt */
 a:hover {
@@ -581,6 +584,278 @@ input:focus {
 button:active {
     background-color: #ccc;
 }
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="Pseudoelemente">Pseudoelemente</h1>
+        <p>
+            Pseudoelemente ermöglichen es dir, spezielle Teile eines Elements gezielt zu gestalten, ohne dafür zusätzliches HTML zu schreiben. 
+            Mit Pseudoelementen wie <code>::before</code> und <code>::after</code> kannst du Inhalte visuell vor oder nach einem Element einfügen, etwa für Icons, dekorative Linien oder animierte Effekte. 
+            Andere Pseudoelemente wie <code>::first-line</code> oder <code>::selection</code> helfen dir, gezielt einzelne Textbereiche zu stylen. 
+            Sie machen dein CSS flexibler, reduzieren den HTML-Aufwand und ermöglichen clevere visuelle Details.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;p class="tipp"&gt;
+    Du kannst mit CSS Pseudoelementen Inhalte hinzufügen, ohne das HTML zu verändern.
+&lt;/p&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.tipp::before {
+    content: " ";
+    color: orange;
+    font-weight: bold;
+}
+                
+.tipp::after {
+    content: " ";
+    color: gold;
+}         
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="content">content</h1>
+        <p>
+            Die Eigenschaft <code>content</code> wird hauptsächlich in Kombination mit Pseudoelementen wie <code>::before</code> und <code>::after</code> verwendet, um zusätzlichen Inhalt in ein Element einzufügen. 
+            Dabei kannst du Text, Symbole, Bilder oder sogar leere Strings einfügen, ohne das HTML anzupassen. 
+            <code>content</code> ist ein mächtiges Werkzeug, um Layouts und Designs zu verfeinern und kleine dekorative Details direkt per CSS zu steuern.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;h3&gt;Wichtige Hinweise&lt;/h3&gt;       
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+h3::before {
+    content: "[INFO] ";
+    color: #2a7ae2;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+            
+h3::after {
+    content: " — Ende der Information";
+    font-style: italic;
+    color: #555;
+    margin-left: 5px;
+}
+            
+h3 {
+    margin-top: 30px;
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="padding">padding</h1>
+        <p>
+            <code>padding</code> ist eine Eigenschaft, mit der du den inneren Abstand zwischen dem Inhalt eines Elements und seinem Rand (Border) festlegst. 
+            Dadurch kannst du bestimmen, wie viel Platz innerhalb eines Elements frei bleibt, damit Text oder andere Inhalte nicht direkt am Rand kleben. 
+            Padding sorgt also für mehr „Luft“ und verbessert die Lesbarkeit und das Design. 
+            Du kannst <code>padding</code> für alle vier Seiten (oben, rechts, unten, links) einzeln oder als Kurzschreibweise angeben.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div class="box"&gt;
+    Dieser Text hat unterschiedlich viel Abstand zum Rand oben, rechts, unten und links.
+&lt;/div&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.box {
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    padding: 20px 40px 10px 15px; /* oben rechts unten links */
+    width: 300px;
+    font-family: Arial, sans-serif;
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="border">border</h1>
+        <p>
+            Die Eigenschaft <code>border</code> definiert den sichtbaren Rahmen um ein Element. 
+            Du kannst damit die Stärke, Farbe und den Stil des Rahmens festlegen, z. B. durchgezogene, gestrichelte oder gepunktete Linien. 
+            Borders helfen dabei, Inhalte optisch abzugrenzen oder hervorzuheben. 
+            Du kannst einzelne Seiten (oben, rechts, unten, links) unterschiedlich gestalten oder mit der Kurzschreibweise alle Seiten gleichzeitig einstellen. 
+            Außerdem lassen sich Ecken mit <code>border-radius</code> abrunden und Rahmen mit <code>box-shadow</code> optisch aufwerten.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div class="kasten"&gt;
+    &lt;h2&gt;Standardrahmen mit abgerundeten Ecken&lt;/h2&gt;
+    &lt;p&gt;Dieser Kasten hat einen blauen, durchgezogenen Rahmen mit abgerundeten Ecken und einem leichten Schatten. Er wirkt dadurch modern und hebt sich gut vom Hintergrund ab.&lt;/p&gt;
+&lt;/div&gt;
+            
+&lt;div class="kasten kasten-links"&gt;
+    &lt;h2&gt;Individuelle Rahmenseiten&lt;/h2&gt;
+    &lt;p&gt;Hier sind die Rahmenseiten unterschiedlich gestaltet: Oben gestrichelt, rechts kein Rahmen, unten gepunktet und links ein dicker durchgezogener Rahmen. So kannst du gezielt Akzente setzen.&lt;/p&gt;
+&lt;/div&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.kasten {
+    width: 350px;
+    padding: 20px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+                
+    /* Rahmen komplett mit Kurzschreibweise */
+    border: 4px solid #2a7ae2;
+                
+    /* Ecken abrunden */
+    border-radius: 12px;
+                
+    /* Schatten für 3D-Effekt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+            
+/* Einzelne Rahmenseiten verschieden gestalten */
+.kasten-links {
+    border-top: 3px dashed #ff6f61;
+    border-right: 0;
+    border-bottom: 3px dotted #ff6f61;
+    border-left: 5px solid #ff6f61;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 40px;
+    padding: 15px;
+    background-color: #fff0f0;
+} 
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="margin">margin</h1>
+        <p>
+            <code>margin</code> ist eine Eigenschaft, mit der du den Außenabstand eines Elements zu anderen Elementen festlegen kannst. 
+            Damit bestimmst du, wie viel Platz um ein Element herum frei bleibt, also der Abstand zum Nachbarinhalt oder zum Rand des Containers. 
+            <code>margin</code> kann für jede Seite (oben, rechts, unten, links) einzeln gesetzt werden, oder als Kurzschreibweise mit ein bis vier Werten. 
+            Mit <code>margin: auto;</code> kannst du Elemente auch horizontal zentrieren, wenn eine feste Breite definiert ist.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div class="container"&gt;
+    &lt;div class="box"&gt;
+        &lt;p&gt;Diese Box hat oben 10px, rechts 30px, unten 20px und links 5px Abstand zum nächsten Element.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="box2"&gt;
+        &lt;p&gt;Diese Box ist horizontal zentriert dank &lt;code&gt;margin: auto;&lt;/code&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.container {
+    background-color: #e0f7fa;
+    padding: 20px;
+    width: 400px;
+    font-family: Arial, sans-serif;
+    margin: 30px auto;
+    border: 2px solid #00796b;
+}
+            
+.box {
+    background-color: #4db6ac;
+    color: white;
+    padding: 15px;
+
+    /* oben rechts unten links */
+    margin: 10px 30px 20px 5px;
+
+    border-radius: 8px;
+}
+            
+.box2 {
+    background-color: #00796b;
+
+    /* zentriert horizontal */
+    margin: auto;
+
+    width: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="fontfamily">fontfamily</h1>
+        <p>
+            Die CSS-Eigenschaft <code>font-family</code> bestimmt, welche Schriftart für Text in einem Element verwendet wird. 
+            Du kannst Systemschriftarten verwenden, Google Fonts einbinden oder eigene Schriftdateien im Webfont-Format (wie <code>.ttf</code>, <code>.woff</code>, <code>.woff2</code>, <code>.otf</code>) lokal hosten und importieren. 
+            Dafür nutzt du die <code>@font-face</code>-Regel, mit der du eine eigene Schriftdatei definierst und ihr einen Namen gibst, den du später in <code>font-family</code> verwenden kannst.
+        </p>
+        <h2>Browserschriftarten</h2>
+        <pre class="language-css"><code>
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}  
+        </code></pre>
+        <h2>Import über URL</h2>
+        <pre class="language-html"><code>
+&lt;head&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;           
+        </code></pre>
+        <br>
+        <h3>oder</h3>
+        <pre class="language-css"><code>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+        </code></pre>
+        <h2>Lokal einbingen</h2>
+        <pre><code>
+@font-face {
+    font-family: 'MeineCustomFont';
+    src: url('fonts/MeineCustomFont.woff2') format('woff2'),
+         url('fonts/MeineCustomFont.woff') format('woff'),
+         url('fonts/MeineCustomFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+              
+body {
+    font-family: 'MeineCustomFont', Arial, sans-serif;
+}       
         </code></pre>
     </main>
 
