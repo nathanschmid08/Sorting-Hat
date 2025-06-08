@@ -182,8 +182,8 @@
                     <li><a href="#border">border</a></li>
                     <li><a href="#margin">margin</a></li>
                     <li><a href="#fontfamily">fontfamily</a></li>
-                    <li><a href="#">font-size</a></li>
-                    <li><a href="#">font-style</a></li>
+                    <li><a href="#font-size">font-size</a></li>
+                    <li><a href="#font-style">font-style</a></li>
                     <li><a href="#">font-weight</a></li>
                     <li><a href="#">text-align</a></li>
                     <li><a href="#">text-decoration</a></li>
@@ -843,7 +843,7 @@ body {
 }
         </code></pre>
         <h2>Lokal einbingen</h2>
-        <pre><code>
+        <pre class="language-css"><code>
 @font-face {
     font-family: 'MeineCustomFont';
     src: url('fonts/MeineCustomFont.woff2') format('woff2'),
@@ -857,6 +857,78 @@ body {
     font-family: 'MeineCustomFont', Arial, sans-serif;
 }       
         </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="font-size">font-size</h1>
+        <p>
+            Die Eigenschaft <code>font-size</code> legt die Schriftgröße von Text in einem HTML-Element fest. 
+            Du kannst die Größe in verschiedenen Einheiten angeben, z.&nbsp;B. in <code>px</code> (Pixel), <code>em</code> (relativ zur Schriftgröße des Elternelements), 
+            <code>rem</code> (relativ zur Wurzel-Schriftgröße, meist <code>html</code>) oder <code>%</code>. 
+            Mit <code>font-size</code> kannst du die Lesbarkeit und die visuelle Hierarchie deiner Inhalte gezielt steuern. 
+            Für responsive Designs empfiehlt es sich, relative Einheiten wie <code>em</code> oder <code>rem</code> zu verwenden, da sie sich besser an unterschiedliche Bildschirmgrößen anpassen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-css"><code>
+html {
+    font-size: 16px;        /* Basisgröße für rem */
+}
+
+h1 {
+    font-size: 2rem;        /* entspricht 32px */
+}
+
+p {
+    font-size: 1rem;        /* entspricht 16px */
+}
+
+.small-text {
+    font-size: 0.875rem;    /* ca. 14px */
+}
+
+.large-text {
+    font-size: 1.5em;       /* relativ zur Schriftgröße des Elternelements */
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="font-style">font-style</h1>
+        <p>
+            Die Eigenschaft <code>font-style</code> wird verwendet, um die Schrift eines Textes schräg darzustellen. 
+            Typischerweise nutzt man sie für kursiven Text – also für Betonungen, Fachbegriffe oder Zitate. 
+            Die häufigsten Werte sind <code>normal</code> (Standardschrift), <code>italic</code> (echte Kursivschrift, wenn verfügbar) und <code>oblique</code> (künstlich geneigte Schrift). 
+            Während <code>italic</code> auf speziell gestaltete Zeichen zurückgreift, wird bei <code>oblique</code> die normale Schrift einfach geneigt – das wirkt oft weniger elegant. 
+            Du kannst <code>font-style</code> global im CSS oder gezielt für einzelne Elemente verwenden.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;p class="normal"&gt;Dies ist normaler Text.&lt;/p&gt;
+&lt;p class="italic"&gt;Dies ist kursiver Text mit &lt;code&gt;italic&lt;/code&gt;.&lt;/p&gt;
+&lt;p class="oblique"&gt;Dies ist schräger Text mit &lt;code&gt;oblique&lt;/code&gt;.&lt;/p&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.normal {
+    font-style: normal;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.oblique {
+    font-style: oblique;
+}
+        </code></pre>
+
     </main>
 
     <script>
