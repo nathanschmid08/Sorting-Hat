@@ -187,9 +187,9 @@
                     <li><a href="#font-weight">font-weight</a></li>
                     <li><a href="#text-align">text-align</a></li>
                     <li><a href="#text-decoration">text-decoration</a></li>
-                    <li><a href="#">line-height</a></li>
-                    <li><a href="#">color</a></li>
-                    <li><a href="#">background-color</a></li>
+                    <li><a href="#line-height">line-height</a></li>
+                    <li><a href="#color">color</a></li>
+                    <li><a href="#background-color">background-color</a></li>
                     <li><a href="#">background-image</a></li>
                     <li><a href="#">background-repeat</a></li>
                     <li><a href="#">background-position</a></li>
@@ -954,11 +954,11 @@ p {
         <h3>style.css</h3>
         <pre pre class="language-css"><code>
 .normal {
-    font-weight: normal; /* entspricht 400 */
+    font-weight: normal;    /* entspricht 400 */
 }
               
 .bold {
-    font-weight: bold; /* entspricht 700 */
+    font-weight: bold;      /* entspricht 700 */
 }
               
 .light {
@@ -976,7 +976,7 @@ p {
 
         <h1 id="text-align">text-align</h1>
         <p>
-            Die CSS-Eigenschaft <code>text-align</code> bestimmt, wie der Text innerhalb eines Elements horizontal ausgerichtet wird. 
+            Die Eigenschaft <code>text-align</code> bestimmt, wie der Text innerhalb eines Elements horizontal ausgerichtet wird. 
             Typische Werte sind <code>left</code> (links, Standard bei westlichen Sprachen), <code>right</code> (rechts), <code>center</code> (zentriert) und <code>justify</code> (Blocksatz). 
             Mit <code>text-align</code> kannst du das Layout von Überschriften, Absätzen oder anderen Textblöcken steuern und so für bessere Lesbarkeit und Optik sorgen.
         </p>
@@ -991,7 +991,7 @@ p {
         </code></pre>        
         <br>
         <h3>style.css</h3>
-        <pre pre class="language-css"><code>
+        <pre class="language-css"><code>
 .left {
     text-align: left;
 }
@@ -1014,7 +1014,136 @@ p {
         <br>
 
         <h1 id="text-decoration">text-decoration</h1>
-        <p></p>
+        <p>
+            Die Eigenschaft <code>text-decoration</code> steuert visuelle Verzierungen am Text, wie z. B. Unterstreichungen, Durchstreichungen oder Überstreichungen. 
+            Standardmässig wird sie oft verwendet, um Links mit einer Unterstreichung hervorzuheben. 
+            Du kannst einzelne Effekte einzeln oder kombiniert anwenden, z. B. <code>underline</code>, <code>line-through</code> (Durchgestrichen) oder <code>overline</code>. 
+            Seit CSS3 lassen sich auch Farben und Stilarten (wie gestrichelt oder gepunktet) der Dekoration festlegen.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;p class="underline"&gt;Dieser Text ist unterstrichen.&lt;/p&gt;
+&lt;p class="line-through"&gt;Dieser Text ist durchgestrichen.&lt;/p&gt;
+&lt;p class="overline"&gt;Dieser Text hat eine Überstreichung.&lt;/p&gt;
+&lt;p class="custom"&gt;Dieser Text ist rot und gepunktet unterstrichen.&lt;/p&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.underline {
+    text-decoration: underline;
+}
+              
+.line-through {
+    text-decoration: line-through;
+}
+              
+.overline {
+    text-decoration: overline;
+}
+              
+.custom {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: red;
+}    
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="line-height">line-height</h1>
+        <p>
+            Die Eigenschaft <code>line-height</code> legt den Zeilenabstand zwischen Textzeilen fest. 
+            Sie bestimmt, wie viel Platz vertikal zwischen den einzelnen Zeilen eines Textblocks bleibt und beeinflusst damit die Lesbarkeit und das Gesamtbild von Absätzen oder Überschriften. 
+            Du kannst <code>line-height</code> als Zahl (relativ zur Schriftgrösse), in <code>px</code>, <code>em</code> oder Prozentwerten angeben. 
+            Ein zu kleiner Wert kann den Text gedrängt und schwer lesbar machen, ein zu grosser sorgt für zu viel Leerraum.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;p class="normal"&gt;
+    Dieser Text hat einen eher kleinen Zeilenabstand und wirkt kompakter.
+&lt;/p&gt;
+              
+&lt;p class="comfortable"&gt;
+    Dieser Text hat einen grösseren Zeilenabstand und ist dadurch leichter zu lesen.
+&lt;/p&gt;
+              
+&lt;p class="fixed"&gt;
+    Dieser Text hat einen festen Zeilenabstand von 24 Pixeln, unabhängig von der Schriftgrösse.
+&lt;/p&gt;   
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.normal {
+    line-height: 1.2;       /* 120% der Schriftgrösse */
+}
+              
+.comfortable {
+    line-height: 1.6;       /* 160% der Schriftgrösse */
+}
+              
+.fixed {
+    line-height: 24px;      /* feste Höhe in Pixel */
+}      
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="color">color</h1>
+        <p>
+            Die Eigenschaft <code>color</code> bestimmt die Schriftfarbe von Textinhalten in HTML-Elementen. 
+            Du kannst Farben auf verschiedene Arten angeben: mit Farbnamen (z.&nbsp;B. <code>red</code>), in Hexadezimalnotation (z.&nbsp;B. <code>#ff0000</code>), als RGB- oder RGBA-Werte 
+            (z.&nbsp;B. <code>rgb(255, 0, 0)</code> oder <code>rgba(255, 0, 0, 0.5)</code>) oder mit modernen HSL-Werten (z.&nbsp;B. <code>hsl(0, 100%, 50%)</code>). 
+            <code>color</code> wirkt sich nur auf den Text aus – für den Hintergrund gibt es die separate Eigenschaft <code>background-color</code>.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;p class="named"&gt;Dieser Text ist mit einem Farbnamen blau eingefärbt.&lt;/p&gt;
+&lt;p class="hex"&gt;Dieser Text nutzt eine hexadezimale Farbe (#ff6600).&lt;/p&gt;
+&lt;p class="rgb"&gt;Dieser Text verwendet eine RGB-Farbe.&lt;/p&gt;
+&lt;p class="rgba"&gt;Dieser Text hat eine halbtransparente RGBA-Farbe.&lt;/p&gt;
+&lt;p class="hsl"&gt;Dieser Text ist mit HSL definiert.&lt;/p&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.named {
+    color: blue;
+}
+              
+.hex {
+    color: #ff6600;
+}
+              
+.rgb {
+    color: rgb(34, 139, 34);        /* forestgreen */
+}
+              
+.rgba {
+    color: rgba(255, 0, 0, 0.6);    /* halbtransparentes Rot */
+}
+              
+.hsl {
+    color: hsl(240, 100%, 50%);     /* reines Blau */
+}      
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="background-color">background-color</h1>
 
     </main>
 
