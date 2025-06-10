@@ -184,8 +184,8 @@
                     <li><a href="#fontfamily">fontfamily</a></li>
                     <li><a href="#font-size">font-size</a></li>
                     <li><a href="#font-style">font-style</a></li>
-                    <li><a href="#">font-weight</a></li>
-                    <li><a href="#">text-align</a></li>
+                    <li><a href="#font-weight">font-weight</a></li>
+                    <li><a href="#text-align">text-align</a></li>
                     <li><a href="#">text-decoration</a></li>
                     <li><a href="#">line-height</a></li>
                     <li><a href="#">color</a></li>
@@ -699,7 +699,7 @@ h3 {
             Du kannst damit die Stärke, Farbe und den Stil des Rahmens festlegen, z. B. durchgezogene, gestrichelte oder gepunktete Linien. 
             Borders helfen dabei, Inhalte optisch abzugrenzen oder hervorzuheben. 
             Du kannst einzelne Seiten (oben, rechts, unten, links) unterschiedlich gestalten oder mit der Kurzschreibweise alle Seiten gleichzeitig einstellen. 
-            Außerdem lassen sich Ecken mit <code>border-radius</code> abrunden und Rahmen mit <code>box-shadow</code> optisch aufwerten.
+            Ausserdem lassen sich Ecken mit <code>border-radius</code> abrunden und Rahmen mit <code>box-shadow</code> optisch aufwerten.
         </p>
         <h2>Beispiel</h2>
         <br>
@@ -755,7 +755,7 @@ h3 {
 
         <h1 id="margin">margin</h1>
         <p>
-            <code>margin</code> ist eine Eigenschaft, mit der du den Außenabstand eines Elements zu anderen Elementen festlegen kannst. 
+            <code>margin</code> ist eine Eigenschaft, mit der du den Aussenabstand eines Elements zu anderen Elementen festlegen kannst. 
             Damit bestimmst du, wie viel Platz um ein Element herum frei bleibt, also der Abstand zum Nachbarinhalt oder zum Rand des Containers. 
             <code>margin</code> kann für jede Seite (oben, rechts, unten, links) einzeln gesetzt werden, oder als Kurzschreibweise mit ein bis vier Werten. 
             Mit <code>margin: auto;</code> kannst du Elemente auch horizontal zentrieren, wenn eine feste Breite definiert ist.
@@ -864,16 +864,16 @@ body {
 
         <h1 id="font-size">font-size</h1>
         <p>
-            Die Eigenschaft <code>font-size</code> legt die Schriftgröße von Text in einem HTML-Element fest. 
-            Du kannst die Größe in verschiedenen Einheiten angeben, z.&nbsp;B. in <code>px</code> (Pixel), <code>em</code> (relativ zur Schriftgröße des Elternelements), 
-            <code>rem</code> (relativ zur Wurzel-Schriftgröße, meist <code>html</code>) oder <code>%</code>. 
+            Die Eigenschaft <code>font-size</code> legt die Schriftgrösse von Text in einem HTML-Element fest. 
+            Du kannst die Grösse in verschiedenen Einheiten angeben, z.&nbsp;B. in <code>px</code> (Pixel), <code>em</code> (relativ zur Schriftgrösse des Elternelements), 
+            <code>rem</code> (relativ zur Wurzel-Schriftgrösse, meist <code>html</code>) oder <code>%</code>. 
             Mit <code>font-size</code> kannst du die Lesbarkeit und die visuelle Hierarchie deiner Inhalte gezielt steuern. 
-            Für responsive Designs empfiehlt es sich, relative Einheiten wie <code>em</code> oder <code>rem</code> zu verwenden, da sie sich besser an unterschiedliche Bildschirmgrößen anpassen.
+            Für responsive Designs empfiehlt es sich, relative Einheiten wie <code>em</code> oder <code>rem</code> zu verwenden, da sie sich besser an unterschiedliche Bildschirmgrössen anpassen.
         </p>
         <h2>Beispiel</h2>
         <pre class="language-css"><code>
 html {
-    font-size: 16px;        /* Basisgröße für rem */
+    font-size: 16px;        /* Basisgrösse für rem */
 }
 
 h1 {
@@ -889,7 +889,7 @@ p {
 }
 
 .large-text {
-    font-size: 1.5em;       /* relativ zur Schriftgröße des Elternelements */
+    font-size: 1.5em;       /* relativ zur Schriftgrösse des Elternelements */
 }
         </code></pre>
 
@@ -927,6 +927,86 @@ p {
 .oblique {
     font-style: oblique;
 }
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="font-weight">font-weight</h1>
+        <p>
+            Die Eigenschaft <code>font-weight</code> steuert die Dicke bzw. Stärke der Schriftzeichen. 
+            Übliche Werte sind numerisch von <code>100</code> (sehr dünn) bis <code>900</code> (sehr fett), wobei <code>400</code> dem normalen Schriftgewicht entspricht und <code>700</code> für fett steht. 
+            Ausserdem kannst du die Schlüsselwörter <code>normal</code> und <code>bold</code> verwenden, die den Werten <code>400</code> bzw. <code>700</code> entsprechen. 
+            Nicht alle Schriftarten unterstützen alle Gewichtungen, daher solltest du prüfen, welche Schriftschnitte verfügbar sind – vor allem bei Webfonts. 
+            Mit <code>font-weight</code> kannst du Texte optisch hierarchisch strukturieren oder hervorheben.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;p class="normal"&gt;Dies ist normal gewichteter Text.&lt;/p&gt;
+&lt;p class="bold"&gt;Dieser Text ist fett (bold).&lt;/p&gt;
+&lt;p class="light"&gt;Dieser Text ist leicht (light).&lt;/p&gt;
+&lt;p class="black"&gt;Dieser Text ist sehr fett (black).&lt;p&gt;    
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre pre class="language-css"><code>
+.normal {
+    font-weight: normal; /* entspricht 400 */
+}
+              
+.bold {
+    font-weight: bold; /* entspricht 700 */
+}
+              
+.light {
+    font-weight: 300;
+}
+              
+.black {
+    font-weight: 900;
+}      
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="text-align">text-align</h1>
+        <p>
+            Die CSS-Eigenschaft <code>text-align</code> bestimmt, wie der Text innerhalb eines Elements horizontal ausgerichtet wird. 
+            Typische Werte sind <code>left</code> (links, Standard bei westlichen Sprachen), <code>right</code> (rechts), <code>center</code> (zentriert) und <code>justify</code> (Blocksatz). 
+            Mit <code>text-align</code> kannst du das Layout von Überschriften, Absätzen oder anderen Textblöcken steuern und so für bessere Lesbarkeit und Optik sorgen.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre><code>
+&lt;p class="left"&gt;Dieser Text ist linksbündig ausgerichtet.&lt;/p&gt;
+&lt;p class="center"&gt;Dieser Text ist zentriert.&lt;/p&gt;
+&lt;p class="right"&gt;Dieser Text ist rechtsbündig.&lt;/p&gt;
+&lt;p class="justify"&gt;Dieser Text ist im Blocksatz formatiert, sodass die Zeilen gleichmässig am linken und rechten Rand abschliessen.&gt;/p&lt;
+        </code></pre>        
+        <br>
+        <h3>style.css</h3>
+        <pre><code>
+.left {
+    text-align: left;
+}
+              
+.center {
+    text-align: center;
+}
+              
+.right {
+    text-align: right;
+}
+              
+.justify {
+    text-align: justify;
+}  
         </code></pre>
 
     </main>
