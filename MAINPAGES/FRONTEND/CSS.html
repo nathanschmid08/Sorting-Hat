@@ -1144,6 +1144,46 @@ p {
         <br>
 
         <h1 id="background-color">background-color</h1>
+        <p>
+            Die Eigenschaft <code>background-color</code> legt die Hintergrundfarbe eines HTML-Elements fest. 
+            Sie kann mit Farbnamen, Hexadezimalwerten, RGB-, RGBA- oder HSL-Werten definiert werden. 
+            Ein farbiger Hintergrund sorgt für visuelle Hervorhebungen, verbessert die Lesbarkeit oder unterstützt das Design einer Webseite. 
+            Mit transparenten Farben (z.B. über <code>rgba</code>) kannst du auch Überlagerungen oder weichere Effekte erzielen.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div class="bg-blue"&gt;Blauer Hintergrund&lt;/div&gt;
+&lt;div class="bg-hex"&gt;intergrund mit Hex-Farbe&lt;/div&gt;
+&lt;div class="bg-rgb"&gt;Hintergrund mit RGB-Farbe&lt;/div&gt;
+&lt;div class="bg-rgba"&gt;Halbtransparenter roter Hintergrund&lt;/div&gt;
+&lt;div class="bg-hsl"&gt;Hintergrund mit HSL-Farbe&lt;/div&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre><code>
+.bg-blue {
+    background-color: blue;
+}
+              
+.bg-hex {
+    background-color: #f0a500;
+}
+              
+.bg-rgb {
+    background-color: rgb(100, 149, 237); /* cornflowerblue */
+}
+              
+.bg-rgba {
+    background-color: rgba(255, 0, 0, 0.3); /* halbtransparentes Rot */
+}
+              
+.bg-hsl {
+    background-color: hsl(120, 60%, 70%); /* helles Grün */
+}    
+        </code></pre>
+        
 
     </main>
 
