@@ -190,9 +190,9 @@
                     <li><a href="#line-height">line-height</a></li>
                     <li><a href="#color">color</a></li>
                     <li><a href="#background-color">background-color</a></li>
-                    <li><a href="#">background-image</a></li>
-                    <li><a href="#">background-repeat</a></li>
-                    <li><a href="#">background-position</a></li>
+                    <li><a href="#background-image">background-image</a></li>
+                    <li><a href="#background-repeat">background-repeat</a></li>
+                    <li><a href="#background-position">background-position</a></li>
                     <li><a href="#">background-size</a></li>
                     <li><a href="#">block</a></li>
                     <li><a href="#">inline</a></li>
@@ -1172,18 +1172,227 @@ p {
 }
               
 .bg-rgb {
-    background-color: rgb(100, 149, 237); /* cornflowerblue */
+    background-color: rgb(100, 149, 237);       /* cornflowerblue */
 }
               
 .bg-rgba {
-    background-color: rgba(255, 0, 0, 0.3); /* halbtransparentes Rot */
+    background-color: rgba(255, 0, 0, 0.3);     /* halbtransparentes Rot */
 }
               
 .bg-hsl {
-    background-color: hsl(120, 60%, 70%); /* helles Grün */
+    background-color: hsl(120, 60%, 70%);       /* helles Grün */
 }    
         </code></pre>
-        
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="background-image">background-image</h1>
+        <p>
+            Die Eigenschaft <code>background-image</code> ermöglicht es, ein Bild oder einen Verlauf als Hintergrund eines Elements festzulegen. 
+            Du kannst dabei sowohl externe Bilddateien (z.&nbsp;B. JPG, PNG, SVG) als auch CSS-Verläufe (<code>linear-gradient</code>, <code>radial-gradient</code>) verwenden. 
+            In Kombination mit weiteren Eigenschaften wie <code>background-size</code>, <code>background-repeat</code> und <code>background-position</code> kannst du die Darstellung sehr flexibel steuern.
+        </p>
+        <h2>Bild als Hintergrund</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div class="image-bg"&gt;
+    Dies ist ein Text auf einem Bildhintergrund.
+&lt;/div&gt;              
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.image-bg {
+    background-image: url('bilder/hintergrund.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    padding: 40px;
+}              
+        </code></pre>
+        <br>
+        <h2>Frabverlauf als Hintergrund</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div class="gradient-bg"&gt;
+    Dies ist ein Hintergrund mit Farbverlauf.
+&lt;/div&gt;           
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.gradient-bg {
+    background-image: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    padding: 40px;
+}              
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="background-repeat">background-repeat</h1>
+        <p>
+            Die Eigenschaft <code>background-repeat</code> steuert, ob und wie ein Hintergrundbild innerhalb eines Elements wiederholt (also gekachelt) wird. 
+            Standardmässig wird ein Hintergrundbild sowohl horizontal als auch vertikal wiederholt. 
+            Du kannst diese Wiederholung mit Werten wie <code>no-repeat</code>, <code>repeat-x</code>, <code>repeat-y</code> oder <code>repeat</code> gezielt beeinflussen. 
+            Diese Eigenschaft ist besonders nützlich, wenn du Muster, Texturen oder Icons als Hintergrund verwendest und kontrollieren möchtest, wie sie sich verhalten.
+        </p>
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div class="repeat-default"&gt;Standard-Wiederholung&lt;/div&gt;
+&lt;div class="repeat-x"&gt;Nur horizontal wiederholt&lt;/div&gt;
+&lt;div class="repeat-y"&gt;Nur vertikal wiederholt&lt;/div&gt;
+&lt;div class="no-repeat"&gt;Keine Wiederholung, Bild zentriert&lt;/div&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.repeat-default {
+    background-image: url('muster.png');
+    background-repeat: repeat;                  /* Standard: in beide Richtungen */
+}
+              
+.repeat-x {
+    background-image: url('muster.png');
+    background-repeat: repeat-x;                /* nur horizontal */
+}
+              
+.repeat-y {
+    background-image: url('muster.png');
+    background-repeat: repeat-y;                /* nur vertikal */
+}
+              
+.no-repeat {
+    background-image: url('muster.png');
+    background-repeat: no-repeat;               /* keine Wiederholung */
+    background-position: center;
+}      
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="background-position">background-position</h1>
+        <p>
+            Die Eigenschaft <code>background-position</code> legt fest, an welcher Stelle innerhalb eines Elements ein Hintergrundbild angezeigt wird. 
+            Du kannst dabei Schlüsselwörter wie <code>top</code>, <code>center</code>, <code>bottom</code>, <code>left</code>, <code>right</code> oder exakte Werte in <code>px</code>, <code>%</code> oder <code>em</code> verwenden. 
+            Diese Eigenschaft wirkt sich nur aus, wenn <code>background-repeat</code> auf <code>no-repeat</code> oder eine eingeschränkte Wiederholung gesetzt ist. 
+            Sie ist besonders hilfreich, um Icons, Logos oder Designelemente gezielt zu platzieren.
+        </p>  
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div class="bg-top-left"&gt;Bild oben links&lt;/div&gt;
+&lt;div class="bg-center"&gt;Bild zentriert&lt;/div&gt;
+&lt;div class="bg-bottom-right"&gt;Bild unten rechts&lt;/div&gt;
+&lt;div class="bg-pixel"&gt;Bild mit Pixel-Position&lt;/div&gt;
+&lt;div class="bg-percent"&gt;Bild mit Prozent-Position&lt;/div&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.bg-top-left {
+    background-image: url('bild.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+              
+.bg-center {
+    background-image: url('bild.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+              
+.bg-bottom-right {
+    background-image: url('bild.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+              
+.bg-pixel {
+    background-image: url('bild.png');
+    background-repeat: no-repeat;
+    background-position: 20px 50px;
+}
+              
+.bg-percent {
+    background-image: url('bild.png');
+    background-repeat: no-repeat;
+    background-position: 75% 25%;
+}              
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1>background-size</h1>
+        <p>
+            Die Eigenschaft <code>background-size</code> bestimmt, wie ein Hintergrundbild skaliert wird. 
+            Du kannst feste Masse in <code>px</code>, <code>%</code> oder flexible Schlüsselwörter wie <code>cover</code> und <code>contain</code> verwenden. 
+            <code>cover</code> sorgt dafür, dass das Bild den gesamten Hintergrundbereich ausfüllt, wobei es eventuell an den Rändern beschnitten wird. 
+            <code>contain</code> hingegen passt das Bild vollständig in den Container ein, wobei eventuell Freiräume entstehen. 
+            Die Eigenschaft ist besonders nützlich für responsive Designs oder um Hintergrundbilder gezielt anzupassen.
+        </p>    
+        <h2>Beispiel</h2>
+        <br>
+        <h3>index.html</h3>
+        <pre class="language-html"><code>
+&lt;div class="bg-original"&gt;Originalgrösse&lt;/div&gt;
+&lt;div class="bg-cover"&gt;Cover: Fläche wird vollständig abgedeckt&lt;/div&gt;
+&lt;div class="bg-contain"&gt;Contain: Bild passt vollständig ins Element&lt;/div&gt;
+&lt;div class="bg-fixed-size"&gt;Feste Grösse: 100px x 80px&lt;/div&gt;
+        </code></pre>
+        <br>
+        <h3>style.css</h3>
+        <pre class="language-css"><code>
+.bg-original {
+    background-image: url('bild.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+              
+.bg-cover {
+    background-image: url('bild.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+              
+.bg-contain {
+    background-image: url('bild.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+              
+.bg-fixed-size {
+    background-image: url('bild.jpg');
+    background-repeat: no-repeat;
+    background-size: 100px 80px;            /* Breite 100px, Höhe 80px */
+    background-position: center;
+}              
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1></h1>
+
+
 
     </main>
 
