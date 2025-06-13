@@ -137,6 +137,11 @@
             color: var(--text-secondary);
         }
 
+        main a {
+            color: #ffff;
+            text-decoration: none;
+        }
+
         .hljs,
         .hljs * {
             background: none !important;
@@ -171,8 +176,8 @@
             <nav>
                 <ul>
                     <li><a href="#intro">Einführung</a></li>
-                    <li><a href="#">Installation und Einrichtung</a></li>
-                    <li><a href="#">Grundlegende Syntax</a></li>
+                    <li><a href="#installation">Installation und Einrichtung</a></li>
+                    <li><a href="#syntax">Grundlegende Syntax</a></li>
                     <li><a href="#">Variablen und Datentypen</a></li>
                     <li><a href="#">Operatoren</a></li>
                     <li><a href="#">Kontrollstrukturen</a></li>
@@ -231,6 +236,109 @@
 &lt;/body&gt;
 &lt;/html&gt;
         </code></pre>
+        
+        <br>
+        <br>
+        <br>
+
+        <h1 id="installation">Installation und Einrichtung</h1>
+        <p>
+            Um mit PHP programmieren zu können, musst du zuerst den <strong>PHP-Interpreter</strong> auf deinem Rechner installieren.
+            Er ermöglicht das Ausführen von PHP-Skripten und ist die Grundlage für die Entwicklung von Webanwendungen.
+        </p>
+  
+        <h2>1. PHP herunterladen</h2>
+        <p>
+            Die einfachste Möglichkeit ist der Download von der offiziellen <a href="https://www.php.net/downloads" target="_blank">PHP-Webseite</a>.
+            Dort findest du Versionen für verschiedene Betriebssysteme (Windows, macOS, Linux).
+            Für Einsteiger ist es empfehlenswert, die aktuelle stabile Version zu verwenden.
+        </p>
+  
+        <h2>2. PHP installieren</h2>
+        <p>
+            Nach dem Download kannst du PHP je nach Betriebssystem folgendermaßen installieren:
+        </p>
+        <p>
+            <strong>Windows:</strong> Lade die <em>Thread Safe</em>-Version herunter und entpacke sie an einen Ort deiner Wahl. 
+            Füge dann den Pfad zum PHP-Ordner in die Systemumgebungsvariablen (PATH) hinzu, damit du PHP im Terminal nutzen kannst.
+        </p>
+        <p>
+            <strong>macOS (mit Homebrew):</strong> Öffne das Terminal und gib ein:
+        </p>
+
+        <br>
+
+        <pre class="language-bash"><code>
+brew install php
+        </code></pre>
+
+        <p><strong>Linux (z. B. Ubuntu):</strong> Öffne ein Terminal und gib folgenden Befehl ein:</p>
+
+        <br>
+
+        <pre class="language-bash"><code>
+sudo apt update
+sudo apt install php
+        </code></pre>
+    
+  
+        <h2>3. Installation überprüfen</h2>
+        <p>
+            Öffne ein Terminal oder die Eingabeaufforderung und gib folgendes ein:<br>
+            <code>php -v</code><br>
+            Wenn du eine Ausgabe mit der PHP-Version wie <code>PHP 8.x.x</code> siehst, ist PHP korrekt installiert.
+        </p>
+  
+        <h2>Welche IDE ist empfehlenswert?</h2>
+        <p>
+            Für PHP eignet sich besonders <strong>Visual Studio Code</strong> mit der Erweiterung <em>PHP Intelephense</em>. 
+            VS Code ist kostenlos, leichtgewichtig und bietet viele nützliche Features wie Syntax-Highlighting, Autovervollständigung und Debugging.
+            Du kannst es hier herunterladen: <a href="https://code.visualstudio.com/" target="_blank">VS Code Download</a>.
+        </p>
+        
+        <p>
+            Alternativ sind auch <strong>PHPStorm</strong> (kostenpflichtig, sehr umfangreich) oder <strong>NetBeans</strong> gute Optionen für professionelle PHP-Entwicklung.
+        </p>
+  
+        <h2>Erstes PHP-Programm</h2>
+        <p>
+            Erstelle eine Datei mit dem Namen <code>index.php</code> und schreibe folgenden Code hinein:
+        </p>
+        <pre><code class="language-php">
+&lt;?php
+    echo "Hallo, PHP!";
+?&gt;
+        </code></pre>
+        <p>
+            Öffne das Terminal, navigiere zum Ordner mit der Datei und starte das Skript mit:<br>
+            <code>php index.php</code><br>
+            Schon wird dein erstes PHP-Programm die Ausgabe <em>Hallo, PHP!</em> anzeigen.
+        </p>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="syntax">Grundlegende Syntax</h1>
+        <p>
+            Die grundlegende Syntax von PHP ist relativ einfach und ähnelt vielen anderen Programmiersprachen, insbesondere C, JavaScript oder Perl. 
+            PHP-Code wird immer innerhalb spezieller PHP-Tags geschrieben, die dem Webserver signalisieren, dass der enthaltene Code ausgeführt werden muss. 
+            Dabei kannst du Variablen deklarieren, Kontrollstrukturen nutzen, Funktionen definieren und mit Daten arbeiten. 
+            Kommentare helfen dir dabei, den Code verständlich zu dokumentieren.
+        </p>
+        
+        <p>
+            Ein PHP-Skript kann direkt in eine HTML-Datei eingebettet werden oder als eigenständige PHP-Datei vorliegen. 
+            Standardmäßig endet jede PHP-Anweisung mit einem Semikolon <code>;</code>. 
+            Variablennamen beginnen immer mit einem <code>$</code>-Zeichen, gefolgt von Buchstaben, Zahlen oder Unterstrichen. 
+            PHP ist typfrei, das bedeutet, dass Variablen keine expliziten Datentypen benötigen – der Typ wird dynamisch zur Laufzeit festgelegt.
+        </p>
+        
+        <p>
+            Die Ausführung eines PHP-Skripts beginnt immer am Anfang und läuft sequenziell ab. 
+            Mit Kontrollstrukturen wie <code>if</code>, <code>else</code>, <code>for</code> oder <code>while</code> kannst du den Ablauf beeinflussen. 
+            Funktionen helfen dir, wiederkehrende Aufgaben zu kapseln und deinen Code sauberer und modularer zu gestalten.
+        </p>
         
     </main>
 
