@@ -337,6 +337,41 @@ public class HalloWelt {
         <br>
 
         <h1 id="vardat">Variablen und Datentypen</h1>
+        <p>
+            In Java müssen Variablen immer mit einem Datentyp deklariert werden, der bestimmt, welche Art von Wert gespeichert werden kann. 
+            Es gibt primitive Datentypen wie <code>int</code> (Ganzzahlen), <code>double</code> (Gleitkommazahlen), <code>boolean</code> (wahr oder falsch) und <code>char</code> (ein einzelnes Zeichen). 
+            Zusätzlich gibt es Referenzdatentypen wie <code>String</code>, die auf Objekte verweisen. 
+            Durch die klare Typisierung sorgt Java für Sicherheit und Vorhersagbarkeit im Code. Variablen lassen sich mit einem Startwert initialisieren oder später befüllen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-java"><code>
+public class DatentypenBeispiel {
+
+    public static void main(String[] args) {
+        // Einfache Zahl (Ganzzahl)
+        int alter = 16;
+            
+        // Kommazahl
+        double temperatur = 36.6;
+            
+        // Wahrheitswert
+        boolean istVolljährig = false;
+            
+        // Ein einzelnes Zeichen
+        char geschlecht = 'm';
+            
+        // Ein Text (String ist eine Klasse, kein primitiver Typ)
+        String name = "Nathan";
+            
+        // Ausgabe der Variablen
+        System.out.println("Name: " + name);
+        System.out.println("Alter: " + alter);
+        System.out.println("Temperatur: " + temperatur);
+        System.out.println("Geschlecht: " + geschlecht);
+        System.out.println("Ist volljährig? " + istVolljährig);
+    }
+}
+        </code></pre>
     </main>
 
     <script>
