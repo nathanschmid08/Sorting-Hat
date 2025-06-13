@@ -1592,7 +1592,7 @@ try {
 
         <h1 id="file">File Uploads</h1>
         <p>
-            In PHP kannst du Benutzern das Hochladen von Dateien über ein HTML-Formular ermöglichen. PHP speichert hochgeladene Dateien zunächst in einem temporären Verzeichnis. Du kannst diese Datei anschließend mit der Funktion <code>move_uploaded_file()</code> an den gewünschten Ort verschieben. Dabei ist es wichtig, die Dateigröße und den MIME-Typ zu prüfen, um Sicherheitsprobleme wie das Hochladen ausführbarer Dateien zu vermeiden. Auch solltest du den Dateinamen bereinigen oder selbst vergeben.
+            In PHP kannst du Benutzern das Hochladen von Dateien über ein HTML-Formular ermöglichen. PHP speichert hochgeladene Dateien zunächst in einem temporären Verzeichnis. Du kannst diese Datei anschliessend mit der Funktion <code>move_uploaded_file()</code> an den gewünschten Ort verschieben. Dabei ist es wichtig, die Dateigrösse und den MIME-Typ zu prüfen, um Sicherheitsprobleme wie das Hochladen ausführbarer Dateien zu vermeiden. Auch solltest du den Dateinamen bereinigen oder selbst vergeben.
         </p>
         <h2>Beispiel</h2>
         <br>
@@ -1616,9 +1616,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $zielverzeichnis = "uploads/";
         $zielpfad = $zielverzeichnis . $dateiname;
         
-        // Prüfen, ob die Datei zu groß ist (z. B. &gt; 2MB)
+        // Prüfen, ob die Datei zu gross ist (z. B. &gt; 2MB)
         if ($_FILES["datei"]["size"] &gt; 2 * 1024 * 1024) {
-            echo "Die Datei ist zu groß.";
+            echo "Die Datei ist zu gross.";
             exit;
         }
         
