@@ -179,8 +179,8 @@
                 <ul>
                     <li><a href="#intro">Einführung</a></li>
                     <li><a href="#installation">Installation und Einrichtung</a></li>
-                    <li><a href="#">Grundlegende Syntax</a></li>
-                    <li><a href="#">Variablen und Datentypen</a></li>
+                    <li><a href="#syntax">Grundlegende Syntax</a></li>
+                    <li><a href="#vardat">Variablen und Datentypen</a></li>
                     <li><a href="#">Operatoren</a></li>
                     <li><a href="#">Kontrollstrukturen</a></li>
                     <li><a href="#">Schleifen</a></li>
@@ -272,7 +272,7 @@ sudo apt install openjdk-17-jdk
             Für Einsteiger ist <strong>IntelliJ IDEA Community Edition</strong> besonders geeignet. 
             Sie ist kostenlos, leicht verständlich und bietet viele Funktionen wie Autovervollständigung, Fehlererkennung und ein übersichtliches Projektmanagement.
             Du kannst sie direkt von der offiziellen Seite herunterladen:
-            <a href="https://www.jetbrains.com/idea/download" target="_blank">https://www.jetbrains.com/idea/download</a>.
+            <a href="https://www.jetbrains.com/idea/download" target="_blank">IntelliJ Download</a>.
         </p>
           
         <p>
@@ -292,7 +292,51 @@ public class Main {
         </code></pre>
         <p>
             Klicke in der IDE auf den &#x25B6; Button, um das Programm zu starten. Schon wird dein erstes Java-Programm in der Konsole ausgegeben!
-        </p>          
+        </p>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="syntax">Grundlegende Syntax</h1>
+        <p>
+            Java ist eine streng typisierte, objektorientierte Programmiersprache, bei der jedes Programm in Klassen strukturiert ist. 
+            Der Einstiegspunkt jedes Programms ist die Methode <code>main()</code>, in der der auszuführende Code steht. 
+            Java verwendet geschweifte Klammern <code>{ }</code> zur Abgrenzung von Codeblöcken und ein Semikolon <code>;</code> am Ende jeder Anweisung. 
+            Variablen müssen mit einem Datentyp deklariert werden, und Methoden dienen dazu, Code logisch zu strukturieren und wiederzuverwenden.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-java"><code>
+public class HalloWelt {
+
+    // Haupteinstiegspunkt des Programms
+    public static void main(String[] args) {
+        // Gibt eine Textzeile aus
+        System.out.println("Hallo, Welt!");
+            
+        // Deklariert eine Ganzzahl-Variable
+        int zahl = 10;
+            
+        // Bedingte Ausgabe basierend auf der Zahl
+        if (zahl > 5) {
+            System.out.println("Die Zahl ist größer als 5.");
+        } else {
+            System.out.println("Die Zahl ist 5 oder kleiner.");
+        }
+            
+        // Eine einfache Schleife von 0 bis 4
+        for (int i = 0; i &lt; 5; i++) {
+            System.out.println("Zähler: " + i);
+        }
+    }
+}      
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="vardat">Variablen und Datentypen</h1>
     </main>
 
     <script>
