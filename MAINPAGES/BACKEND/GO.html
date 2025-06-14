@@ -188,7 +188,7 @@
                     <li><a href="#Funktionen">Funktionen</a></li>
                     <li><a href="#xreturn">Mehrere Rückgabewerte</a></li>
                     <li><a href="#anonyfunc">Anonyme Funktionen</a></li>
-                    <li><a href="#">Panik und Fehlerbehandlung</a></li>
+                    <li><a href="#panerror">Panik und Fehlerbehandlung</a></li>
                     <li><a href="#">Bedingungen</a></li>
                     <li><a href="#">Switch-Anweisung</a></li>
                     <li><a href="#">Schleifen</a></li>
@@ -692,7 +692,56 @@ func main() {
         <br>
         <br>
 
-        <h1></h1>
+        <h1 id="panerror">Panik und Fehlerbehandlung</h1>
+        <p>
+            In Go erfolgt die <strong>Fehlerbehandlung</strong> normalerweise über Rückgabewerte vom Typ <code>error</code>, die explizit geprüft werden müssen. 
+            Das ist ein zentrales Prinzip in Go – statt Ausnahmen zu werfen, geben Funktionen Fehler zurück. 
+            Für schwerwiegende Fehler, bei denen das Programm nicht mehr sinnvoll fortgesetzt werden kann, gibt es <code>panic</code>. 
+            Mit <code>defer</code> und <code>recover</code> lässt sich eine Panik auffangen und das Programm gezielt abfangen oder "retten".
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import (
+    "errors"
+    "fmt"
+)
+        
+// Funktion mit normaler Fehlerbehandlung über 'error'
+func teile(a, b int) (int, error) {
+    if b == 0 {
+        return 0, errors.New("Division durch null ist nicht erlaubt")
+    }
+    return a / b, nil
+}
+        
+func main() {
+    // Fehlerbehandlung durch Rückgabewert prüfen
+    ergebnis, err := teile(10, 0)
+    if err != nil {
+        fmt.Println("Fehler:", err)
+    } else {
+        fmt.Println("Ergebnis:", ergebnis)
+    }
+        
+    // defer + recover zum Abfangen einer Panik
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Panik aufgefangen:", r)
+        }
+    }()
+        
+    fmt.Println("Jetzt wird eine Panik ausgelöst...")
+        
+    // Panik erzeugen (z. B. durch einen kritischen Fehler)
+    panic("etwas sehr Schlimmes ist passiert!")
+        
+    // Dieser Code wird nicht mehr ausgeführt – außer recover greift
+    fmt.Println("Dieser Code wird nicht erreicht.")
+}
+        </code></pre>
+        
 
         
     </main>
