@@ -129,6 +129,11 @@
             color: var(--hover-color);
         }
 
+        main a {
+            color: #ffff;
+            text-decoration: none;
+        }
+
         main p {
             font-family: 'Source Sans 3', sans-serif;
             margin-top: 1rem;
@@ -172,17 +177,17 @@
             <nav>
                 <ul>
                     <li><a href="#intro">Einführung</a></li>
-                    <li><a href="#">Installation</a></li>
-                    <li><a href="#">Go-Modul</a></li>
-                    <li><a href="#">Variablen und Konstanten</a></li>
-                    <li><a href="#">Datentypen</a></li>
-                    <li><a href="#">Arrays und Slices</a></li>
-                    <li><a href="#">Maps</a></li>
-                    <li><a href="#">Strukturen</a></li>
-                    <li><a href="#">Punkte und Felder in Strukturen</a></li>
-                    <li><a href="#">Funktionen</a></li>
-                    <li><a href="#">Mehrere Rückgabewerte</a></li>
-                    <li><a href="#">Anonyme Funktionen</a></li>
+                    <li><a href="#Installation">Installation</a></li>
+                    <li><a href="#modulego">Go-Modul</a></li>
+                    <li><a href="#varkonsta">Variablen und Konstanten</a></li>
+                    <li><a href="#Datentypen">Datentypen</a></li>
+                    <li><a href="#arrsli">Arrays und Slices</a></li>
+                    <li><a href="#Maps">Maps</a></li>
+                    <li><a href="#Strukturen">Strukturen</a></li>
+                    <li><a href="#puffis">Punkte und Felder in Strukturen</a></li>
+                    <li><a href="#Funktionen">Funktionen</a></li>
+                    <li><a href="#xreturn">Mehrere Rückgabewerte</a></li>
+                    <li><a href="#anonyfunc">Anonyme Funktionen</a></li>
                     <li><a href="#">Panik und Fehlerbehandlung</a></li>
                     <li><a href="#">Bedingungen</a></li>
                     <li><a href="#">Switch-Anweisung</a></li>
@@ -247,7 +252,449 @@ import "fmt"
 func main() {
     fmt.Println("Hallo, Go!")
 }         
-</code></pre>
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="Installation">Installation</h1>
+        <p>
+            Um mit Go programmieren zu können, musst du zuerst die <strong>Go-Programmiersprache</strong> installieren.
+            Sie enthält den Compiler, die Laufzeitumgebung und wichtige Werkzeuge für die Entwicklung.
+        </p>
+
+        <h2>1. Go herunterladen</h2>
+        <p>
+            Die einfachste Möglichkeit ist der Download von der offiziellen <a href="https://go.dev/dl/" target="_blank">Go-Webseite</a>.
+            Wähle dort einfach dein Betriebssystem aus (z. B. Windows, macOS oder Linux) und lade das aktuelle stabile Release herunter.
+        </p>
+
+        <h2>2. Go installieren</h2>
+        <p>
+            Nach dem Download kannst du Go ganz einfach installieren:
+        </p>
+        <p><strong>Windows / macOS:</strong> Installiere es über einen Doppelklick und folge dem Assistenten.</p>
+        <p><strong>Linux (z. B. Ubuntu):</strong> Öffne ein Terminal und gib folgenden Befehl ein:</p>
+
+        <br>
+
+        <pre class="language-bash"><code>
+sudo apt install golang-go
+        </code></pre>
+
+        <h2>3. Installation überprüfen</h2>
+        <p>
+            Öffne ein Terminal oder die Eingabeaufforderung und gib folgendes ein:
+            <code>go version</code><br>
+            Wenn du eine Ausgabe wie <code>go version go1.x.x linux/amd64</code> siehst, ist alles korrekt installiert.
+        </p>
+
+        <h2>Welche IDE ist empfehlenswert?</h2>
+        <p>
+            Für Einsteiger ist <strong>Visual Studio Code</strong> mit der offiziellen <a href="https://marketplace.visualstudio.com/items?itemName=golang.Go" target="_blank">Go-Erweiterung</a> sehr gut geeignet.
+            Sie ist kostenlos, leicht verständlich und bietet Funktionen wie Autovervollständigung, Fehlererkennung und Debugging.
+        </p>
+
+        <p>
+            Alternativ kannst du auch <strong>GoLand</strong> von JetBrains verwenden, eine kostenpflichtige, aber sehr leistungsfähige IDE speziell für Go.
+        </p>
+
+        <h2>Erstes Go-Programm</h2>
+        <p>
+            Sobald deine Entwicklungsumgebung eingerichtet ist, kannst du eine neue Datei <code>main.go</code> erstellen und folgenden Code ausprobieren:
+        </p>
+        <pre><code class="language-go">
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hallo, Go!")
+}
+        </code></pre>
+        <p>
+            Öffne ein Terminal im Ordner mit der Datei und gib folgenden Befehl ein, um das Programm auszuführen:
+            <code>go run main.go</code><br>
+            Schon wird dein erstes Go-Programm in der Konsole ausgegeben!
+        </p>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="modulego">Go-Modul</h1>
+        <p>
+            Ein <strong>Go-Modul</strong> ist eine Sammlung von Go-Paketen, die zusammen versioniert und verwaltet werden. 
+            Module ermöglichen es, Abhängigkeiten eindeutig zu definieren und wiederverwendbaren Code einfach zu organisieren. 
+            Ein Go-Projekt wird als Modul initialisiert, indem eine <code>go.mod</code>-Datei erstellt wird, die alle benötigten Informationen enthält, wie Modulname und Abhängigkeiten.
+        </p>
+        <p>
+            Mit Go-Modulen kannst du Pakete aus dem Internet einbinden, versionieren und sicherstellen, dass dein Projekt immer mit den richtigen Versionen arbeitet.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-bash"><code>
+// Modul initialisieren (im Projektordner)
+go mod init beispiel.com/meinmodul
+        
+// Abhängigkeiten herunterladen und auflösen
+go mod tidy
+        </code></pre>
+        <br>
+        <pre class="language-go"><code>
+package main
+        
+import (
+    "fmt"
+    "github.com/fatih/color"  // Beispiel einer externen Bibliothek
+)
+        
+func main() {
+    color.Cyan("Hallo mit Farbe in der Konsole!")
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="varkonsta">Variablen und Konstanten</h1>
+        <p>
+            <strong>Variablen</strong> werden verwendet, um Werte zu speichern, die sich während der Programmausführung ändern können. 
+            Variablen müssen mit einem Typ deklariert werden, können aber auch mit dem Kurzdeklarationsoperator <code>:=</code> automatisch typisiert werden. 
+            <strong>Konstanten</strong> sind unveränderliche Werte, die einmal definiert und danach nicht mehr verändert werden können. 
+            Sie werden mit dem Schlüsselwort <code>const</code> deklariert und eignen sich gut für feste Werte wie Pi oder Statuscodes.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import "fmt"
+        
+func main() {
+    // Variable mit expliziter Typangabe
+    var zahl int = 10
+        
+    // Kurzdeklaration mit automatischer Typbestimmung
+    text := "Hallo Go!"
+        
+    // Konstante
+    const pi = 3.14159
+        
+    fmt.Println("Zahl:", zahl)
+    fmt.Println("Text:", text)
+    fmt.Println("Pi:", pi)
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="Datentypen">Datentypen</h1>
+        <p>
+            Go bietet verschiedene <strong>Datentypen</strong> für unterschiedliche Werte an. 
+            Zu den grundlegenden Typen gehören <code>int</code> für ganze Zahlen, <code>float64</code> für Gleitkommazahlen, <code>string</code> für Text und <code>bool</code> für Wahrheitswerte. 
+            Go ist statisch typisiert, das heisst, der Typ einer Variablen wird beim Kompilieren festgelegt und kann sich nicht ändern. 
+            Ausserdem gibt es zusammengesetzte Typen wie Arrays, Slices, Maps und Strukturen, die komplexere Datenstrukturen ermöglichen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import "fmt"
+        
+func main() {
+    var ganzeZahl int = 42
+    var gleitKomma float64 = 3.14
+    var text string = "Hallo Go"
+    var wahrheitswert bool = true
+        
+    fmt.Println("Int:", ganzeZahl)
+    fmt.Println("Float64:", gleitKomma)
+    fmt.Println("String:", text)
+    fmt.Println("Bool:", wahrheitswert)
+}
+        </code></pre>
+        
+        <br>
+        <br>
+        <br>
+
+        <h1 id="arrsli">Arrays und Slices</h1>
+        <p>
+            <strong>Arrays</strong> sind feste Datenstrukturen mit einer festen Länge, die mehrere Werte desselben Typs speichern. 
+            Die Grösse eines Arrays wird bei der Deklaration festgelegt und kann später nicht geändert werden. 
+            <strong>Slices</strong> sind flexiblere, dynamisch veränderbare Ansichten auf Arrays. 
+            Sie besitzen eine Länge und eine Kapazität und sind das bevorzugte Mittel, um mit Listen in Go zu arbeiten.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import "fmt"
+        
+func main() {
+    // Ein Array mit 3 Elementen vom Typ int
+    var arr [3]int = [3]int{10, 20, 30}
+    fmt.Println("Array:", arr)
+        
+    // Ein Slice, das ein Array hinterlegt hat
+    slice := []int{1, 2, 3, 4, 5}
+    fmt.Println("Slice:", slice)
+        
+    // Slice erweitern durch Anhängen eines neuen Werts
+    slice = append(slice, 6)
+    fmt.Println("Erweitertes Slice:", slice)
+        
+    // Zugriff auf einzelne Elemente
+    fmt.Println("Erstes Element im Array:", arr[0])
+    fmt.Println("Letztes Element im Slice:", slice[len(slice)-1])
+}
+        </code></pre>
+        
+        <br>
+        <br>
+        <br>
+
+        <h1 id="Maps">Maps</h1>
+        <p>
+            Eine <strong>Map</strong> ist eine eingebaute Datenstruktur, die Schlüssel-Wert-Paare speichert. 
+            Maps sind dynamisch und erlauben schnellen Zugriff, Einfügen und Löschen von Daten über eindeutige Schlüssel. 
+            Die Schlüssel müssen vergleichbare Typen haben, während die Werte beliebige Typen sein können. 
+            Maps werden mit der Funktion <code>make</code> erstellt und sind ideal, um Daten nach Schlüssel zu organisieren.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import "fmt"
+        
+func main() {
+    // Map erstellen: Schlüssel vom Typ string, Werte vom Typ int
+    alter := make(map[string]int)
+        
+    // Werte hinzufügen
+    alter["Alice"] = 30
+    alter["Bob"] = 25
+        
+    // Wert ausgeben
+    fmt.Println("Alter von Alice:", alter["Alice"])
+        
+    // Überprüfen, ob ein Schlüssel existiert
+    wert, vorhanden := alter["Charlie"]
+    if vorhanden {
+        fmt.Println("Alter von Charlie:", wert)
+    } else {
+        fmt.Println("Charlie ist nicht in der Map vorhanden")
+    }
+        
+    // Schlüssel löschen
+    delete(alter, "Bob")
+    fmt.Println("Map nach dem Löschen von Bob:", alter)
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="Strukturen">Strukturen</h1>
+        <p>
+            In Go sind <strong>Strukturen</strong> (engl. <code>struct</code>) benutzerdefinierte Datentypen, mit denen man verschiedene Felder zu einem einzigen komplexen Datentyp zusammenfassen kann. 
+            Strukturen eignen sich gut, um zusammengehörige Daten logisch zu gruppieren, wie zum Beispiel Informationen zu einer Person oder einem Produkt. 
+            Jedes Feld in einer Struktur hat einen Namen und einen Typ, und man greift über den Punktoperator darauf zu.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import "fmt"
+        
+// Strukturtyp definieren
+type Person struct {
+    Name string
+    Alter int
+}
+        
+func main() {
+    // Neue Instanz der Struktur erstellen
+    p := Person{
+        Name: "Nathan",
+        Alter: 16,
+    }
+        
+    // Zugriff auf Felder der Struktur
+    fmt.Println("Name:", p.Name)
+    fmt.Println("Alter:", p.Alter)
+        
+    // Strukturfeld ändern
+    p.Alter = 17
+    fmt.Println("Neues Alter:", p.Alter)
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="puffis">Punkte und Felder in Strukturen</h1>
+        <p>
+            In Go greift man auf die einzelnen <strong>Felder</strong> einer Struktur mit dem <code>.</code>-Operator zu, der oft einfach als „Punktoperator“ bezeichnet wird. 
+            Über diesen Operator kannst du Werte lesen oder ändern. 
+            Wenn du eine Struktur als Zeiger (Pointer) übergibst, kannst du die Felder direkt mit dem Punktoperator ansprechen – Go erledigt dabei automatisch die Dereferenzierung für dich, was den Code klarer macht.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import "fmt"
+        
+// Strukturtyp definieren
+type Auto struct {
+    Marke  string
+    Baujahr int
+}
+        
+func main() {
+    // Strukturwert
+    meinAuto := Auto{
+        Marke:  "Tesla",
+        Baujahr: 2022,
+    }
+        
+    // Zugriff auf Felder mit Punktoperator
+    fmt.Println("Marke:", meinAuto.Marke)
+    fmt.Println("Baujahr:", meinAuto.Baujahr)
+        
+    // Feld ändern
+    meinAuto.Baujahr = 2023
+    fmt.Println("Neues Baujahr:", meinAuto.Baujahr)
+        
+    // Zeiger auf Struktur
+    autoPtr := &meinAuto
+        
+    // Auch mit Zeiger kann man Felder mit Punktoperator erreichen
+    autoPtr.Marke = "BMW"
+    fmt.Println("Neue Marke über Zeiger:", autoPtr.Marke)
+}
+        </code></pre>
+        
+        <br>
+        <br>
+        <br>
+        
+        <h1 id="Funktionen">Funktionen</h1>
+        <p>
+            Funktionen sind eigenständige Codeblöcke, die eine bestimmte Aufgabe ausführen und optional Werte zurückgeben können. 
+            Sie werden mit dem Schlüsselwort <code>func</code> definiert und haben einen Namen, eine Parameterliste und einen optionalen Rückgabewert. 
+            Funktionen helfen, den Code übersichtlich und wiederverwendbar zu machen.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import "fmt"
+        
+// Funktion ohne Parameter und Rückgabewert
+func sagHallo() {
+    fmt.Println("Hallo, Go!")
+}
+        
+// Funktion mit Parametern und Rückgabewert
+func addiere(a int, b int) int {
+    return a + b
+}
+        
+func main() {
+    sagHallo() // Funktion aufrufen
+        
+    // Funktion mit Parametern aufrufen und Ergebnis speichern
+    ergebnis := addiere(5, 3)
+    fmt.Println("Ergebnis der Addition:", ergebnis)
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="xreturn">Mehrere Rückgabewerte</h1>
+        <p>
+            Funktionen können <strong>mehrere Rückgabewerte</strong> liefern, was besonders nützlich ist, um zusätzlich zu einem Ergebnis auch einen Fehlerstatus oder weitere Informationen zurückzugeben. 
+            Die Rückgabetypen werden in Klammern angegeben, und beim Aufruf kannst du die Werte einzeln in Variablen speichern.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import (
+    "errors"
+    "fmt"
+)
+        
+// Funktion mit zwei Rückgabewerten: Ergebnis und Fehler
+func dividiere(a, b float64) (float64, error) {
+    if b == 0 {
+        return 0, errors.New("Division durch Null nicht erlaubt")
+    }
+    return a / b, nil
+}
+        
+func main() {
+    ergebnis, err := dividiere(10, 2)
+    if err != nil {
+        fmt.Println("Fehler:", err)
+    } else {
+        fmt.Println("Ergebnis:", ergebnis)
+    }
+        
+    // Beispiel für Division durch Null
+    _, err = dividiere(5, 0)
+    if err != nil {
+        fmt.Println("Fehler:", err)
+    }
+}
+        </code></pre>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 id="anonyfunc">Anonyme Funktionen</h1>
+        <p>
+            In Go kannst du <strong>anonyme Funktionen</strong> erstellen, also Funktionen ohne Namen, die oft direkt beim Definieren aufgerufen oder als Werte an Variablen und Parameter übergeben werden. 
+            Sie sind nützlich für kleine, einmalige Aufgaben oder als Closure, die auf Variablen aus dem äußeren Gültigkeitsbereich zugreifen kann.
+        </p>
+        <h2>Beispiel</h2>
+        <pre class="language-go"><code>
+package main
+        
+import "fmt"
+        
+func main() {
+    // Anonyme Funktion, die sofort ausgeführt wird
+    func() {
+        fmt.Println("Hallo aus einer anonymen Funktion!")
+    }()
+        
+    // Anonyme Funktion einer Variablen zuweisen
+    begruessung := func(name string) {
+        fmt.Printf("Hallo, %s!\n", name)
+    }
+        
+    // Aufruf der anonymen Funktion über die Variable
+    begruessung("Nathan")
+}
+        </code></pre>
+        
+        <br>
+        <br>
+        <br>
+
+        <h1></h1>
+
+        
     </main>
 
     
