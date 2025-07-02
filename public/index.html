@@ -44,6 +44,25 @@ body::before {
     z-index: 1;
 }
 
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.25;
+    pointer-events: none; 
+}
+
+/* Damit der Inhalt darüber liegt */
+.container, body > *:not(.background-image) {
+    position: relative;
+    z-index: 1;
+}
+
+
 /* Main container */
 .container {
     position: relative;
@@ -393,6 +412,8 @@ body::before {
 </style>
 </head>
 <body>
+    <img src="assests/hogwarts.svg" alt="Hogwarts Background" class="background-image" />
+
     <div class="container">
         <div class="hogwarts-frame">
             <h1 class="title">The Sorting Hat</h1>
